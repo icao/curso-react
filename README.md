@@ -1,2 +1,2 @@
-# curso-react
-This is a full curse of react with hooks
+# Course of React.js ⚛️
+This is a full course of react.js 
