@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <img src={logo}
       className="App-logo" alt="logo"/>
-      <h1>Hola mundo</h1>
+      <h1>Hola mundo JSX</h1>
     </div>
   );
 }
