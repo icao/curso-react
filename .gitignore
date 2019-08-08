@@ -415,6 +415,8 @@ _site/
 ## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
 node_modules
 
+# Yarn lock - Important: For security on Github
+yarn.lock 
 # Book build output
 _book
 
