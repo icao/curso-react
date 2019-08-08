@@ -14,6 +14,7 @@ function FunctionalComponent() {
 /**
  * Un Functional component tambien es conocido como Statless Functional Component.
  * Acontinuación pasamos el conponente FunctionalComponent a otra sintaxis.
+ * Un statless functional component no tiene estados.
  */
 
 const FunctionalComponent = () => {
