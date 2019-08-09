@@ -416,7 +416,7 @@ _site/
 node_modules
 
 # Yarn lock - Important: For security on Github
-yarn.lock 
+yarn.lock
 # Book build output
 _book
 
