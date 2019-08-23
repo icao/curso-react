@@ -5,6 +5,17 @@ import PropsClass from './PropsClass';
 import PropsFunction from './PropsFunction'
 
 function App() {
+  const valores = {
+    cadena: 'Soy un String',
+    numero: 45,
+    arreglo: [15, 5, 'Hola', 9, 'Noritza'],
+    objeto: {
+      tarea: 'Terminar sección de props',
+      prioridad: 'Urgente',
+      categoria: 4
+    },
+    evaluado: true
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -12,9 +23,31 @@ function App() {
       </header>
       <section className="App-components">
         {/* Class Component Con Propiedades */}
-        <PropsClass />
+        <PropsClass
+          cadena={valores.cadena}
+          cadenaOtro={valores.cadena}
+          numero={valores.numero}
+          numeroOtro={valores.numero}
+          arreglo={valores.arreglo}
+          arregloOtro={valores.arreglo}
+          objeto={valores.objeto}
+          objetoOtro={valores.objeto}
+          boleano={valores.evaluado}
+          boleanoOtro={valores.evaluado}
+        />
         {/* Functional Component Con Propiedades */}
-        <PropsFunction />
+        <PropsFunction
+          cadena={valores.cadena}
+          cadenaOtro={valores.cadena}
+          numero={valores.numero}
+          numeroOtro={valores.numero}
+          arreglo={valores.arreglo}
+          arregloOtro={valores.arreglo}
+          objeto={valores.objeto}
+          objetoOtro={valores.objeto}
+          boleano={valores.evaluado}
+          boleanoOtro={valores.evaluado}
+        />
       </section>
     </div>
   );

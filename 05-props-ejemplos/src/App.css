@@ -42,12 +42,12 @@
 .Container-class {
   width: 100%;
   height: inherit;
-  background-color: coral;
+  background-color: #fd883a;
 }
 .Container-function {
   width: 100%;
   height: inherit;
-  background-color: deeppink;
+  background-color: #f51795;
 }
 
 .App-link {
