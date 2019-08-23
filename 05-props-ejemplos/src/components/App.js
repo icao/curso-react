@@ -1,17 +1,17 @@
 import React from "react";
 import logo from "../logo.svg";
 import "../App.css";
-import PropsClass from './PropsClass';
-import PropsFunction from './PropsFunction'
+import PropsClass from "./PropsClass";
+import PropsFunction from "./PropsFunction";
 
 function App() {
   const valores = {
-    cadena: 'Soy un String',
+    cadena: "Soy un String",
     numero: 45,
-    arreglo: [15, 5, 'Hola', 9, 'Noritza'],
+    arreglo: [15, 5, "Hola", 9, "Noritza"],
     objeto: {
-      tarea: 'Terminar sección de props',
-      prioridad: 'Urgente',
+      tarea: "Terminar sección de props",
+      prioridad: "Urgente",
       categoria: 4
     },
     evaluado: true
