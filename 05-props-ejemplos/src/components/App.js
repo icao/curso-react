@@ -25,26 +25,26 @@ function App() {
         {/* Class Component Con Propiedades */}
         <PropsClass
           cadena={valores.cadena}
-          cadenaOtro={valores.cadena}
+          cadenaOtro={"Soy una cadena"}
           numero={valores.numero}
-          numeroOtro={valores.numero}
+          numeroOtro={4500}
           arreglo={valores.arreglo}
-          arregloOtro={valores.arreglo}
+          arregloOtro={[5, 9, 45, 336, "cadena", true]}
           objeto={valores.objeto}
-          objetoOtro={valores.objeto}
+          objetoOtro={{ key: "Soy una llave de un objeto", numero: 500 }}
           boleano={valores.evaluado}
           boleanoOtro={valores.evaluado}
         />
         {/* Functional Component Con Propiedades */}
         <PropsFunction
           cadena={valores.cadena}
-          cadenaOtro={valores.cadena}
+          cadenaOtro={"Soy una cadena"}
           numero={valores.numero}
-          numeroOtro={valores.numero}
+          numeroOtro={4500}
           arreglo={valores.arreglo}
-          arregloOtro={valores.arreglo}
+          arregloOtro={[5, 9, 45, 336, "cadena", true]}
           objeto={valores.objeto}
-          objetoOtro={valores.objeto}
+          objetoOtro={{ key: "Soy una llave de un objeto", numero: 500 }}
           boleano={valores.evaluado}
           boleanoOtro={valores.evaluado}
         />
@@ -54,3 +54,9 @@ function App() {
 }
 
 export default App;
+
+/** 
+ * En ambos casos(Class Component & Funcitonal Component)
+ * las propiedades se pasan por igual, no hay ninguna diferencia.
+ * Solo al momento de usarlas cambia en cada una, revisar cadacomponente para ver como son llamadas.
+*/
