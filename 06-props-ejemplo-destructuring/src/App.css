@@ -40,6 +40,21 @@
   align-items: center;
 }
 
+.App-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.Container-component-center {
+  width: 100%;
+  height: inherit;
+  background-color: #6262ee;
+}
+
 .Container-component-left {
   width: 100%;
   height: inherit;
@@ -61,9 +76,9 @@
   /* align-items: center; */
 }
 
-h1 {
-  margin-bottom: 1.3em;
-  text-transform: uppercase;
+h2 {
+  margin: 1.3em 1em;
+  text-transform: capitalize;
 }
 
 ul {

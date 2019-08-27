@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const LeftComponent = () => {
+class LeftComponent extends Component {
+  render() {
     return (
       <section className="Container-component-left">
-        <h1>Componente Izquierda</h1>
+        <h2>Class Component - Destructuring Props</h2>
       </section>
     );
+  }
 }
 
 export default LeftComponent;
