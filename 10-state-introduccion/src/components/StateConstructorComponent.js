@@ -10,13 +10,13 @@ class StateConstructorComponent extends Component {
   constructor() {
     // Llamamos a super() para acceder a los metodos de la clase
     super(); //Super ejecutara el metodo constructor de la clase que extendemos de Component
-    // Apuntamos a la propiedad state que es un objeto que aloja a las propiuedades
+    // Apuntamos a la propiedad state que es un objeto que aloja a las "propiedades dinamicas"
     this.state = {
-      contador: 1 //Inicializamos contador en el estado <- Nuestra propiedad
+      contador: 1 //Inicializamos contador en el estado <- Nuestra propiedad dinamica
     };
   }
   render() {
-    // this.state aloja un objeto con las propiedades
+    // this.state aloja un objeto con las propiedades dinamicas
     console.log('State', this.state);
     return (
       <section>
