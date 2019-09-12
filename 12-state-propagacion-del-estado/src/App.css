@@ -40,16 +40,32 @@
   align-items: center;
   justify-content: center;
 }
-.App-container-component {
-  /* box-sizing: border-box;
-  height: calc(100vh - (50px + 10vmin));
+.App-container-parent {
+  box-sizing: border-box;
+  background-color: lightgreen;
+  width: auto;
+  height: calc(100vh - (50vmin));
   display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5em;
+}
+
+.App-container-child {
+  box-sizing: border-box;
+  background-color: deepskyblue;
+  width: calc(100vh - (50vmin));
+  height: calc(100vh - (50vmin));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5em;
 }
 
 h2 {
-  margin: 1.3em 1em;
+  margin: 1em 1em;
   text-transform: capitalize;
 }
 
