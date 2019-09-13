@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import SetStateComponent from "./components/SetStateComponent";
+import SetStateAsynchronous from "./components/SetStateAsynchronous";
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
       <section className="App-components">
         {/* Qué es setState() */}
         <SetStateComponent />
-        {/* Ejemplo con setState y asincronía */}
-        
+        {/* Ejemplo con setState() y asincronía */}
+        <SetStateAsynchronous />
       </section>
     </div>
   );
