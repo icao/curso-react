@@ -69,7 +69,7 @@ export default UpdateState;
 /**
  * Si queremos modificar el estado en React, desgraciadamente no se puede, ya que
  * no es reactivo como lo es Vue o Angular, no asegura el databinding, no existe.
- * PAra eso nosotros tenemos que hacer uso de un metodo setState()
+ * Para eso nosotros tenemos que hacer uso de un metodo setState()
  * Que hace cambios al estado del componente y le dice a React que este componente y sus elementos
  * secundarios deben volverse a procesar con el estado actualizado,
  * solo y unicamente asi garantizamos la reactividad en react.
@@ -78,9 +78,9 @@ export default UpdateState;
  */
 
 /**
- * Para que nuestro componente pueda hacer ver un cmabio reflejado en nuestra UI,
+ * Para que nuestro componente pueda hacer ver un cambio reflejado en nuestra UI,
  * tenemos que gesionar el state mandando una petición solicitando que se actualice
- * el estado de nuestro componente. Esto se hace con el étodo setState()
+ * el estado de nuestro componente. Esto se hace con el método setState()
  *
  * El state(estado) en react es:
  * 1.- INMUTABLE
