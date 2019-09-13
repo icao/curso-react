@@ -10,7 +10,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <section className="App-components">
+        {/* Qué es setState() */}
         <SetStateComponent />
+        {/* Ejemplo con setState y asincronía */}
+        
       </section>
     </div>
   );

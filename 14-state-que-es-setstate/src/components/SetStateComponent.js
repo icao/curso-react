@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 class SetStateComponent extends Component {
+  // Objeto state como Class field (campo de clase)
   state = {
     contador: 0
   };
@@ -8,6 +9,7 @@ class SetStateComponent extends Component {
   constructor() {
     super();
     setInterval(() => {
+      // Modificando el state con el métoso setState()
       this.setState({
         contador: this.state.contador + 1
       });
@@ -15,6 +17,7 @@ class SetStateComponent extends Component {
   }
 
   render() {
+    // Imprime en consola el objeto state
     console.log('Contador: ', this.state.contador);
     return (
       <section className="App-container-component">
@@ -52,12 +55,16 @@ export default SetStateComponent;
  * DIFERENCIA ENTRE 'state' Y 'props'
  * ----------------------------------------
  * 
+ * En React, tanto 'this.props' como 'this.state' representan los valores renderizados, 
+ * es decir, lo que hay actualmente en la pantalla.
+ * 
  * 'props' y 'state' son OBJETOS PLANOS de JavsScript. Mientras ambos contienen
  * información que influye en el resultado del render, son diferentes debido a 
  * una importante razón:
+ * 
  *  * 'props':
  *    - Se pasa al componente(similar a los parámetros de una función).
- *    - Son usados para pasar dato de componentes padres a subcomponentes(hijos).
+ *    - Son usados para pasar datos de componentes padres a subcomponentes(hijos).
  *    - Son inmutables(no deben cambiar).
  *  * 'state':
  *    - Se administra dentro del componente(similar a las variables declaradas dentro de una función).
@@ -74,4 +81,5 @@ export default SetStateComponent;
  * ¿Se puede establecer el valor inicial para los componentes secundarios?  |   Sí  |   Sí  |
  * ¿Se Puede cambiar en componentes secundarios?                            |   Si  |   No  |
  * __________________________________________________________________________________________
+ * 
 */
