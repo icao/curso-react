@@ -21,7 +21,8 @@ class SetStateComponent extends Component {
     console.log('Contador: ', this.state.contador);
     return (
       <section className="App-container-component">
-        <h1>Counter: {this.state.contador}</h1>
+        <h2>Actualizando el estado del componente</h2>
+        <p>Contador 0: {this.state.contador}</p>
       </section>
     );
   }
