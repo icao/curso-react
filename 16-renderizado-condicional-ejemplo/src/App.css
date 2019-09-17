@@ -8,8 +8,6 @@
 .App {
   text-align: center;
   box-sizing: border-box;
-  /* width: 100%;
-  height: auto; */
   font-size: calc(10px + 2vmin);
 }
 
@@ -58,39 +56,59 @@
 }
 
 .App-container-component-child-a {
-  border-radius: 5px;
-  background-color: #223ebb;
+  border-radius: 20px;
+  border: 4px solid #223ebb;
   box-sizing: border-box;
-  width: calc(100vh - (50vmin));
+  width: 100%;
   height: calc(100% - (50vmin));
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 1em;
-  /* margin: 1em; */
 }
+
 .App-container-component-child-b {
-  border-radius: 5px;
-  background-color: #cf0d7f;
+  border-radius: 20px;
+  border: 4px solid #cf0d7f;
   box-sizing: border-box;
-  width: calc(100vh - (50vmin));
+  width: 100%;
   height: calc(100% - (50vmin));
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 1em;
-  /* margin: 1em; */
 }
 
 .Text-dark {
+  color: #223ebb;
+}
+
+.Button {
+  background-color: #23d15e;
+  border-color: transparent;
   color: #fff;
+  border-width: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: 1.75em;
+  padding-right: 1.75em;
+  padding-top: calc(0.375em - 1px);
+  text-align: center;
+  white-space: nowrap;
+  outline: none;
+  font-size: 1.75rem;
 }
 
 h2 {
   margin: 1.3em 1em;
   text-transform: capitalize;
+  font-size: calc(10px + 2vmin);
 }
 
 hr {
