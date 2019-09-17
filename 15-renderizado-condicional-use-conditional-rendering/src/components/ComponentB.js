@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class ComponentB extends Component {
   render() {
     return (
-      <section className="App-container-component">
-        <h1>Component B</h1>
+      <section className="App-container-component-child-b">
+        <h2 className="Text-dark">Component B</h2>
       </section>
     );
   }
