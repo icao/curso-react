@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #282c34;
+}
+
+.App {
+  text-align: center;
+  box-sizing: border-box;
+  /* width: 100%;
+  height: auto; */
+  font-size: calc(10px + 2vmin);
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 15vmin;
+  pointer-events: none;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: calc(50px + 10vmin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  overflow: hidden;
+}
+
+.App-components {
+  box-sizing: border-box;
+  height: calc(100vh - (50px + 10vmin));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.App-container-list-players {
+  box-sizing: border-box;
+  background-color: lightgreen;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5em;
+  border-radius: 3px;
+}
+
+.App-container-player {
+  box-sizing: border-box;
+  background-color: deepskyblue;
+  width: calc(100vh - (50vmin));
+  height: auto;
+  padding: 0.5em;
+}
+
+h2 {
+  margin: 1em 1em;
+  text-transform: capitalize;
+}
+
+tbody img {
+  width: 60px;
+  height: auto;
+}
+
+tbody {
+  text-transform: capitalize;
+}
+
+tbody td {
+  padding: 0.5em;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
