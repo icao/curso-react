@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1569874521,
+    "clasificacion": 1,
+    "jugador": "anaxamides",
+    "clase": "paladin",
+    "nivel": 120,
+    "imagen": "https://render-us.worldofwarcraft.com/character/quelthalas/104/105392744-avatar.jpg",
+    "puntuacion": 8235
+  },
+  {
+    "id": 2231456875,
+    "clasificacion": 3,
+    "jugador": "leewongg",
+    "clase": "monje",
+    "nivel": 120,
+    "imagen": "https://render-us.worldofwarcraft.com/character/quelthalas/201/111609033-avatar.jpg",
+    "puntuacion": 3895
+  },
+  {
+    "id": 3985462145,
+    "clasificacion": 2,
+    "jugador": "gödwin",
+    "clase": "sacerdote",
+    "nivel": 120,
+    "imagen": "https://render-us.worldofwarcraft.com/character/quelthalas/235/167578603-avatar.jpg",
+    "puntuacion": 5600
+  }
+]

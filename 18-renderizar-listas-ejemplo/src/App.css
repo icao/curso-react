@@ -1,15 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: #282c34;
+  font-family: "Oswald", sans-serif;
 }
 
 .App {
   text-align: center;
   box-sizing: border-box;
-  /* width: 100%;
-  height: auto; */
   font-size: calc(10px + 2vmin);
 }
 
@@ -43,7 +44,7 @@
 }
 .App-container-list-players {
   box-sizing: border-box;
-  background-color: lightgreen;
+  border: 3px solid #3835ec;
   width: auto;
   height: auto;
   display: flex;
@@ -65,6 +66,13 @@
 h2 {
   margin: 1em 1em;
   text-transform: capitalize;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: #3835ec;
 }
 
 tbody img {
