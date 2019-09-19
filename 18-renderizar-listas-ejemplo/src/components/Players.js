@@ -39,7 +39,6 @@ class Players extends Component {
       puntuacion
     } = this.props;
 
-    // TODO: Falta corroborar todo el funcionamiento
     return (
       // Pasado por props
       // <tr className="App-container-player">

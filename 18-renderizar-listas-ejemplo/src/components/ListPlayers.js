@@ -38,11 +38,11 @@ class ListPlayers extends Component {
               </tr>
             </thead>
             <tbody>
-              {/* aqui van los componentes player */}
+              {/* Pasamos el objeto con los datos de los jugadores al componente que renderizara a cada jugador */}
               {DataPlayers.map(player => {
                 return (
                   <Players
-                    key={player.id} // id mandado como key 
+                    key={player.id} // id mandado como key
                     clasificacion={player.clasificacion}
                     jugador={player.jugador}
                     clase={player.clase}
