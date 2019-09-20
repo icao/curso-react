@@ -36,4 +36,40 @@ export default EventoOnClickComponent;
  * Al atributo entre "{}" le pasamos la función que será ejecutada, haciendo referencia a ella con "this":
  * onClick={this.onClickEvent}
  * 
+ * Manejar eventos en elementos de React es muy similar a manejar eventos con elementos del DOM. 
+ * Hay algunas diferencias de sintaxis:
+ * 
+ * Los eventos de React se nombran usando camelCase, en vez de minúsculas.
+ * Con JSX pasas una función como el manejador del evento, en vez de un string.
+ * Por ejemplo, el HTML:
+ * 
+ * <button onclick="activateLasers()">
+ *    Activate Lasers
+ * </button>
+ * 
+ * En React es algo diferente:
+ * <button onClick={activateLasers}>
+ *    Activate Lasers
+ * </button>
+ * 
 */
+
+// Otra diferencia es que en React no puedes retornar false para prevenir el comportamiento por defecto. Debes, explícitamente, llamar preventDefault. Por ejemplo, en un HTML plano, para prevenir el comportamiento por defecto de un enlace de abrir una nueva página, puedes escribir:
+
+// <a href="#" onclick="console.log('The link was clicked.'); return false">
+//   Click me
+// </a>
+// En cambio en React, esto podría ser:
+
+// function ActionLink() {
+//   function handleClick(e) {
+//     e.preventDefault();
+//     console.log('The link was clicked.');
+//   }
+
+//   return (
+//     <a href="#" onClick={handleClick}>
+//       Click me
+//     </a>
+//   );
+// }
