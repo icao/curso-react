@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import FormsReactComponents from './components/FormsReactComponents';
 import FormReactRefsComponent from './components/FormReactRefsComponent';
+import FormEventsComponent from "./components/FormEventsComponent";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <FormsReactComponents />
         <hr />
         <FormReactRefsComponent />
+        <hr />
+        <FormEventsComponent />
       </section>
     </div>
   );
