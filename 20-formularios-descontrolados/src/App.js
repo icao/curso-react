@@ -1,8 +1,9 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import FormsReact from './components/FormsReact';
-import FormReactRefs160 from './components/FormReactRefs160';
+import FormsReact from "./components/FormsReact";
+import FormReactRefs160 from "./components/FormReactRefs160";
+import FormReactRefs163 from "./components/FormReactRefs163";
 import FormEvents from "./components/FormEvents";
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <FormsReact />
         <hr />
         <FormReactRefs160 />
+        <hr />
+        <FormReactRefs163 />
         <hr />
         <FormEvents />
       </section>

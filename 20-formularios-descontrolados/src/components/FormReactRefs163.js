@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 
-class FormEvents extends Component {
+class FormReactRefs163 extends Component {
   constructor(props) {
     super(props);
     //Almanceanos la entrada en this.entradaNombre, inicializamos en el constructor
@@ -26,7 +26,7 @@ class FormEvents extends Component {
   render() {
     return (
       <Fragment>
-        <h3>Eventos en formulario</h3>
+        <h3>Refs en formulario v 16.3 </h3>
         <section className="App-container-component">
           <form onSubmit={this.handleOnSubmit}>
             <p>
@@ -49,7 +49,7 @@ class FormEvents extends Component {
                 ref={this.entradaSocialRef} // Refs apartir de React 16.3
               />
             </p>
-            <p>
+            {/* <p>
               <label htmlFor="id__active">
                 Activado:
                 <input
@@ -58,7 +58,7 @@ class FormEvents extends Component {
                   type="checkbox"
                 />
               </label>
-            </p>
+            </p> */}
             <button className="button button-primary">Enviar</button>
           </form>
         </section>
@@ -67,7 +67,7 @@ class FormEvents extends Component {
   }
 }
 
-export default FormEvents;
+export default FormReactRefs163;
 
 /**
  * Referencias y el DOM >=16.3
@@ -90,7 +90,7 @@ export default FormEvents;
  *class MyComponent extends React.Component {
  * constructor(props) { <- ES IMPORTANTE INICIALIZAR LA PROPIEDAD DENTRO DEL CONSTRUCTOR.
  *   super(props); <- LLAMANOS A SUPER PARA PODER AGREGAR UNA PROPIEDAD NUEVA AL CONSTRUCTOR
- *   this.myRef = React.createRef();    <- AQUÍ INICIALIZAMOS LA PROPIEDAD CON EL MÉTODO QUE NSO DA REACT
+ *   this.myRef = React.createRef();    <- AQUÍ INICIALIZAMOS LA PROPIEDAD CON EL MÉTODO QUE NOS DA REACT
  * }
  * render() {
  *   return <div ref={this.myRef} />;  <- LO USAMOS PASANDO LA REFERENCIA USANDO EL PARAMETRO CREADO
