@@ -1,9 +1,22 @@
 import React, { Component, Fragment } from "react";
 
-class FormEventsComponent extends Component {
-  handleOnSubmit(e) {
+class FormEvents extends Component {
+  constructor(props) {
+    super(props);
+    //Almanecanos la entrada een this.entradaNombre, inicializamos en el constructor
+    this.entradaNombreRef = React.createRef();
+    this.entradaSocialRef = React.createRef();
+    //Esto me da acceso al objeto de referencia que me da React, y luego lo asigno a mi propiedade
+  }
+
+  handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log("Enviando...");
+    const name = this.entradaNombreRef.current.value;
+    const twitter = this.entradaSocialRef.current.value;
+    // const name = this.entradaNombreRef.current.focus();
+    // const twitter = this.entradaSocialRef.current.focus();
+    console.log("Enviando nombre ...", name);
+    console.log("Enviando twitter ...", twitter);
   }
 
   handleOnChange(e) {
@@ -23,7 +36,7 @@ class FormEventsComponent extends Component {
                 name="userName"
                 placeholder="name"
                 type="text"
-                ref={inputName => (this.entradaNombre = inputName)}
+                ref={this.entradaNombreRef}
               />
             </p>
             <p>
@@ -33,7 +46,7 @@ class FormEventsComponent extends Component {
                 name="twitterAccount"
                 placeholder="@Twitter"
                 type="text"
-                ref={inputSocial => (this.entradaSocial = inputSocial)}
+                ref={this.entradaSocialRef}
               />
             </p>
             <p>
@@ -54,7 +67,7 @@ class FormEventsComponent extends Component {
   }
 }
 
-export default FormEventsComponent;
+export default FormEvents;
 
 /**
  * Para tratar formulario tenemos expecificamente al hacer submit con el boton,
@@ -66,9 +79,9 @@ export default FormEventsComponent;
  *
  * Adicional otro evento que usaremos mucho en los formularios es el evento onChange, que esta escuchando
  * cualquier cambio que nosotros hagamos en nuestros campos.
- * 
+ *
  * onChange={this.handleOnChange}
- * 
+ *
  * El ejemplo se ve con el checkbox activar.
  *
  */

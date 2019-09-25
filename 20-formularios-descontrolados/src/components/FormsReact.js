@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class FormsReactCompoents extends Component {
+class FormsReact extends Component {
   handleOnClick(e) {
     e.preventDefault() // Neutralizamos el comportamiento por defecto
 
@@ -50,7 +50,7 @@ class FormsReactCompoents extends Component {
   }
 }
 
-export default FormsReactCompoents;
+export default FormsReact;
 
 /**
  * Form - ligando widgets

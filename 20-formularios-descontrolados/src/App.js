@@ -1,9 +1,9 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import FormsReactComponents from './components/FormsReactComponents';
-import FormReactRefsComponent from './components/FormReactRefsComponent';
-import FormEventsComponent from "./components/FormEventsComponent";
+import FormsReact from './components/FormsReact';
+import FormReactRefs160 from './components/FormReactRefs160';
+import FormEvents from "./components/FormEvents";
 
 function App() {
   return (
@@ -13,11 +13,11 @@ function App() {
       </header>
       <section className="App-componentd">
         <h2>Formularios 'Descontrolados'</h2>
-        <FormsReactComponents />
+        <FormsReact />
         <hr />
-        <FormReactRefsComponent />
+        <FormReactRefs160 />
         <hr />
-        <FormEventsComponent />
+        <FormEvents />
       </section>
     </div>
   );
