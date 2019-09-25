@@ -72,11 +72,15 @@ export default FormReactRefsComponent;
  *  ref={inputSocial => this.entradaSocial = inputSocial}
  * />
  * 
- * Dentro del método donde lo usaremos (en el handle), lo asignamos a una variableÑ
+ * Dentro del método donde lo usaremos (en el handle), lo asignamos a una variable
  * const twitter = this.entradaSocial.value;
  * Esto nos guardara el valor como lo haciamos accediendo al DOM y capturando el value.  
  * 
  * Las referencias son usadas cuando se implementan librerias externas, ajenas a react.
  * No se recomienda hacer uso de ellas, para esto hay mas formas que nos aconseja react,
  * asi procuramos tratar de la mejor manera loa datos de nuestro formulario.
+ * 
+ * NOTA: Como se agrega a la clase como una nueva propiedad, solo pueden ser usados en Class component,
+ * no en functional component.
+ * 
 */
