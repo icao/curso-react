@@ -49,16 +49,6 @@ class FormReactRefs163 extends Component {
                 ref={this.entradaSocialRef} // Refs apartir de React 16.3
               />
             </p>
-            {/* <p>
-              <label htmlFor="id__active">
-                Activado:
-                <input
-                  onChange={this.handleOnChange}
-                  id="id__active"
-                  type="checkbox"
-                />
-              </label>
-            </p> */}
             <button className="button button-primary">Enviar</button>
           </form>
         </section>
@@ -99,5 +89,12 @@ export default FormReactRefs163;
  *
  * NOTA: Como se agrega a la clase como una nueva propiedad, solo pueden ser usados en Class component,
  * no en functional component.
+ * 
+ * ---------------------------------------
+ * En la documentación en react nos hace un ejemplo con las referencias, haciendo uso del método focus()
+ * El método focus() nos ayuda a tener acceso al elemento referenciado, o visto de una manera paractica,
+ * hacer focus al input asociado.
+ * 
+ * const name = this.entradaNombreRef.current.focus();
  *
  */
