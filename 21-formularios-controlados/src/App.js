@@ -10,6 +10,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <section className="App-components">
+        <h1>Componentes Controlados</h1>
         <IntroComponentesControlados />
       </section>
     </div>
