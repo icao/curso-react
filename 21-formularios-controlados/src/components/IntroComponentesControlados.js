@@ -1,23 +1,37 @@
 import React, { Component } from "react";
 
 class IntroComponentesControlados extends Component {
-  constructor(props) {
-    super(props);
-    this.entradaNombreRef = React.createRef();
-    this.entradaSocialRef = React.createRef();
+  //  NOTA: Al ser ya un componente controlado no necesitamos le método constructor ni las referencias
+  // constructor(props) {
+  //   super(props);
+  //   this.entradaNombreRef = React.createRef();
+  //   this.entradaSocialRef = React.createRef();
+  // }
+
+  state = {
+    nameValue: '',
+    socialValue: '@',
+    checkboxValue: true
   }
 
-  handleOnSubmit = e => {
-    e.preventDefault();
-    const nombre = this.entradaNombreRef.current.value;
-    const social = this.entradaSocialRef.current.value;
 
-    console.log("nombre ", nombre);
-    console.log("social ", social);
+  handleOnSubmit = e => {
+    // Prevenimos el comportamineto por default del navegador
+    e.preventDefault();
+    // Imprimimos en consola el valor del estado
+    console.log("ENVIANDO... 📩 ");
+    console.log("Nombre ", this.state.nameValue);
+    console.log("Social ", this.state.socialValue);
+    console.log("Activado ", this.state.checkboxValue);
   };
 
-  handleOnChange(e) {
-    console.log('Activado: ', e.target.checked);
+  handleOnChange = (e) => {
+    this.setState({ checkboxValue: e.target.checked })
+    /** 
+     * NOTA:  Aquí podriamos hacer todas las asignaciones de loa valores nuevos al estado.
+     * En este ejemplo lo hacemos de las dos formas, en el checkbox se hace dentro de este método handle y en los inputs
+     * se hace atravez de pasar el evento capturado como una función flecha desde el evento onChange en el input
+    */
   }
 
  
@@ -32,7 +46,10 @@ class IntroComponentesControlados extends Component {
               name="userName"
               placeholder="name"
               type="text"
-              ref={this.entradaNombreRef}
+              // ref={this.entradaNombreRef} // Referencia eliminada
+              value={this.state.nameValue}
+              //Ya se a que pasemos una funcion como parametro, o enviemos el evento handle
+              onChange={e => this.setState({ nameValue: e.target.value })}
             />
           </p>
           <p>
@@ -42,13 +59,19 @@ class IntroComponentesControlados extends Component {
               name="twitterAccount"
               placeholder="@Twitter"
               type="text"
-              ref={this.entradaSocialRef}
+              // ref={this.entradaSocialRef} // Referencia eliminada
+              value={this.state.socialValue}
+              // Enviamos la captura del evento al estado
+              onChange={e => this.setState({ socialValue: e.target.value })}
             />
           </p>
           <p>
             <label htmlFor="id__active">
               Activado:
               <input
+                //Enlazamo el valor del checkbox ocn el actual en el estado
+                checked={this.state.checkboxValue}
+                // Encaso dle cgeckbox  llamamos al handle asociado, donde hacemo la asignacion del nuevo valor
                 onChange={this.handleOnChange}
                 id="id__active"
                 type="checkbox"
@@ -100,6 +123,5 @@ export default IntroComponentesControlados;
  * formulario con las subsecuentes entradas del usuario. "Un campo de formulario cuyos valores son
  * controlados por React" de esta forma es denominado "componente controlado".
  *
- * TODO: Terminar el ejemplo convirtiendolo en componente controlado, hacer otro ejercicio como en la documentacion
- * y seguir con los demas de textarea, select, inputs multiples y valor null
+ * TODO: hacer otro ejercicio como en la documentacion y seguir con los demas de textarea, select, inputs multiples y valor null
  */
