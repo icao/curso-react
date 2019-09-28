@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import IntroComponentesControlados from './components/IntroComponentesControlados'
+import IntroComponentesControlados from './components/IntroComponentesControlados';
+import ComponentesControlados from './components/ComponentesControlados';
+import TextareaComponent from './components/TextareaComponent';
+import SelectComponent from './components/SelectComponent';
 
 function App() {
   return (
@@ -10,8 +13,11 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <section className="App-components">
-        <h1>Componentes Controlados</h1>
+        <h1>Componntes Controlados</h1>
         <IntroComponentesControlados />
+        <ComponentesControlados />
+        <TextareaComponent />
+        <SelectComponent />
       </section>
     </div>
   );

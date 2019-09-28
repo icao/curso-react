@@ -28,9 +28,9 @@ class IntroComponentesControlados extends Component {
   handleOnChange = (e) => {
     this.setState({ checkboxValue: e.target.checked })
     /** 
-     * NOTA:  Aquí podriamos hacer todas las asignaciones de loa valores nuevos al estado.
+     * NOTA:  Aquí podriamos hacer todas las asignaciones de los valores nuevos al estado.
      * En este ejemplo lo hacemos de las dos formas, en el checkbox se hace dentro de este método handle y en los inputs
-     * se hace atravez de pasar el evento capturado como una función flecha desde el evento onChange en el input
+     * se hace pasando el evento capturado como una función flecha desde el evento onChange en el input.
     */
   }
 
@@ -38,6 +38,7 @@ class IntroComponentesControlados extends Component {
   render() {
     return (
       <section className="App-container-component">
+        <h3>Componente Controlado 1</h3>
         <form onSubmit={this.handleOnSubmit}>
           <p>
             <label htmlFor="id__name">Nombre:</label>
@@ -88,7 +89,7 @@ class IntroComponentesControlados extends Component {
 export default IntroComponentesControlados;
 
 /**
- * La forma en que nosotros usamos los formularios como en HTML, se lec onoce como
+ * La forma en que nosotros usamos los formularios como en HTML, se les conoce como
  * 'Componentes Descontrolados', se le llama asi ya que no tenemos ningun control
  * sobre el valor del componente y para recuperarlos tenemos que acceder al arbol de elementos del DOM.
  *
