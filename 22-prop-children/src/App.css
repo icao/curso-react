@@ -63,6 +63,21 @@
   border-radius: 3px;
   margin: 0.3em;
 }
+.App-container-component-2 {
+  box-sizing: border-box;
+  background-color: #eddaff;
+  border: 1px solid #3835ec;
+  /* border: 3px solid #3835ec; */
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5em;
+  border-radius: 3px;
+  margin: 0.3em;
+}
 
 h2 {
   margin: 1em 1em;
