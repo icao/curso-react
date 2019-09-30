@@ -31,6 +31,7 @@ class TextareaComponent extends Component {
               onChange={this.handleChange}
             ></textarea>
           </label>
+          <br/>
           <button className="button button-primary">Enviar</button>
         </form>
       </section>

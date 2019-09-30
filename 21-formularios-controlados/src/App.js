@@ -5,6 +5,7 @@ import IntroComponentesControlados from './components/IntroComponentesControlado
 import ComponentesControlados from './components/ComponentesControlados';
 import TextareaComponent from './components/TextareaComponent';
 import SelectComponent from './components/SelectComponent';
+import MultipleInputsComponent from "./components/MultipleInputsComponent";
 
 function App() {
   return (
@@ -14,10 +15,16 @@ function App() {
       </header>
       <section className="App-components">
         <h1>Componntes Controlados</h1>
+        {/* Introducción a los componentes controlados */}
         <IntroComponentesControlados />
+        {/* Ejemplo 2 de componentes controlados */}
         <ComponentesControlados />
+        {/* Ejemplo de comportamiento de textarea */}
         <TextareaComponent />
+        {/* Ejemplo de comportamiento de select */}
         <SelectComponent />
+        {/* Ejemplo de comportamiento de multiples selects */}
+        <MultipleInputsComponent  />
       </section>
     </div>
   );

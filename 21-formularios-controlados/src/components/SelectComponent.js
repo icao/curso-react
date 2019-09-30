@@ -33,6 +33,7 @@ class SelectComponent extends Component {
               <option value="Svelte">Svelte</option>
             </select>
           </label>
+          <br/>
           <button className="button button-primary">Enviar</button>
         </form>
       </section>

@@ -32,6 +32,7 @@ class ComponentesControlados extends Component {
               onChange={this.handleOnchange}
             />
           </label>
+          <br/>
           <button className="button button-primary">Enviar</button>
         </form>
       </section>
