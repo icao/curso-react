@@ -50,7 +50,7 @@
 
 .App-container-component-2 {
   box-sizing: border-box;
-  background-color: #eddaff;
+  background-color: #a6a5fa;
   /* border: 1px solid #3835ec; */
   /* border: 3px solid #3835ec; */
   width: auto;
@@ -73,11 +73,14 @@ h2 {
 p, ul, ol {
   width: 100%;
   height: auto;
-  border: 3px solid #fff6fb;
+  /* border: 3px solid #fff6fb; */
   margin: 1em;
   padding: 0.5em;
   text-align: left;
   font-size: 0.7em;
+}
+ul ul li{
+  font-weight: bold;
 }
 
 @keyframes App-logo-spin {
