@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import diagrama from "../ciclos_de_vida.jpg";
 
 class CiclosDeVida extends Component {
   render() {
@@ -109,6 +110,18 @@ class CiclosDeVida extends Component {
           en un método en el ciclo de vida o en el constructor de cualquier
           componente hijo.
         </p>
+        <section>
+          <h2>
+            Puedes ver el diagrama con los ciclos de vida de react en:
+            <a href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/">
+              Ciclos de vida react
+            </a>
+            <img
+              src={diagrama}
+              alt="diagrama de los ciclos de vida de react"
+            />
+          </h2>
+        </section>
       </section>
     );
   }
