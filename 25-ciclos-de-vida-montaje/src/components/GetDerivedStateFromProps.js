@@ -29,7 +29,7 @@ class Father extends Component {
 
   render() {
     return (
-      <section className="App-container-componen-2">
+      <section className="App-container-component-2">
         {/* Llamamos a una instancia de nuestro componente hijo y le pasamos por medio de una prop, la imagen actual que esta en el estado */}
         <GetDerivedStateFromProps srcImage={this.state.srcImage} />
         <button onClick={this.handleClick}>Cambiar imagen</button>
