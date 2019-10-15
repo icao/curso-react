@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Constructor from "./components/Constructor";
+import Father from "./components/GetDerivedStateFromProps";
 
 function App() {
   return (
@@ -11,7 +12,10 @@ function App() {
       </header>
       <section className="App-components">
         <h1>Fase de Montaje</h1>
-        <Constructor/>
+        {/* Constructor Method */}
+        <Constructor />
+        {/* GetDerivedStateFromProps Method */}
+        <Father />
       </section>
     </div>
   );

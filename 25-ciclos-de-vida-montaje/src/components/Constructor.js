@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import imagen01 from '../imagen01.jpeg';
+import imagen02 from '../imagen02.jpeg';
 
 class Constructor extends Component {
   // Por defecto al crear nuestro componente, por ser una clase, tiene una metodo constructor por default
@@ -17,7 +19,7 @@ class Constructor extends Component {
     super(props); // Este constructor es necesario para mandar a llamar al constructor de Componet
     this.state = {
       //Inicializamos el state de nuestro componente
-      mensaje: "Mensaje inicial"
+      imagen: imagen01 //Inicializamos con imagen01 por defaul 
     };
     // En el constructor podemos bindear el contexto de this de los handles / o usar arrow functions en la declaración del método
     this.handleClick = this.handleClick.bind(this);
@@ -28,7 +30,7 @@ class Constructor extends Component {
 
   handleClick() {
     this.setState({
-      mensaje: "mensaje cambiado"
+      imagen: imagen02 //Actualizamos el estado con imagen02
     });
   }
   render() {
@@ -36,9 +38,9 @@ class Constructor extends Component {
     return (
       <section className="App-container-component">
         <h2>constructor()</h2>
-        <p>{this.state.mensaje}</p>
+        <img src={this.state.imagen} className="image" alt="imagen"/>
         <hr />
-        <button onClick={this.handleClick}>Cambiar mensaje</button>
+        <button onClick={this.handleClick}>Cambiar imagen</button>
       </section>
     );
   }
