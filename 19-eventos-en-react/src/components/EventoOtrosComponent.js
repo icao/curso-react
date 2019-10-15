@@ -3,11 +3,12 @@ import React, { Component } from "react";
 class EventoOtrosComponent extends Component {
   state = {
     distanceX: 0,
-    distanceY: 0
+    distanceY: 0,
+    scrollY: 0
   };
 
   constructor() {
-    super()
+    super();
     // Este enlace es necesario para hacer que `this` funcione en el callback
     this.calculatePosition = this.calculatePosition.bind(this);
   }
@@ -24,7 +25,8 @@ class EventoOtrosComponent extends Component {
     // Destructuramos el evento que se captura y accedemos a clientX y clientY
     const { clientX, clientY } = evento;
     console.log(`ClientX ${clientX}, ClientY ${clientY}`);
-    this.setState(() => { // setState = undefined
+    this.setState(() => {
+      // setState = undefined
       return {
         distanceX: clientX,
         distanceY: clientY
@@ -32,12 +34,18 @@ class EventoOtrosComponent extends Component {
     });
   }
 
-  
+  handleScroll = event => {
+    let scrolltop = event.target.scrollTop;
+    this.setState({
+      scrollY: scrolltop
+    });
+  };
 
   render() {
     return (
       <section className="App-container-component">
         <h2>Soy un evento Otro</h2>
+        <h4>onMouseMove</h4>
         <p
           className="App-contenedor-parrafo"
           // Si pasamos this.calculatePosition sin (),
@@ -50,6 +58,28 @@ class EventoOtrosComponent extends Component {
         >
           {this.state.distanceX},{this.state.distanceY}
         </p>
+
+        <h4>onScroll {this.state.scrollY}</h4>
+        <article className="box" onScroll={this.handleScroll}>
+          <p className="paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
+            nostrum cumque consectetur excepturi nam officia accusantium saepe
+            facere aut minima repellendus necessitatibus libero aliquid
+            similique odit hic, dignissimos nobis temporibus.
+          </p>
+          <p className="paragraph">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente,
+            natus. Nihil, aperiam nam neque accusamus omnis sapiente odio et
+            magnam consequatur deleniti. Sit reiciendis exercitationem odit
+            enim? Placeat, quo quia.
+          </p>
+          <p className="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus hic
+            ipsam sunt laudantium expedita officia dolor dolorem consequatur non
+            vel quisquam alias nostrum accusantium maxime rerum omnis,
+            architecto veritatis. Consequuntur!
+          </p>
+        </article>
       </section>
     );
   }
