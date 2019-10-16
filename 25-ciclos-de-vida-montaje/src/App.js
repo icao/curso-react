@@ -4,6 +4,8 @@ import './App.css';
 import Constructor from "./components/Constructor";
 import UNSAFEComponentWillMount from "./components/UNSAFEComponentWillMount";
 import Father from "./components/GetDerivedStateFromProps";
+import Render from "./components/Render";
+import ComponentDidMount from "./components/ComponentDidMount";
 
 function App() {
   return (
@@ -19,6 +21,10 @@ function App() {
         <UNSAFEComponentWillMount />
         {/* GetDerivedStateFromProps Method */}
         <Father />
+        {/* Render method */}
+        <Render />
+        {/* ComponentDidMount method */}
+        <ComponentDidMount />
       </section>
     </div>
   );

@@ -22,7 +22,7 @@ class UNSAFEComponentWillMount extends Component {
     return (
       <section className="App-container-component-deprecated">
         <h2>UNSAFE_componentWillMount()</h2>
-        <p>{this.state.mensaje}</p>
+        <p className="paragraph">{this.state.mensaje}</p>
       </section>
     );
   }
