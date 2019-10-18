@@ -1,6 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Father from "./components/ShouldComponentUpdate";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         {/* getDerivedStateFromProps() method  */}
         {/* Este compomponente se puede ver en el proyecto anterior de ciclos de vida fase de montaje, consultar para mas información */}
         {/* shouldComponentUpdate() method */}
+        <Father />
         {/* render() method  */}
         {/* getSnapshotBeforeUpdate() method  */}
         {/* componentDidUpdate() method */}
