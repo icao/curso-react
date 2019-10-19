@@ -124,6 +124,13 @@ class ShouldComponentUpdate extends Component {
    * usar el PureComponent en vez de Component, ya que este esta optimizado para este tipo de
    * situaciones.
    * 
+   * IMPORTANTE: Si extendemos de la clase PureComponent en vez de Component,
+   * vemos como sin udar el método shouldComponentUpdate(), sigue respetando las
+   * reglas que le dimos en el shuoldComponentUpdate(), solo que sin declarar este ultimo.
+   * Cabe mencionar que la comparación que hce del state o pros son superficiales,
+   * por lo que, si tenemos un state con parametros anidados, es posiblemente que nos 
+   * arroje un falso positivo, Hay que tener cuidado de como lo usamos.
+   * 
    */
 
   render() {

@@ -15,7 +15,9 @@ function App() {
         {/* shouldComponentUpdate() method */}
         <Father />
         {/* render() method  */}
+        {/* Este componente se puede ver en el proyecto de ciclos de vida fase de montaje */}
         {/* getSnapshotBeforeUpdate() method  */}
+        {/* TODO: es el siguiente a implementar */}
         {/* componentDidUpdate() method */}
       </section>
     </div>
