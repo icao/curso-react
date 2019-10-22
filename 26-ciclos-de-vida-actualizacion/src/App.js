@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Father from "./components/ShouldComponentUpdate";
 import GetSnapshotBeforeUpdate from "./components/GetSnapshotBeforeUpdate";
+import ComponentDidUpdate from "./components/ComponentDidUpdate";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         {/* getSnapshotBeforeUpdate() method  */}
         <GetSnapshotBeforeUpdate />
         {/* componentDidUpdate() method */}
+        <ComponentDidUpdate />
       </section>
     </div>
   );
