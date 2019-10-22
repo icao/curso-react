@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Father from "./components/ShouldComponentUpdate";
+import GetSnapshotBeforeUpdate from "./components/GetSnapshotBeforeUpdate";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         {/* render() method  */}
         {/* Este componente se puede ver en el proyecto de ciclos de vida fase de montaje */}
         {/* getSnapshotBeforeUpdate() method  */}
-        {/* TODO: es el siguiente a implementar */}
+        <GetSnapshotBeforeUpdate />
         {/* componentDidUpdate() method */}
       </section>
     </div>
