@@ -1,22 +1,26 @@
 import React, { Component } from "react";
 
 class Father extends Component {
-  state = { showChild: true }
+  state = { showChild: true };
 
   showComponent = () => {
     this.setState({
       showChild: false
     });
-  }
+  };
 
-  render() { 
+  render() {
     return (
       <section className="App-container-component-2">
         <h1>Ciclos de vida Desmontaje</h1>
         <button onClick={this.showComponent}>Desmontar Componente</button>
-        {this.state.showChild === true ? <ComponentWillUnmount /> : 'Componente desmontado'}
+        {this.state.showChild === true ? (
+          <ComponentWillUnmount />
+        ) : (
+          "Componente desmontado"
+        )}
       </section>
-    )
+    );
   }
 }
 
@@ -42,14 +46,14 @@ class ComponentWillUnmount extends Component {
     console.log("↔ Width Resize Listener 🦻:", document.body.clientWidth);
     this.setState({
       resizeWidth: document.body.clientWidth
-    })
-  }
+    });
+  };
 
   componentDidMount() {
     console.log("-> ComponentDidMount() ✅");
     this.boxRef.current.addEventListener("scroll", this.scrollFunction);
     // listener para medir wl width de la ventana
-    this.widthFunction() //Inicializamos para obtener el width inicial
+    this.widthFunction(); //Inicializamos para obtener el width inicial
     window.addEventListener("resize", this.widthFunction);
   }
 
@@ -78,10 +82,12 @@ class ComponentWillUnmount extends Component {
     console.log("-> componentWillUnmount() 🚮");
     this.boxRef.current.removeEventListener("scroll", this.scrollFunction);
     window.removeEventListener("resize", this.widthFunction);
-    /** 
-     * IMPORTANTE: Necesitamos remover los listeners, en caso contrario, el listener estaria activo aunque el componente 
-     * se haya removido de la UI. Nos marcara un error en consola si no lo hemos desactivado. 
-    */
+    /**
+     * IMPORTANTE: Necesitamos remover los listeners, en caso contrario, el listener estaria activo aunque el componente
+     * se haya removido de la UI. Nos marcara un error en consola si no lo hemos desactivado.
+     * Una vez desmontado, podremos ver tambien como en las herramientas de React developer tools,
+     * se remueve el componente <ComponentWillUnmount />
+     */
   }
 
   render() {
@@ -99,13 +105,26 @@ class ComponentWillUnmount extends Component {
         <h3>Scroll Top: {this.state.scrollY}px</h3>
         <article className="box" ref={this.boxRef}>
           <p className="paragraph">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error atque deleniti cupiditate cum eos repellat ad vero tempora distinctio magni natus et aliquam nesciunt nihil molestias, fuga veniam ut. <br/>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident quisquam ex cupiditate atque aperiam autem ipsum aliquam animi quas recusandae. Architecto, vero nisi placeat corrupti deleniti a magnam voluptates nihil. <br/>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            error atque deleniti cupiditate cum eos repellat ad vero tempora
+            distinctio magni natus et aliquam nesciunt nihil molestias, fuga
+            veniam ut. <br />
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident
+            quisquam ex cupiditate atque aperiam autem ipsum aliquam animi quas
+            recusandae. Architecto, vero nisi placeat corrupti deleniti a magnam
+            voluptates nihil. <br />
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus hic
             ipsam sunt laudantium expedita officia dolor dolorem consequatur non
             vel quisquam alias nostrum accusantium maxime rerum omnis,
             architecto veritatis. Consequuntur! <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, amet corrupti facilis consequuntur voluptate quos eum reprehenderit laboriosam modi magni labore aliquid, harum porro cum delectus! Impedit quas ducimus modi? <br/> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cupiditate, quasi esse sapiente assumenda molestiae delectus maiores illo, temporibus vel quae. Provident repellendus modi ullam optio. Voluptas est labore incidunt.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, amet
+            corrupti facilis consequuntur voluptate quos eum reprehenderit
+            laboriosam modi magni labore aliquid, harum porro cum delectus!
+            Impedit quas ducimus modi? <br /> Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Ullam cupiditate, quasi esse sapiente
+            assumenda molestiae delectus maiores illo, temporibus vel quae.
+            Provident repellendus modi ullam optio. Voluptas est labore
+            incidunt.
           </p>
         </article>
       </section>
@@ -113,20 +132,18 @@ class ComponentWillUnmount extends Component {
   }
 }
 
-
-
 export default Father;
 
 /**
  * --------------------------------------
  * componentWillUnmount()
  * --------------------------------------
- * 
- * componentWillUnmount() se invoca inmediatamente antes de desmontar y destruir un componente. 
+ *
+ * componentWillUnmount() se invoca inmediatamente antes de desmontar y destruir un componente.
  * Realiza las tareas de limpieza necesarias en este método, como la invalidación de temporizadores,
- * la cancelación de solicitudes de red o la eliminación de las suscripciones que se crearon en 
- * componentdidMount(). 
- * 
+ * la cancelación de solicitudes de red o la eliminación de las suscripciones que se crearon en
+ * componentdidMount().
+ *
  * NO DEBES LLAMAR A setState() en componentwillUnmount() porque el componente nunca será vuelto a renderizar. Una vez que una instancia de componente sea desmontada, nunca será montada de nuevo.
- * 
+ *
  */
