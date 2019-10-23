@@ -50,7 +50,7 @@ class GetSnapshotBeforeUpdate extends Component {
     console.log("-> Render() ✅");
     return (
       <section className="App-container-component">
-        <h2>componentDidMount()</h2>
+        <h2>getSnapshotBeforeUpdate()</h2>
         <p className="paragraph">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo ab
           laborum sint ducimus consequatur est animi, beatae illo perferendis,
