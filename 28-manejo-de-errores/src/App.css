@@ -62,6 +62,21 @@
   margin: 0.3em;
   text-align: left;
 }
+.App-container-component-error {
+  box-sizing: border-box;
+  border: 5px solid #cf0091;
+  border-radius: 20px;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5em;
+  margin: 0.3em;
+  text-align: left;
+}
+
 .App-container-component-2 {
   box-sizing: border-box;
   border: 5px solid #b71dff;
