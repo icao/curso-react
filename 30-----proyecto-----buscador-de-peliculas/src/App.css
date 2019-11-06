@@ -1,3 +1,81 @@
-.text-center{
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* color: #282c34; */
+  font-family: "Montserrat", sans-serif;
+  /* background-color: #1d1d27; */
+}
+
+html {
+  /* background-color: #1d1d27 !important; */
+}
+
+.text-center {
   text-align: center;
+}
+
+.search__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.card-image-background {
+  width: inherit;
+  height: inherit;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(216, 216, 216);
+  position: relative;
+  border: 5px solid black;
+}
+
+.card-image-layer{
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: rgba(76, 76, 83, 0.301);
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+
+.sub-image img {
+  border-radius: 15px;
+  width: auto;
+  height: 300px;
+}
+
+
+
+.filtered {
+  filter: blur(12px);
+  transform: scale(1.5);
+  /* opacity: 0.8; */
+  /* filter: blur(2vw); */
 }
