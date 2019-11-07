@@ -12,12 +12,20 @@ class App extends Component {
   };
 
   searchMovie = query => {
-    serviceApi.searchMovies(query).then(({ Search }) => {
+    serviceApi.searchMovies(query).then(({ Search = [] }) => {
       console.log({ Search });
       this.setState({
         movies: Search
       });
     });
+  };
+
+  showResults = () => {
+    return this.state.movies.length === 0 ? (
+      <p>Lo sentimos, no se encontraron resultados</p>
+    ) : (
+      <ListMovies movies={this.state.movies} />
+    );
   };
 
   render() {
@@ -39,10 +47,9 @@ class App extends Component {
               <Search search={this.searchMovie} />
             </div>
           </div>
+          {/* meter en una funcion evaluando results */}
           <div className="columns">
-            <div className="column is-full">
-              <ListMovies movies={this.state.movies} />
-            </div>
+            <div className="column is-full">{this.showResults()}</div>
           </div>
         </div>
       </main>
