@@ -8,21 +8,36 @@ import { ListMovies } from "./components/ListMovies";
 
 class App extends Component {
   state = {
-    movies: []
+    movies: [],
+    usedSearch: false
   };
 
   searchMovie = query => {
     serviceApi.searchMovies(query).then(({ Search = [] }) => {
       console.log({ Search });
       this.setState({
-        movies: Search
+        movies: Search,
+        usedSearch: true
       });
     });
   };
 
   showResults = () => {
     return this.state.movies.length === 0 ? (
-      <p>Lo sentimos, no se encontraron resultados</p>
+      <span>
+        <p>
+          Lo sentimos, no se encontraron resultados{" "}
+          <span role="img" aria-label="emoji">
+            😔
+          </span>
+        </p>
+        <p>
+          Intenta con otra busqueda{" "}
+          <span role="img" aria-label="emoji">
+            😊
+          </span>
+        </p>
+      </span>
     ) : (
       <ListMovies movies={this.state.movies} />
     );
@@ -49,7 +64,12 @@ class App extends Component {
           </div>
           {/* meter en una funcion evaluando results */}
           <div className="columns">
-            <div className="column is-full">{this.showResults()}</div>
+            <div className="column is-full">
+              {this.state.usedSearch ?
+                this.showResults() :
+                <p>Usa el buscador para encontrar una pelicula</p>
+              }
+            </div>
           </div>
         </div>
       </main>
