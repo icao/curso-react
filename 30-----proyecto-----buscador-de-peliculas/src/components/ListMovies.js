@@ -9,7 +9,7 @@ export const ListMovies = ({ movies }) => {
         return (
           <div
             key={movie.imdbID}
-            className="column is-one-quarter-widescreen is-one-third-desktop is-half-tablet is-full-mobile"
+            className="column is-one-fifth-fullhd is-one-quarter-widescreen  is-one-third-desktop is-half-tablet is-full-mobile"
           >
             <Movie
               title={movie.Title}

@@ -33,7 +33,7 @@ export class Search extends Component {
             />
           </div>
           <div className="control">
-            <button className="button is-primary">
+            <button className="button is-info">
               <span>
                 Buscar{" "}
                 <span role="img" aria-label="emoji">

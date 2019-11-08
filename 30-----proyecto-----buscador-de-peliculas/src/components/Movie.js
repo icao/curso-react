@@ -1,9 +1,6 @@
 import React from "react";
-import { usePalette } from "react-palette";
 
 export const Movie = ({ title, poster, type, year }) => {
-  const { data, loading, error } = usePalette(poster);
-
   return (
     <div className="card">
       <div className="card-image">
@@ -18,31 +15,11 @@ export const Movie = ({ title, poster, type, year }) => {
         </div>
       </div>
       <div className="card-content">
-        <div className="media">
-          <div className="media-content">
-            <h2 className="title is-4">{title}</h2>
-            <p className="subtitle is-6">
-              {type} - {year}
-            </p>
-            {/* <p style={{ backgroundColor: data.darkMuted }}>
-              Text with the darkMuted color
-            </p>
-            <p style={{ backgroundColor: data.darkVibrant }}>
-              Text with the darkVibrant color
-            </p>
-            <p style={{ backgroundColor: data.lightMuted }}>
-              Text with the lightMuted color
-            </p>
-            <p style={{ backgroundColor: data.lightVibrant }}>
-              Text with the lightVibrant color
-            </p>
-            <p style={{ backgroundColor: data.muted }}>
-              Text with the muted color
-            </p>
-            <p style={{ backgroundColor: data.vibrant }}>
-              Text with the vibrant color
-            </p> */}
-          </div>
+        <div className="content is-small">
+          <h2 className="title">{title}</h2>
+          <p className="subtitle">
+            {type} - {year}
+          </p>
         </div>
       </div>
     </div>

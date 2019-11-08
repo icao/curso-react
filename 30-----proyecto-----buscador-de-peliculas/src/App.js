@@ -25,13 +25,13 @@ class App extends Component {
   showResults = () => {
     return this.state.movies.length === 0 ? (
       <span>
-        <p>
+        <p className="has-text-centered">
           Lo sentimos, no se encontraron resultados{" "}
           <span role="img" aria-label="emoji">
             😔
           </span>
         </p>
-        <p>
+        <p className="has-text-centered">
           Intenta con otra busqueda{" "}
           <span role="img" aria-label="emoji">
             😊
@@ -45,33 +45,44 @@ class App extends Component {
 
   render() {
     return (
-      <main className="section">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-full">
-              <Title>
-                <span role="img" aria-label="jsx-a11y/aria-proptypes">
-                  🍿📽
-                </span>
-                Buscador de películas
-              </Title>
+      <main>
+        <section className="section">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-full">
+                <Title>
+                  <span role="img" aria-label="jsx-a11y/aria-proptypes">
+                    🍿
+                  </span>{" "}
+                  Buscador de películas{" "}
+                  <span role="img" aria-label="jsx-a11y/aria-proptypes">
+                    📽
+                  </span>
+                </Title>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-full">
+                <Search search={this.searchMovie} />
+              </div>
             </div>
           </div>
-          <div className="columns">
-            <div className="column is-full">
-              <Search search={this.searchMovie} />
+        </section>
+        <section className="section">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-full">
+                {this.state.usedSearch ? (
+                  this.showResults()
+                ) : (
+                  <p className="has-text-centered">
+                    Usa el buscador para encontrar una pelicula
+                  </p>
+                )}
+              </div>
             </div>
           </div>
-          {/* meter en una funcion evaluando results */}
-          <div className="columns">
-            <div className="column is-full">
-              {this.state.usedSearch ?
-                this.showResults() :
-                <p>Usa el buscador para encontrar una pelicula</p>
-              }
-            </div>
-          </div>
-        </div>
+        </section>
       </main>
     );
   }
