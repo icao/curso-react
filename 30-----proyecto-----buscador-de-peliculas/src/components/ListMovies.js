@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Movie } from "./Movie";
 import { Pagination } from "./Pagination";
 
-export const ListMovies = ({ movies }) => {
+export const ListMovies = ({ movies, previousPage, nextPage }) => {
   console.log("MOVIES:", movies);
   return (
     <Fragment>
@@ -24,7 +24,7 @@ export const ListMovies = ({ movies }) => {
         })}
       </section>
       <div className="column is-full">
-        <Pagination />
+        <Pagination previous={previousPage} next={nextPage}/>
       </div>
     </Fragment>
   );

@@ -9,15 +9,48 @@ import { ListMovies } from "./components/ListMovies";
 class App extends Component {
   state = {
     movies: [],
-    usedSearch: false
+    usedSearch: false,
+    page: 1
   };
+
+  previousPage = () => {
+    console.log('⏮ Página Anterior...');
+    // Obtener el estado actual
+    let { page } = this.state;
+    console.log('Page: ', page);
+    // Validar si page === 1
+    if (page === 1) {
+      return null
+    }
+    // Decrementar 1 
+    page -= 1;
+    // Actualizar en el estado
+    this.setState({
+      page
+    })
+
+  }
+
+  nextPage = () => {
+    console.log('⏭ Página Siguiente...');
+     // Obtener el estado actual
+    let { page } = this.state;
+    console.log("Page: ", page);
+    // Incrementar 1 
+    page += 1;
+    // Actualizar en el estado
+    this.setState({
+      page
+    })
+  }
 
   searchMovie = query => {
     serviceApi.searchMovies(query).then(({ Search = [] }) => {
       console.log({ Search });
       this.setState({
         movies: Search,
-        usedSearch: true
+        usedSearch: true,
+        page: 1
       });
     });
   };
@@ -39,7 +72,11 @@ class App extends Component {
         </p>
       </span>
     ) : (
-      <ListMovies movies={this.state.movies} />
+        <ListMovies
+          movies={this.state.movies}
+          previousPage={this.previousPage}
+          nextPage={this.nextPage}
+        />
     );
   };
 

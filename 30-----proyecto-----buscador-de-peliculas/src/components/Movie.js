@@ -18,7 +18,9 @@ export const Movie = ({ title, poster, type, year }) => {
         <div className="content is-small">
           <h2 className="title">{title}</h2>
           <p className="subtitle">
-            {type} - {year}
+            <small>
+              {type} - {year}
+            </small>
           </p>
         </div>
       </div>
