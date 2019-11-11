@@ -8,51 +8,83 @@ import { ListMovies } from "./components/ListMovies";
 
 class App extends Component {
   state = {
+    query: "",
     movies: [],
     usedSearch: false,
-    page: 1
+    page: "",
+    totalResults: ''
   };
 
   previousPage = () => {
-    console.log('⏮ Página Anterior...');
+    console.log("⏮ Página Anterior...");
     // Obtener el estado actual
-    let { page } = this.state;
-    console.log('Page: ', page);
+    let page = this.state.page;
     // Validar si page === 1
     if (page === 1) {
-      return null
+      return null;
     }
-    // Decrementar 1 
+    // Decrementar 1
     page -= 1;
     // Actualizar en el estado
-    this.setState({
-      page
-    })
-
-  }
+    this.setState(
+      {
+        page
+      },
+      () => {
+        // llama a consultarApi
+        this.consultarApi();
+      }
+    );
+  };
 
   nextPage = () => {
-    console.log('⏭ Página Siguiente...');
-     // Obtener el estado actual
-    let { page } = this.state;
-    console.log("Page: ", page);
-    // Incrementar 1 
+    console.log("⏭ Página Siguiente...");
+    // Obtener el estado actual
+    let page = this.state.page;
+    // Incrementar 1
     page += 1;
     // Actualizar en el estado
-    this.setState({
-      page
-    })
-  }
+    this.setState(
+      {
+        page
+      },
+      () => {
+        // llama a consultarApi
+        this.consultarApi();
+      }
+    );
+  };
 
   searchMovie = query => {
-    serviceApi.searchMovies(query).then(({ Search = [] }) => {
-      console.log({ Search });
-      this.setState({
-        movies: Search,
-        usedSearch: true,
+    // 1.- Actualizando estado con nuevos datos: query y pagina
+    this.setState(
+      {
+        query: query,
         page: 1
+      },
+      () => {
+        // Consultar api
+        this.consultarApi();
+      }
+    );
+  };
+
+  consultarApi = () => {
+    // 2.- Obtener el estado actual de page y query
+    let { query, page } = this.state;
+    console.log(`Consultando pagina ${page} de ${query}`);
+    //3.- Mandar a llamar la API (query y page)
+    serviceApi
+      .searchMovies(query, page)
+      .then(({ Search = [], totalResults }) => {
+        console.log(Search );
+        console.log('TOTAL DE RESULTADOS:', totalResults );
+        this.setState({
+          movies: Search,
+          usedSearch: true,
+          totalResults
+        });
       });
-    });
   };
 
   showResults = () => {
@@ -63,8 +95,7 @@ class App extends Component {
           <span role="img" aria-label="emoji">
             😔
           </span>
-        </p>
-        <p className="has-text-centered">
+          <br />
           Intenta con otra busqueda{" "}
           <span role="img" aria-label="emoji">
             😊
@@ -72,11 +103,11 @@ class App extends Component {
         </p>
       </span>
     ) : (
-        <ListMovies
-          movies={this.state.movies}
-          previousPage={this.previousPage}
-          nextPage={this.nextPage}
-        />
+      <ListMovies
+        movies={this.state.movies}
+        previousPage={this.previousPage}
+        nextPage={this.nextPage}
+      />
     );
   };
 

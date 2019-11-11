@@ -3,7 +3,6 @@ import { Movie } from "./Movie";
 import { Pagination } from "./Pagination";
 
 export const ListMovies = ({ movies, previousPage, nextPage }) => {
-  console.log("MOVIES:", movies);
   return (
     <Fragment>
       <section className="columns is-multiline">
