@@ -5,10 +5,3 @@ export const searchMovies = (query, page) => {
   console.log("URL:", URL);
   return fetch(URL).then(res => res.json());
 };
-
-
-// TODO: con el total de resultados hacer un contador,
-// en base al lenght del los Response, ir sumandolos. 
-
-// Si el total acumulado === total result,
-//   entonces, cancelar el boton de siguiente.
