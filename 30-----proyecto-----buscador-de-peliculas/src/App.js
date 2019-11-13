@@ -10,28 +10,24 @@ class App extends Component {
   state = {
     query: "",
     movies: [],
-    usedSearch: false,
+    totalResults: "",
     page: "",
-    totalResults: ''
+    totalPages: "",
+    usedSearch: false
   };
 
   previousPage = () => {
     console.log("⏮ Página Anterior...");
-    // Obtener el estado actual
     let page = this.state.page;
-    // Validar si page === 1
     if (page === 1) {
       return null;
     }
-    // Decrementar 1
     page -= 1;
-    // Actualizar en el estado
     this.setState(
       {
         page
       },
       () => {
-        // llama a consultarApi
         this.consultarApi();
       }
     );
@@ -39,50 +35,46 @@ class App extends Component {
 
   nextPage = () => {
     console.log("⏭ Página Siguiente...");
-    // Obtener el estado actual
-    let page = this.state.page;
-    // Incrementar 1
+    let { page, totalPages} = this.state;
+    if (page === totalPages) {
+      return null;
+    }
     page += 1;
-    // Actualizar en el estado
     this.setState(
       {
         page
       },
       () => {
-        // llama a consultarApi
         this.consultarApi();
       }
     );
   };
 
   searchMovie = query => {
-    // 1.- Actualizando estado con nuevos datos: query y pagina
     this.setState(
       {
         query: query,
         page: 1
       },
       () => {
-        // Consultar api
         this.consultarApi();
       }
     );
   };
 
+  getPages = total => Math.ceil(total / 10);
+
   consultarApi = () => {
-    // 2.- Obtener el estado actual de page y query
     let { query, page } = this.state;
-    console.log(`Consultando pagina ${page} de ${query}`);
-    //3.- Mandar a llamar la API (query y page)
     serviceApi
       .searchMovies(query, page)
       .then(({ Search = [], totalResults }) => {
-        console.log(Search );
-        console.log('TOTAL DE RESULTADOS:', totalResults );
+        let pages = this.getPages(totalResults);
         this.setState({
           movies: Search,
           usedSearch: true,
-          totalResults
+          totalResults,
+          totalPages: pages
         });
       });
   };
@@ -124,7 +116,7 @@ class App extends Component {
                   </span>{" "}
                   Buscador de películas{" "}
                   <span role="img" aria-label="jsx-a11y/aria-proptypes">
-                    📽
+                    🎬
                   </span>
                 </Title>
               </div>

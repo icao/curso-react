@@ -18,9 +18,14 @@ export const Movie = ({ title, poster, type, year }) => {
         <div className="content is-small">
           <h2 className="title">{title}</h2>
           <p className="subtitle">
-            <small>
-              {type} - {year}
-            </small>
+            <div class="tags has-addons is-right">
+              <span class="tag ">
+                <strong>{year}</strong>
+              </span>
+              <span class="tag is-warning">
+                <strong>{type}</strong>
+              </span>
+            </div>
           </p>
         </div>
       </div>

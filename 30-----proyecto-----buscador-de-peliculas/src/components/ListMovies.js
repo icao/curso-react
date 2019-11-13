@@ -23,7 +23,7 @@ export const ListMovies = ({ movies, previousPage, nextPage }) => {
         })}
       </section>
       <div className="column is-full">
-        <Pagination previous={previousPage} next={nextPage}/>
+        <Pagination previous={previousPage} next={nextPage} />
       </div>
     </Fragment>
   );
