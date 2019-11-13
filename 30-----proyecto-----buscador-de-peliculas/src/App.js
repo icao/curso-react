@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./App.css";
 import "bulma/css/bulma.css";
+import "./App.css";
 import { Title } from "./components/Title";
 import { Search } from "./components/Search";
 import * as serviceApi from "./services/serviceOmdbAPI";

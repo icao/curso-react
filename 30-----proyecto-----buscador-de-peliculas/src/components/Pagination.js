@@ -8,8 +8,8 @@ export const Pagination = ({previous, next}) => {
       aria-label="pagination"
     >
       <div className="pagination-list">
-        <button onClick={previous} className="pagination-previous">Anterior</button>
-        <button onClick={next} className="pagination-next">Siguiente</button>
+        <button  onClick={previous} className="button is-link pagination-previous">Anterior</button>
+        <button  onClick={next} className="button is-link pagination-next">Siguiente</button>
       </div>
     </nav>
   );
