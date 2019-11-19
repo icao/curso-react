@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 const imagen = "https://f-scope.net/images/shark-logo-png-4.png";
 
 const Nav = () => {
@@ -12,9 +13,9 @@ const Nav = () => {
       </div>
       <div className="navbar__menu">
         <div className="navbar__start">
-          <a className="navbar__item">Home</a>
-          <a className="navbar__item">About</a>
-          {/* <a className="navbar__item">Blog</a> */}
+          <Link to="/" className="navbar__item">Home</Link>
+          <Link to="/about" className="navbar__item">About</Link>
+          <Link to="/blog" className="navbar__item">Blog</Link>
         </div>
       </div>
     </nav>
