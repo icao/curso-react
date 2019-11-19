@@ -19,7 +19,8 @@ const Nav = () => {
           <Link to="/blog" className="navbar__item">Blog</Link> */}
 
           <NavLink
-            to="/" exact
+            to="/"
+            exact
             activeStyle={{ color: "#0199f9" }}
             className="navbar__item"
           >
@@ -66,4 +67,7 @@ export default Nav;
  * 2.1 activeStyle
  * Esta propiedad recibe un objeto de estilos Css, en el cual especificamos la personalización dle link una vez activo.
  * Esta propiedad pertenece al componente NavLink, por lo que es escencial declararlo dentro de él.
+ *
+ * NOTA: Tenemos que hacer uso de la propiedad 'exact' para asegurar
+ * que las activaciones sean correctas cuando se active el link correspondiente
  */
