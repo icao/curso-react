@@ -16,7 +16,7 @@ function App() {
             <Route path="/" exact  component={Home} /> 
             <Route path="/about" exact strict component={About} />
             <Route
-              path="/blog"
+              path="/blog" exact
               render={() => {
                 return (
                   <h1>
