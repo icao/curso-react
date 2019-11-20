@@ -3,6 +3,7 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import About from "./components/About";
+import AlbumDetail from "./components/AlbumDetail"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -13,10 +14,14 @@ function App() {
         <Nav />
         <div className="container">
           <Switch>
-            <Route path="/" exact  component={Home} /> 
-            <Route path="/about" exact strict component={About} />
+            <Route path="/" exact component={Home} />
+            {/* Pasamos id que se adicionara como una propiedad mas en la url, que usaremos en el componente AlbumDetail */}
+            <Route path="/:id" exact component={AlbumDetail} />
+            <Route path="/about" exact component={About} />
             <Route
-              path="/blog" exact
+              path="/blog/"
+              exact
+              strict
               render={() => {
                 return (
                   <h1>
@@ -54,6 +59,9 @@ export default App;
  *
  * 2.1 path
  * Con path, establecemos la ruta personalizada, como un string.
+ * 
+ * 2.1.1 ':parametro_dinamico'
+ * Con los ':' especificamos que pasarémos un elemento adicional a la url, el cual pasaremos de forma dinamica en el componente declarado en component.
  *
  * 2.2 render
  * Recibe una funcion con elementos a renderizar en JSX, recibe una función que retorna algo.

@@ -35,7 +35,7 @@ const Nav = () => {
             About
           </NavLink>
           <NavLink
-            to="/blog"
+            to="/blog/"
             exact
             activeStyle={{ color: "#0199f9" }}
             className="navbar__item"
