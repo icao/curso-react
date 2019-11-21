@@ -78,3 +78,17 @@ class AlbumDetail extends Component {
 }
 
 export default AlbumDetail;
+
+/**
+ * 1.- match
+ * Para acceder a las propiedades que son pasadas atra vez del link, por medio de la url,
+ * hacemos uso de un objeto que actua como las props, llamado match.
+ * Este objeto se compone de varios parametros: 
+ *  - isExact: true -> Indica que el componente será accesado solo como aparece en la url.
+ *  - params: {id: "81804"} -> Objeto que contiene los parametros de la url
+ *  - path: "/about/:id" -> Path con el que será llamado en el navegador
+ *  - url: "/about/81804" -> URL actual en el navegador
+ * 
+ * Podemos usar a match oara acceder a cualquiera de sus valores y aprovecharlos como en el ejemplo, donde recatamos el id que viene como parametro y lo usamos para hacer una petición que nos devolvera un elemento que renderizaremos en la vista.
+ * 
+ */

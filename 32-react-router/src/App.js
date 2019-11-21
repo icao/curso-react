@@ -16,10 +16,10 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home} />
             {/* Pasamos id que se adicionara como una propiedad mas en la url, que usaremos en el componente AlbumDetail */}
-            <Route path="/:id" exact component={AlbumDetail} />
             <Route path="/about" exact component={About} />
+            <Route path="/about/:id" exact component={AlbumDetail} />
             <Route
-              path="/blog/"
+              path="/blog"
               exact
               strict
               render={() => {
