@@ -45,6 +45,7 @@ class AlbumDetail extends Component {
   }
 
   showResults = () => {
+    const { location, history } = this.props;
     const { title, link, name, cover_big, tracks } = this.state;
     return (
       <Fragment>
@@ -61,9 +62,31 @@ class AlbumDetail extends Component {
             );
           })}
         </ul>
-          <a href={link} className="link" target="_blank">
-            Play on Deezer
-          </a>
+
+        <a href={link} className="link" target="_blank">
+          Play on Deezer
+        </a>
+        <br />
+        {/* Forma programatica de usar React Routher */}
+        <section>
+          <button className="btn" onClick={() => history.push("/")}>
+            Go to Home
+          </button>
+          <button className="btn" onClick={() => history.push("/about/")}>
+            Go to About
+          </button>
+        </section>
+        {/* History puede "guardar" rutas y podemos hacer uso de ellas, para retroceder o adelantar dependiendo de las rutas consultadas.*/}
+        <section>
+          <button className="btn" onClick={() => history.goBack()}>
+            Go back
+          </button>
+          <button className="btn" onClick={() => history.forWard()}>
+            for ward
+          </button>
+        </section>
+        {/* TODO: Cambiar al componente about */}
+        {/* todo: seguir comentando */}
       </Fragment>
     );
   };
@@ -83,12 +106,20 @@ export default AlbumDetail;
  * 1.- match
  * Para acceder a las propiedades que son pasadas atra vez del link, por medio de la url,
  * hacemos uso de un objeto que actua como las props, llamado match.
- * Este objeto se compone de varios parametros: 
+ * Este objeto se compone de varios parametros:
  *  - isExact: true -> Indica que el componente será accesado solo como aparece en la url.
  *  - params: {id: "81804"} -> Objeto que contiene los parametros de la url
  *  - path: "/about/:id" -> Path con el que será llamado en el navegador
  *  - url: "/about/81804" -> URL actual en el navegador
- * 
+ *
  * Podemos usar a match oara acceder a cualquiera de sus valores y aprovecharlos como en el ejemplo, donde recatamos el id que viene como parametro y lo usamos para hacer una petición que nos devolvera un elemento que renderizaremos en la vista.
  * 
+ * 
+ * 2.- history
+ * History es un objeto que nos brinda hacer routing via progamatica atravez de métodos que nos brindan funcionalidades para garantizar redireccionamientos personalizados sin usar los componentes Route, Link, NavLink. 
+ * 2.1 push()
+ * 2.2 goBack()
+ * 2.3 goForward()
+
+ *
  */
