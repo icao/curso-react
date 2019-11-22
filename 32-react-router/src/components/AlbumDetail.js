@@ -76,17 +76,6 @@ class AlbumDetail extends Component {
             Go to About
           </button>
         </section>
-        {/* History puede "guardar" rutas y podemos hacer uso de ellas, para retroceder o adelantar dependiendo de las rutas consultadas.*/}
-        <section>
-          <button className="btn" onClick={() => history.goBack()}>
-            Go back
-          </button>
-          <button className="btn" onClick={() => history.forWard()}>
-            for ward
-          </button>
-        </section>
-        {/* TODO: Cambiar al componente about */}
-        {/* todo: seguir comentando */}
       </Fragment>
     );
   };
@@ -120,6 +109,8 @@ export default AlbumDetail;
  * 2.1 push()
  * 2.2 goBack()
  * 2.3 goForward()
-
+ * 
+ * Mas información sobre el funcionamiento detallado en:
+ * https://reacttraining.com/react-router/web/api/history
  *
  */

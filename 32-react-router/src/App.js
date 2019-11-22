@@ -62,6 +62,8 @@ export default App;
  * 
  * 2.1.1 ':parametro_dinamico'
  * Con los ':' especificamos que pasarémos un elemento adicional a la url, el cual pasaremos de forma dinamica en el componente declarado en component.
+ * Podemos enviar mas de dos parametros antecediendo los ':', esto lo podemos rescatar en el objeto match una vez en el componente cargado. 
+ * Ejemplo: <Route path="/about/:id/:otro/:unomas" exact component={AlbumDetail} />
  *
  * 2.2 render
  * Recibe una funcion con elementos a renderizar en JSX, recibe una función que retorna algo.
