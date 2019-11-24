@@ -13,6 +13,7 @@ export const ListMovies = ({ movies, previousPage, nextPage }) => {
               className="column is-one-fifth-fullhd is-one-quarter-widescreen  is-one-third-desktop is-half-tablet is-full-mobile"
             >
               <Movie
+                imdbID={movie.imdbID}
                 title={movie.Title}
                 poster={movie.Poster}
                 type={movie.Type}
