@@ -43,7 +43,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #409EFF;
+  background-color: #409eff;
   position: relative;
   overflow: hidden;
 }
@@ -86,6 +86,11 @@ html {
   transform: scale(1.5);
 }
 
+.filtered__banner {
+  filter: blur(30px);
+  transform: scale(1.5);
+}
+
 /*Loader animation*/
 .loader,
 .loader:after {
@@ -102,7 +107,7 @@ html {
   border-top: 1.1em solid rgba(72, 164, 255, 0.2);
   border-right: 1.1em solid rgba(72, 164, 255, 0.2);
   border-bottom: 1.1em solid rgba(72, 164, 255, 0.2);
-  border-left: 1.1em solid #409EFF;
+  border-left: 1.1em solid #409eff;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
@@ -133,7 +138,7 @@ html {
 .detail__title {
   font-size: 36px;
   font-weight: 700;
-  margin: 25px 0;
+  padding: 25px 0;
 }
 
 .detail__year {
@@ -145,9 +150,78 @@ html {
 .detail__text {
   font-weight: 600;
   margin-top: 10px;
-  color: #409EFF;
+  color: #409eff;
 }
 
 .detail__text span {
   font-weight: 300;
 }
+
+/* Capa 1 contenedor banner */
+.container__banner__detail__movie {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* Capa para degradado del contenedor banner */
+.container__banner__detail__movie::after {
+  content: "";
+  width: inherit;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -5;
+}
+
+/* Fondo de imagen */
+.background__detail__movie {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #409eff;
+  z-index: 0;
+}
+
+/* Contenedor de texto del banner */
+.container__detail__movie {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+   position: relative;
+  z-index: 4;
+}
+
+/* Capa de degradado del texto */
+.container__detail__movie::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.99) 8%,
+    rgba(169, 28, 204, 0) 75%
+  );
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+
+.img__detail__movie {
+  margin: 35px 0 0 0;
+}
+
+
+
