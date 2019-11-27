@@ -162,7 +162,7 @@ export class DetailMovie extends Component {
                 >
                   <span>{this.state.detail.Plot}</span>
                 </p>
-                <br/>
+                <br />
                 <p
                   className="detail__text"
                   style={{
@@ -219,7 +219,16 @@ export class DetailMovie extends Component {
         </section>
       </Fragment>
     ) : (
-      <div className="loader">Loading...</div>
+      <div className="loader-icon">
+        <div class="sk-chase">
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+        </div>
+      </div>
     );
   }
 }
