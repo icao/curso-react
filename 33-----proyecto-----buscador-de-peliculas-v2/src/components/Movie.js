@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Movie = ({imdbID, title, poster, type, year }) => {
+export const Movie = ({ imdbID, title, poster, type, year }) => {
   return (
     <Link to={`/detail/${imdbID}`}>
       <div className="card">
@@ -23,7 +23,7 @@ export const Movie = ({imdbID, title, poster, type, year }) => {
               <span className="tag">
                 <strong>{year}</strong>
               </span>
-              <span className="tag is-warning">
+              <span className="tag tag__movie is-warning">
                 <strong>{type}</strong>
               </span>
             </div>
