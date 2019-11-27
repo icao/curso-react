@@ -114,10 +114,7 @@ export class Home extends Component {
                   <span role="img" aria-label="jsx-a11y/aria-proptypes">
                     🍿
                   </span>{" "}
-                  Buscador de películas{" "}
-                  <span role="img" aria-label="jsx-a11y/aria-proptypes">
-                    🎬
-                  </span>
+                  Buscador de películas
                 </Title>
               </div>
             </div>

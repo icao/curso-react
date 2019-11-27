@@ -50,6 +50,7 @@ export class DetailMovie extends Component {
   }
 
   render() {
+    const { history } = this.props;
     return this.state.detail && this.state.colors ? (
       <Fragment>
         <div className="container__banner__detail__movie">
@@ -67,9 +68,6 @@ export class DetailMovie extends Component {
                         className="img__detail__movie"
                         src={this.state.detail.Poster}
                         alt={this.state.detail.Title}
-                        style={{
-                          // border: `5px solid ${this.state.colors.DarkVibrant.hex}`
-                        }}
                       />
                     </div>
                   </div>
@@ -162,9 +160,17 @@ export class DetailMovie extends Component {
                     color: this.state.colors.Vibrant.hex
                   }}
                 >
+                  <span>{this.state.detail.Plot}</span>
+                </p>
+                <br/>
+                <p
+                  className="detail__text"
+                  style={{
+                    color: this.state.colors.Vibrant.hex
+                  }}
+                >
                   Language: <span>{this.state.detail.Language}</span>
                 </p>
-
                 <p
                   className="detail__text"
                   style={{
@@ -197,14 +203,16 @@ export class DetailMovie extends Component {
                 >
                   Actors: <span>{this.state.detail.Actors}</span>
                 </p>
-                <p
-                  className="detail__text"
-                  style={{
-                    color: this.state.colors.Vibrant.hex
-                  }}
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column column is-full-fullhd is-full-widescreen  is-full-desktop is-full-tablet is-full-mobile">
+                <button
+                  className="button is-outlined is-white"
+                  onClick={() => history.push("/")}
                 >
-                  Description: <span>{this.state.detail.Plot}</span>
-                </p>
+                  Return
+                </button>
               </div>
             </div>
           </div>

@@ -18,7 +18,7 @@ export const Movie = ({ imdbID, title, poster, type, year }) => {
         </div>
         <div className="card-content">
           <div className="content">
-            <h2 className="subtitle is-6">{title}</h2>
+            <h2 className="subtitle__card">{title}</h2>
             <div className="tags has-addons is-right">
               <span className="tag">
                 <strong>{year}</strong>
