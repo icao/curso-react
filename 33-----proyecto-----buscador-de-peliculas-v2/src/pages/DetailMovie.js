@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import * as serviceApi from "../services/serviceOmdbAPI";
 import * as Vibrant from "node-vibrant";
+import genericPoster from "../poster_generic_movie.jpg";
 
 export class DetailMovie extends Component {
   state = {
@@ -13,7 +14,6 @@ export class DetailMovie extends Component {
     serviceApi
       .getDetailMovie(match.params.id)
       .then(res => {
-        console.log("responseeeeeeeeeee", res);
         this.setState({
           detail: res
         });
@@ -27,7 +27,6 @@ export class DetailMovie extends Component {
     Vibrant.from(imgSrc)
       .getPalette()
       .then(palette => {
-        console.log("PALETTE EXTRACTED", palette);
         this.setState({
           colors: palette
         });
@@ -38,8 +37,12 @@ export class DetailMovie extends Component {
   };
 
   extractColors = () => {
-    const { Poster } = this.state.detail;
-    this.extractPalette(Poster);
+    if (this.state.detail.Poster === 'N/A') {
+      this.extractPalette(genericPoster);  
+    } else {
+      const { Poster } = this.state.detail;
+      this.extractPalette(Poster);  
+    }
   };
 
   /**
@@ -64,11 +67,19 @@ export class DetailMovie extends Component {
                 <div className="columns">
                   <div className="column is-one-quarter">
                     <div className="container__image__movie">
-                      <img
-                        className="img__detail__movie"
-                        src={this.state.detail.Poster}
-                        alt={this.state.detail.Title}
-                      />
+                      {this.state.detail.Poster === "N/A" ? (
+                        <img
+                          className="img__detail__movie"
+                          src={genericPoster}
+                          alt={this.state.detail.Title}
+                        />
+                      ) : (
+                        <img
+                          className="img__detail__movie"
+                          src={this.state.detail.Poster}
+                          alt={this.state.detail.Title}
+                        />
+                      )}
                     </div>
                   </div>
                   <div className="column flex__column__end">
@@ -220,13 +231,13 @@ export class DetailMovie extends Component {
       </Fragment>
     ) : (
       <div className="loader-icon">
-        <div class="sk-chase">
-          <div class="sk-chase-dot"></div>
-          <div class="sk-chase-dot"></div>
-          <div class="sk-chase-dot"></div>
-          <div class="sk-chase-dot"></div>
-          <div class="sk-chase-dot"></div>
-          <div class="sk-chase-dot"></div>
+        <div className="sk-chase">
+          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot"></div>
         </div>
       </div>
     );
