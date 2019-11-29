@@ -2,7 +2,13 @@ import React, { Fragment } from "react";
 import { Movie } from "./Movie";
 import { Pagination } from "./Pagination";
 
-export const ListMovies = ({ movies, previousPage, nextPage }) => {
+export const ListMovies = ({
+  movies,
+  previousPage,
+  nextPage,
+  prevDisabled,
+  nextDisabled
+}) => {
   return (
     <Fragment>
       <section className="columns is-multiline">
@@ -24,7 +30,12 @@ export const ListMovies = ({ movies, previousPage, nextPage }) => {
         })}
       </section>
       <div className="column is-full">
-        <Pagination previous={previousPage} next={nextPage} />
+        <Pagination
+          previous={previousPage}
+          next={nextPage}
+          prevDisabled={prevDisabled}
+          nextDisabled={nextDisabled}
+        />
       </div>
     </Fragment>
   );

@@ -13,7 +13,9 @@ export class Home extends Component {
     totalResults: "",
     page: "",
     totalPages: "",
-    usedSearch: false
+    usedSearch: false,
+    prevDisabled: false,
+    nextDisabled: false
   };
 
   previousPage = () => {
@@ -25,7 +27,8 @@ export class Home extends Component {
     page -= 1;
     this.setState(
       {
-        page
+        page,
+        nextDisabled: false
       },
       () => {
         this.consultarApi();
@@ -43,7 +46,8 @@ export class Home extends Component {
     page += 1;
     this.setState(
       {
-        page
+        page,
+        prevDisabled: false
       },
       () => {
         this.consultarApi();
@@ -52,11 +56,23 @@ export class Home extends Component {
     );
   };
 
+  validatePagination = () => {
+    let { page, totalPages } = this.state;
+    if (page === 1) {
+      this.setState({ prevDisabled: true });
+    }
+    if (page === totalPages) {
+      this.setState({nextDisabled: true})
+    }
+  };
+
   searchMovie = query => {
     this.setState(
       {
         query: query,
-        page: 1
+        page: 1,
+        prevDisabled: false,
+        nextDisabled: false
       },
       () => {
         this.consultarApi();
@@ -79,6 +95,9 @@ export class Home extends Component {
           totalResults,
           totalPages: pages
         });
+      })
+      .then(() => {
+        this.validatePagination();
       });
   };
 
@@ -102,12 +121,15 @@ export class Home extends Component {
         movies={this.state.movies}
         previousPage={this.previousPage}
         nextPage={this.nextPage}
+        prevDisabled={this.state.prevDisabled}
+        nextDisabled={this.state.nextDisabled}
       />
-    );  
+    );
   };
 
   componentDidMount() {
-    if (localStorage.query && localStorage.page) { // Si existe en el localStorage, query  y paginación.
+    if (localStorage.query && localStorage.page) {
+      // Si existe en el localStorage, query  y paginación.
       // entonces actualiza el estado
       this.setState(
         {
@@ -117,7 +139,7 @@ export class Home extends Component {
         () => {
           this.consultarApi();
         }
-      ); 
+      );
     }
   }
 
