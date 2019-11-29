@@ -29,6 +29,7 @@ export class Home extends Component {
       },
       () => {
         this.consultarApi();
+        localStorage.setItem("page", page);
       }
     );
   };
@@ -46,6 +47,7 @@ export class Home extends Component {
       },
       () => {
         this.consultarApi();
+        localStorage.setItem("page", page);
       }
     );
   };
@@ -58,6 +60,7 @@ export class Home extends Component {
       },
       () => {
         this.consultarApi();
+        localStorage.setItem("page", 1);
       }
     );
   };
@@ -100,8 +103,23 @@ export class Home extends Component {
         previousPage={this.previousPage}
         nextPage={this.nextPage}
       />
-    );
+    );  
   };
+
+  componentDidMount() {
+    if (localStorage.query && localStorage.page) { // Si existe en el localStorage, query  y paginación.
+      // entonces actualiza el estado
+      this.setState(
+        {
+          query: localStorage.query,
+          page: JSON.parse(localStorage.page)
+        },
+        () => {
+          this.consultarApi();
+        }
+      ); 
+    }
+  }
 
   render() {
     return (
@@ -144,4 +162,3 @@ export class Home extends Component {
     );
   }
 }
-

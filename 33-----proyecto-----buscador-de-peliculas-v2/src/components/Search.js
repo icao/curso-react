@@ -12,6 +12,7 @@ export class Search extends Component {
     const { inputMovie } = this.state;
     // Aqui llamada al servicio
     this.props.search(inputMovie);
+    localStorage.setItem('query', inputMovie)
   };
 
   handleChange = event => {

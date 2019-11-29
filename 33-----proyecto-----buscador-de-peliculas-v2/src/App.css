@@ -81,6 +81,15 @@ html {
   /* border-radius: 13px; */
   width: auto;
   height: 300px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 0.1em;
 }
 
 .card-content {
@@ -216,6 +225,15 @@ html {
   /* border: 5px solid white; */
   width: calc(300px + 1vmin);
   height: auto;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 0.1em;
 }
 
 /* Capa de degradado del texto */
