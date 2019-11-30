@@ -222,7 +222,7 @@ export class DetailMovie extends Component {
                   className="button is-outlined is-white"
                   onClick={() => history.push("/")}
                 >
-                  Return
+                  &#8592; Return
                 </button>
               </div>
             </div>

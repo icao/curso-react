@@ -119,12 +119,12 @@ export class Home extends Component {
            return this.state.movies.length === 0 ? (
              <span>
                <p className="has-text-centered">
-                 Lo sentimos, no se encontraron resultados{" "}
+                 Sorry, no results were found{" "}
                  <span role="img" aria-label="emoji">
                    😔
                  </span>
                  <br />
-                 Intenta con otra busqueda{" "}
+                 Try another movie{" "}
                  <span role="img" aria-label="emoji">
                    😊
                  </span>
@@ -168,7 +168,11 @@ export class Home extends Component {
                          <span role="img" aria-label="jsx-a11y/aria-proptypes">
                            🍿
                          </span>{" "}
-                         Buscador de películas
+                         Browser Movies
+                         <span role="img" aria-label="jsx-a11y/aria-proptypes">
+                           {" "}
+                           🍿
+                         </span>
                        </Title>
                      </div>
                    </div>
@@ -187,7 +191,7 @@ export class Home extends Component {
                          this.showResults()
                        ) : (
                          <p className="has-text-centered">
-                           Usa el buscador para encontrar una pelicula
+                           Use the browser to a search movie
                          </p>
                        )}
                      </div>

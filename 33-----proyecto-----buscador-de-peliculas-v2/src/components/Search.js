@@ -30,13 +30,13 @@ export class Search extends Component {
               onChange={this.handleChange}
               className="input"
               type="text"
-              placeholder="Buscar una película"
+              placeholder="Search a movie"
             />
           </div>
           <div className="control">
             <button className="button is-link">
               <span>
-                Buscar{" "}
+                Search{" "}
                 <span role="img" aria-label="emoji">
                   🔍
                 </span>
