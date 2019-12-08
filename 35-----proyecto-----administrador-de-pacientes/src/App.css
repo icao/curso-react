@@ -1,0 +1,47 @@
+.margin--none{
+  margin: 0;
+}
+
+.header{
+  /* border: 1px solid red; */
+  padding: 2rem;
+}
+
+.bd-title {
+    /* margin: 1rem 0; */
+    font-weight: 300;
+    font-size: calc(2rem + 2vmin);
+}
+
+.title__form {
+    margin: 1rem 0;
+    font-weight: 300;
+    /* font-size: 2rem; */
+    font-size: calc(1rem + 1.5vmin);
+}
+
+.border__form{
+  border: 1px solid #3094ff;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.box__shadow{
+  box-shadow: 0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
+}
+
+.form__header__title{
+  margin-bottom: 2rem;
+}
+
+.label__strong{
+  font-weight: 600;
+}
+.label__strong span{
+  font-weight: 300;
+}
+
+.container__consultation__list{
+  
+  margin: calc(1rem + 1.5vmin) 0;
+}
