@@ -6,7 +6,7 @@ export const Alert = () => {
       <span role="img" aria-label="jsx-a11y/aria-proptypes">
         🛑{"  "}
       </span>
-      A simple dark alert—check it out!
+      Por favor, rellena todos los campos
     </div>
   );
 }
