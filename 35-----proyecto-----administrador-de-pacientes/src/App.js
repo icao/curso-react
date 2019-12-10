@@ -70,7 +70,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header title={"Administrador de pacientes veterinaria"} />
         <main className="container p-md-3">
           <section className="row">
             <div className="col-md-12">

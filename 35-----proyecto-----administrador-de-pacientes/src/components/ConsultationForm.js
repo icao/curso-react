@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import { Alert } from "./Alert";
-import uuid from 'uuid'
+import uuid from "uuid";
 // Declaramos un estado inicial para posteriormente resetear el formulario
 const initialState = {
   consultation: {
@@ -13,6 +14,7 @@ const initialState = {
   },
   showAlert: false
 };
+
 export class ConsultationForm extends Component {
   state = {
     ...initialState
@@ -39,13 +41,13 @@ export class ConsultationForm extends Component {
     ) {
       this.setState({
         showAlert: true
-      })
+      });
       // mostrar alerta y detener ejecusion
-      return
+      return;
     }
 
     // obtenemos la consultation y le agreamos un id con uuid (libreria externa)
-    const newConsultation = { ...this.state.consultation } // copiamos el state actual
+    const newConsultation = { ...this.state.consultation }; // copiamos el state actual
     newConsultation.id = uuid(); // agregamos nuevo parametor id
     // Enviamos la consultation creada al padre con el arreglo de consultations
     this.props.createConsultation(newConsultation);
@@ -69,7 +71,14 @@ export class ConsultationForm extends Component {
 
   render() {
     const {
-      consultation: { nombreMascota, nombreDueno, fecha, hora, telefono, sintomas },
+      consultation: {
+        nombreMascota,
+        nombreDueno,
+        fecha,
+        hora,
+        telefono,
+        sintomas
+      },
       showAlert
     } = this.state;
     return (
@@ -177,3 +186,7 @@ export class ConsultationForm extends Component {
     );
   }
 }
+
+ConsultationForm.propTypes = {
+  createConsultation: PropTypes.func.isRequired
+};

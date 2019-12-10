@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-export const Header = () => {
+export const Header = ({ title }) => {
   return (
     <header className="header">
       <h1 className="bd-title text-center">
-        Administrador de pacientes veterinaria
+        {title}
         <span role="img" aria-label="jsx-a11y/aria-proptypes">
           {" "}
           🐶
@@ -12,4 +13,8 @@ export const Header = () => {
       </h1>
     </header>
   );
-}
+};
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired
+};

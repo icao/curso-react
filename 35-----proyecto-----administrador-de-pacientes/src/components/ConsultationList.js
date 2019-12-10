@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import { Consultation } from './Consultation'
+import { Consultation } from "./Consultation";
 
 export class ConsultationList extends Component {
-  // state = { consultations: [] }
-  render() { 
+  render() {
     const { consultations, deleteConsultation } = this.props;
-    console.log('PROPS', this.props);
+    console.log("PROPS", this.props);
     return (
       <section className="container__consultation__list my-5">
         <div className="form__header__title">
@@ -26,3 +26,8 @@ export class ConsultationList extends Component {
     );
   }
 }
+
+ConsultationList.propTypes = {
+  consultations: PropTypes.array.isRequired,
+  deleteConsultation: PropTypes.func.isRequired
+};
