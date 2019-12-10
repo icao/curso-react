@@ -74,14 +74,16 @@ export class ConsultationForm extends Component {
     } = this.state;
     return (
       <Fragment>
-        {showAlert ? (<section className="row">
-          <div className="col-md-12">
-            <Alert />
-          </div>
-        </section>) : null }
+        {showAlert ? (
+          <section className="row">
+            <div className="col-md-12">
+              <Alert />
+            </div>
+          </section>
+        ) : null}
         <section className="border__form box__shadow">
           <div className="form__header__title">
-            <h2 className="text-center title__form">Captura de formulario</h2>
+            <h2 className="text-center title__form">Crear consulta</h2>
           </div>
           <form onSubmit={this.handleSubmit}>
             <div className="form-row">
@@ -140,7 +142,8 @@ export class ConsultationForm extends Component {
                   type="tel"
                   className="form-control"
                   id="inputTime"
-                  placeholder="(00) 00 00 00 00"
+                  title="5599999999"
+                  placeholder="5599999999"
                   name="telefono"
                   value={telefono}
                   onChange={this.handleChange}
