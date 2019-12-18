@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./styles/App.css";
+import Header from './components/Header'
+import Headband from "./components/Headband";
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>The World Times</h1>
+    <div>
+      <Header title="the world times" />
+      <Headband />
     </div>
   );
 }

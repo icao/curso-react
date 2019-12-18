@@ -1,0 +1,83 @@
+/*
+BEM:  Bloque - Elemento - Modificador
+*/
+
+/*Imports*/
+ @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Playfair+Display:400,700,900&display=swap');
+ @import "Grid.css";
+/*Variables*/
+:root {
+  --font-primary: 'Playfair Display', serif;
+  --font-secondary: 'IBM Plex Serif', serif;
+  --color-black: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  /* margin: 0;
+  padding: 0; */
+  transition: .5s;
+  color: var(--color-black);
+}
+
+/*Bloque*/
+
+
+.header{
+  /* padding: 30px 0px; */
+}
+
+.headband{
+  width: 100%;
+  height: 52px;
+  border-top: 1px solid var(--color-black);
+  border-bottom: 5px solid var(--color-black);
+}
+
+@media only screen and (max-width: 768px) {
+  .headband {
+    height: 100%;
+  }
+}
+
+/*Elemento*/
+.header__title__newspaper{
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  font-size: calc(69px + 1vmin);
+  font-weight: 400;
+  text-align: center;
+}
+
+.header__subtitle__newspaper{
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  font-size: calc(11px + 1vmin);
+  font-weight: 400;
+  text-align: center;
+}
+
+.headband__item__container{
+  border: 1px solid red;
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.headband__text{
+  text-transform: uppercase;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.select__border{
+  border: 2px solid var(--color-black);
+}
+
+
+
+/*Modificador*/
