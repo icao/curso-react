@@ -1,0 +1,88 @@
+/*
+BEM:  Bloque - Elemento - Modificador
+*/
+
+/*Variables*/
+:root {
+  --font-primary: "Playfair Display", serif;
+  --font-secondary: "IBM Plex Serif", serif;
+  --color-black: #000000;
+}
+
+.dropdown-content {
+  background-color: #fff;
+  margin: 0;
+  border: 2px solid black;
+  width: 100%;
+  font-family: var(--font-primary);
+}
+
+.dropdown-content li {
+  clear: both;
+  color: #000;
+  cursor: pointer;
+  min-height: 50px;
+  line-height: 1.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-content li > span {
+  font-size: calc(11px + 1vmin);
+  color: #000;
+  text-align: center;
+  line-height: 22px;
+  padding: 16px 16px;
+  border-bottom: 1px solid #c5c5c5;
+}
+
+
+.select-wrapper ul li:last-child > span {
+  border-bottom: 0;
+}
+
+.select-wrapper input.select-dropdown {
+  /* padding: 0px 16px; */
+  font-family: var(--font-primary);
+  font-size: calc(11px + 1vmin);
+  text-align: center;
+  border: none;
+  margin: 0;
+  height: 54px;
+}
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 0;
+}
+
+.select-dropdown.dropdown-content li:hover > span {
+  background-color: #000;
+  border-bottom: 1px solid #000;
+  color: #fff;
+}
+
+.select-dropdown.dropdown-content li:hover:last-child > span {
+  border-bottom: 0;
+}
+
+.select-dropdown.dropdown-content li.selected > span {
+  background-color: #000;
+  color: #fff;
+  border-bottom: 1px solid #000;
+}
+
+.select-dropdown li:last-child.selected > span {
+  border-bottom: 0;
+}
+
+
+
+.input-field {
+  margin: 0;
+}
+
+/*Bloque*/
+
+/*Elemento*/
+
+/*Modificador*/

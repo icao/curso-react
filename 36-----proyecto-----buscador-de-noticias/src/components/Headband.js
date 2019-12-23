@@ -1,5 +1,5 @@
 import React from "react";
-
+import Select from './Select'
 const Headband = () => {
   return (
     <div className="container">
@@ -9,7 +9,7 @@ const Headband = () => {
         </div>
         <div id="select">
           <div className="select__border">
-            <p>Lorem </p>
+            <Select />
           </div>
         </div>
         <div id="date" className="headband__item__container">
