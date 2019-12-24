@@ -1,6 +1,6 @@
 import React from "react";
 import Select from './Select'
-const Headband = () => {
+const Headband = ({ searchNews }) => {
   return (
     <div className="container">
       <div className="headband__grid">
@@ -9,7 +9,7 @@ const Headband = () => {
         </div>
         <div id="select">
           <div className="select__border">
-            <Select />
+            <Select searchNews={searchNews} />
           </div>
         </div>
         <div id="date" className="headband__item__container">

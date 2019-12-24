@@ -7,13 +7,19 @@ class Select extends Component{
   }
 
   handleChange = e => {
-    console.log('valor', e.target.value);
+    const value = e.target.value;
+    this.setState({
+      value
+    }, () => {
+        const { value } = this.state;
+        this.props.searchNews(value);
+    })
   }
 
   render() {
   return (
     <div className="input-field col s12">
-      <select onChange={this.handleChange}>
+      <select value={this.state.value} onChange={this.handleChange}>
         <option value="general">General</option>
         <option value="business">Negocios</option>
         <option value="entertainment">Entretenimiento</option>
