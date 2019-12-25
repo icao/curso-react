@@ -15,7 +15,7 @@ class App extends Component {
 
   searchNews = category => {
     console.log("BUSCAR NOTICIAS DE: ", category);
-    serviceApi.getNews(category = 'general', "mx").then(response => {
+    serviceApi.getNews(category, "mx").then(response => {
       console.log(response);
       this.setState({
         articles: response.articles
