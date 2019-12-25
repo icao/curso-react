@@ -1,6 +1,18 @@
 import React from "react";
 import Select from './Select'
 const Headband = ({ searchNews }) => {
+
+  const getCurrentDate = () => {
+    let months = ["ene","feb","mar","abr","may","jun","jul","ago","sep","act","nov","dic"]
+    let days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+    let currentDate = new Date();
+    let longDate = `${days[currentDate.getDay()]}, ${
+      months[currentDate.getMonth()]
+      } ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
+    
+    return longDate;
+  }
+
   return (
       <div className="headband__grid">
         <div id="version" className="headband__item__container">
@@ -12,7 +24,7 @@ const Headband = ({ searchNews }) => {
           </div>
         </div>
         <div id="date" className="headband__item__container">
-          <p className="headband__text">martes, ene 29, 2020</p>
+        <p className="headband__text">{getCurrentDate()}</p>
         </div>
       </div>
   );
