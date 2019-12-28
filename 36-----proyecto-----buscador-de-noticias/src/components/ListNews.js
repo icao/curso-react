@@ -1,14 +1,13 @@
 import React from "react";
+import ArticleCard from "./ArticleCard";
 
 const ListNews = ({ news }) => {
   return (
-    <section>
-      <span>
-        {news.map(article => {
-          return <div key={article.url }>{article.title}</div>;
-        })}
-      </span>
-    </section>
+    <div className="grid__FALSE">
+      {news.map(article => {
+        return <ArticleCard article={article} key={article.url} />;
+      })}
+    </div>
   );
 };
 
