@@ -211,7 +211,7 @@ BEM:  Bloque - Elemento - Modificador
 .test__container {
   width: 350px;
   height: auto;
-  /* border: 1px solid grey; */
+  border: 1px solid grey;
 }
 
 .card__container {
@@ -241,14 +241,12 @@ BEM:  Bloque - Elemento - Modificador
   position: absolute;
   bottom: 0;
   left: 0;
-  /* margin-bottom: -1px; */
   background-color: var(--color-black);
   padding: 10px;
 }
 
 .card__image__tag__text {
   width: auto;
-  
   font-family: var(--font-secondary);
   font-weight: 400;
   color: var(--color-white);
@@ -257,13 +255,14 @@ BEM:  Bloque - Elemento - Modificador
 }
 
 .card__text__container {
-
+  /* background-color: plum; */
 }
 
 .card__title {
   font-family: var(--font-primary);
   font-size: calc(14px + 1vmin);
   font-weight: 700;
+  margin: 15px 0;
 }
 
 .card__date {
@@ -271,12 +270,14 @@ BEM:  Bloque - Elemento - Modificador
   text-transform: uppercase;
   color: var(--color-gray);
   font-size: calc(15px + 0.1vmin);
+  margin: 0 0 15px 0;
 }
 
 .card__description {
   font-family: var(--font-secondary);
   color: var(--color-gray);
   font-size: calc(15px + 0.1vmin);
+  margin: 0 0 15px 0;
 }
 
 
