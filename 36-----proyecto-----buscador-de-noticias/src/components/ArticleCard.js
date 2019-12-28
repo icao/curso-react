@@ -20,7 +20,7 @@ class ArticleCard extends Component {
       "dic"
     ];
     
-    let date = new Date("2019-12-28T04:38:00Z");
+    let date = new Date(publishedAt);
     let formattedDate = `${
       months[date.getUTCMonth()]
       } ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
@@ -33,7 +33,6 @@ class ArticleCard extends Component {
       source: { name },
       title,
       description,
-      publishedAt,
       urlToImage
     } = this.props.article;
     return (
