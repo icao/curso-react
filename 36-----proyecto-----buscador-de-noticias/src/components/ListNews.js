@@ -1,14 +1,22 @@
-import React from "react";
+import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 
-const ListNews = ({ news }) => {
-  return (
-    <div className="grid__FALSE">
-      {news.map(article => {
-        return <ArticleCard article={article} key={article.url} />;
-      })}
-    </div>
-  );
-};
+class ListNews extends Component {
+ 
+  render() {
+    const { news } = this.props;
+    return (
+      <div className="grid">
+        {news.map(article => {
+          return (
+            <div className="item" key={article.url}>
+              <ArticleCard article={article} resize={this.resize} />
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+}
 
 export default ListNews;

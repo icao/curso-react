@@ -77,6 +77,10 @@ BEM:  Bloque - Elemento - Modificador
   background-color: pink; */
 }
 
+.list__news__container {
+  padding-top: 50px;
+}
+
 .grid {
   display: grid;
   grid-gap: 15px;
@@ -209,31 +213,38 @@ BEM:  Bloque - Elemento - Modificador
 }
 
 .test__container {
-  width: 350px;
-  height: auto;
+  /* width: 350px;
+  height: auto; */
   border: 1px solid grey;
 }
 
 .card__container {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  width: auto;
+  height: 100%;
 }
 
 .card__image__container {
   width: 100%;
   height: auto;
   position: relative;
+  background-color: plum;
 }
 
 .card__image {
+  width: 100%;
   max-width: 100%;
   height: auto;
-  /* max-height: 500px; */
   object-fit: cover;
-  /* overflow: hidden; */
   vertical-align: middle;
    /* Safari 6.0 - 9.0 */
    -webkit-filter: grayscale(100%); 
   filter: grayscale(100%);
+}
+
+.card__image:hover {
+   -webkit-filter: grayscale(0%); 
+  filter: grayscale(0%);
 }
 
 
@@ -258,6 +269,12 @@ BEM:  Bloque - Elemento - Modificador
   /* background-color: plum; */
 }
 
+@media screen and (max-width: 769px) {
+  .card__text__container {
+    padding: 0 1em;
+  }
+}
+
 .card__title {
   font-family: var(--font-primary);
   font-size: calc(14px + 1vmin);
@@ -277,7 +294,7 @@ BEM:  Bloque - Elemento - Modificador
   font-family: var(--font-secondary);
   color: var(--color-gray);
   font-size: calc(15px + 0.1vmin);
-  margin: 0 0 15px 0;
+  margin: 0 0 30px 0;
 }
 
 

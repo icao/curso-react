@@ -14,7 +14,6 @@ class App extends Component {
   };
 
   searchNews = category => {
-    console.log("BUSCAR NOTICIAS DE: ", category);
     serviceApi.getNews(category, "mx").then(response => {
       console.log(response);
       this.setState({
@@ -24,8 +23,12 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.searchNews()
+    this.searchNews();
   }
+
+  showResults = () => {
+    return this.state.articles.length !== 0 ? (<ListNews news={this.state.articles} />) : (<h2>Loading...</h2>);
+  };
 
   render() {
     return (
@@ -38,9 +41,10 @@ class App extends Component {
         <div className="container">
           <Headband searchNews={this.searchNews} />
         </div>
-        <div className="container">
-          <ListNews news={this.state.articles}/>
+        <div className="list__news__container">
+          <div className="container ">{this.showResults()}</div>
         </div>
+        
       </div>
     );
   }

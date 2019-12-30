@@ -1,7 +1,33 @@
 import React, { Component } from "react";
-
+import imageDefault from "../images/default_news_img.jpg";
 class ArticleCard extends Component {
-  state = {};
+  resize() {
+    const grid = document.querySelector(".grid");
+
+    const rowHeight = parseInt(
+      window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
+    );
+    const rowGap = parseInt(
+      window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
+    );
+
+    grid.style.gridAutoRows = "auto";
+    grid.style.alignItems = "self-start";
+
+    grid.querySelectorAll(".item").forEach(item => {
+      item.style.gridRowEnd = `span ${Math.ceil(
+        (item.clientHeight + rowGap) / (rowHeight + rowGap)
+      )}`;
+    });
+
+    grid.removeAttribute("style");
+  }
+
+
+  componentDidMount() {
+    window.addEventListener("load", this.resize);
+    window.addEventListener("resize", this.resize);
+  }
 
   getFormattedDate() {
     const { publishedAt } = this.props.article;
@@ -19,14 +45,24 @@ class ArticleCard extends Component {
       "nov",
       "dic"
     ];
-    
+
     let date = new Date(publishedAt);
     let formattedDate = `${
       months[date.getUTCMonth()]
-      } ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
-    
+    } ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
+
     return formattedDate;
   }
+
+  addDefaultImage = event => {
+    event.target.src = imageDefault;
+  };
+
+  launchResize = () => {
+    // Provocando evento resize para renderizar imagenes
+    // window.dispatchEvent(new Event("resize"));
+    this.resize();
+  };
 
   render() {
     const {
@@ -36,12 +72,14 @@ class ArticleCard extends Component {
       urlToImage
     } = this.props.article;
     return (
-      <div className="item card__container test__container">
+      <div className="card__container test__container_">
         <div className="card__image__container">
           <img
             className="card__image"
-            src={urlToImage}
+            src={urlToImage === null ? imageDefault : urlToImage}
             alt="imagen de la noticia"
+            onError={this.addDefaultImage}
+            onLoad={this.launchResize}
           />
           <div className="card__image__tag__container">
             <span className="card__image__tag__text">{name}</span>
