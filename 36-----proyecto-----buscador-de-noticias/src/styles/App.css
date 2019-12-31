@@ -228,7 +228,7 @@ BEM:  Bloque - Elemento - Modificador
   width: 100%;
   height: auto;
   position: relative;
-  background-color: plum;
+  background-color: var(--color-white);
 }
 
 .card__image {

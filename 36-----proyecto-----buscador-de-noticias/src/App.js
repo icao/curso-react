@@ -7,6 +7,7 @@ import "./styles/App.css";
 import Header from "./components/Header";
 import Headband from "./components/Headband";
 import ListNews from "./components/ListNews";
+import Spinner from "./components/Spinner";
 
 class App extends Component {
   state = {
@@ -27,7 +28,11 @@ class App extends Component {
   }
 
   showResults = () => {
-    return this.state.articles.length !== 0 ? (<ListNews news={this.state.articles} />) : (<h2>Loading...</h2>);
+    return this.state.articles.length !== 0 ? (
+      <ListNews news={this.state.articles} />
+    ) : (
+      <Spinner />
+    );
   };
 
   render() {
