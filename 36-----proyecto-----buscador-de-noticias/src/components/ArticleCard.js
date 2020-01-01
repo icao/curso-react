@@ -69,27 +69,30 @@ class ArticleCard extends Component {
       source: { name },
       title,
       description,
-      urlToImage
+      urlToImage,
+      url
     } = this.props.article;
     return (
-      <div className="card__container test__container_">
-        <div className="card__image__container">
-          <img
-            className="card__image"
-            src={urlToImage === null ? imageDefault : urlToImage}
-            alt="imagen de la noticia"
-            onError={this.addDefaultImage}
-            onLoad={this.launchResize}
-          />
-          <div className="card__image__tag__container">
-            <span className="card__image__tag__text">{name}</span>
+      <div className="card__container">
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          <div className="card__image__container">
+            <img
+              className="card__image"
+              src={urlToImage === null ? imageDefault : urlToImage}
+              alt="imagen de la noticia"
+              onError={this.addDefaultImage}
+              onLoad={this.launchResize}
+            />
+            <div className="card__image__tag__container">
+              <span className="card__image__tag__text">{name}</span>
+            </div>
           </div>
-        </div>
-        <div className="card__text__container">
-          <h2 className="card__title">{title}</h2>
-          <p className="card__date">{this.getFormattedDate()}</p>
-          <p className="card__description">{description}</p>
-        </div>
+          <div className="card__text__container">
+            <h2 className="card__title">{title}</h2>
+            <p className="card__date">{this.getFormattedDate()}</p>
+            <p className="card__description">{description}</p>
+          </div>
+        </a>
       </div>
     );
   }
