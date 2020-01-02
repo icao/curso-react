@@ -77,7 +77,6 @@ BEM:  Bloque - Elemento - Modificador
   }
 }
 
-
 /*Bloque*/
 
 .header {
@@ -220,7 +219,6 @@ BEM:  Bloque - Elemento - Modificador
   /* border: 1px solid blueviolet; */
 }
 
-
 .card__container {
   width: auto;
   height: 100%;
@@ -239,16 +237,15 @@ BEM:  Bloque - Elemento - Modificador
   height: auto;
   object-fit: cover;
   vertical-align: middle;
-   /* Safari 6.0 - 9.0 */
-   -webkit-filter: grayscale(100%); 
+  /* Safari 6.0 - 9.0 */
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
 .card__image:hover {
-   -webkit-filter: grayscale(0%); 
+  -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
-
 
 .card__image__tag__container {
   position: absolute;
@@ -298,7 +295,5 @@ BEM:  Bloque - Elemento - Modificador
   font-size: calc(15px + 0.1vmin);
   margin: 0 0 30px 0;
 }
-
-
 
 /*Modificador*/
