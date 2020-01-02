@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import imageDefault from "../images/default_news_img.jpg";
+import PropTypes from 'prop-types';
 class ArticleCard extends Component {
   resize() {
     const grid = document.querySelector(".grid");
@@ -96,6 +97,10 @@ class ArticleCard extends Component {
       </div>
     );
   }
+}
+
+ArticleCard.propTypes = {
+  article: PropTypes.object.isRequired
 }
 
 export default ArticleCard;

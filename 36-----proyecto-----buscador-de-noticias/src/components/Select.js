@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../styles/Select.css'
+import PropTypes from 'prop-types'
 
 class Select extends Component {
   state = {
@@ -34,6 +35,10 @@ class Select extends Component {
       </div>
     );
   }
+}
+
+Select.propTypes = {
+  searchNews: PropTypes.func.isRequired
 }
  
 export default Select;

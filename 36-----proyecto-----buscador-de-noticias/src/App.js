@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import 'normalize.css'
 import * as serviceApi from "./services/serviceNewsAPI";
 import "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
@@ -16,7 +15,6 @@ class App extends Component {
 
   searchNews = category => {
     serviceApi.getNews(category, "mx").then(response => {
-      console.log(response);
       this.setState({
         articles: response.articles
       });
