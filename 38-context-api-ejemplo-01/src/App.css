@@ -1,0 +1,21 @@
+/*
+BEM:  Bloque - Elemento - Modificador
+*/
+ 
+/*Variables*/
+:root {
+  --black-color: #1a1b2d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: .5s;
+}
+
+/*Bloque*/
+
+/*Elemento*/
+
+/*Modificador*/
