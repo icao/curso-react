@@ -1,0 +1,66 @@
+/*
+BEM:  Bloque - Elemento - Modificador
+*/
+ 
+/*Variables*/
+:root {
+  --black-color: #1a1b2d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: .5s;
+}
+
+/*Bloque*/
+.App{
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grandpa{
+  width: 50%;
+  height: auto;
+  border: 2px solid #262feb;
+  padding: 2em;
+}
+
+@media screen and (max-width: 769px) {
+  .grandpa{
+  width: 90%;
+ }
+}
+
+
+.father{
+  width: 100%;
+  height: auto;
+  border: 2px solid #38ffa2;
+  padding: 2em;
+}
+
+.children{
+  width: 100%;
+  height: auto;
+  border: 2px solid #a547fd;
+  padding: 2em;
+}
+
+.italic{
+  font-style: italic;
+  margin: 0.5em
+}
+
+h2{
+  margin-bottom: 0.5em;
+}
+/*Elemento*/
+
+/*Modificador*/
