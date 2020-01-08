@@ -1,5 +1,4 @@
 import React from 'react';
-import ContextType from './ContextType';
 
 const ContextProvider = () => {
   return <span>Context.Provider</span>;

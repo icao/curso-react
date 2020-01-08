@@ -1,5 +1,5 @@
 import React from 'react';
-import ContextType from './ContextType';
+
 const CreateContext = () => {
   return <span>React.createContext</span>;
 }
