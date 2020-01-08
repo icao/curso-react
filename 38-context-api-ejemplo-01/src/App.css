@@ -32,6 +32,13 @@ BEM:  Bloque - Elemento - Modificador
   padding: 2em;
 }
 
+@media screen and (max-width: 769px) {
+  .grandpa{
+  width: 90%;
+ }
+}
+
+
 .father{
   width: 100%;
   height: auto;
@@ -48,6 +55,11 @@ BEM:  Bloque - Elemento - Modificador
 
 .italic{
   font-style: italic;
+  margin: 0.5em
+}
+
+h2{
+  margin-bottom: 0.5em;
 }
 /*Elemento*/
 

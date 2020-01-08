@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
 
+// 1.- CREAMO EL CONTEXTO
 const AppContext = React.createContext({
   usuarios: [],
   titulo: "titulo default"
 });
 
+//2.- PROVEEMOS LAS PROPIEDADES MEDIANTE EL COMPONENTE PROVIDER QUE EXTIENDE DEL OBJETO CONTEXT
 class App extends Component {
   render() {
     return (
@@ -52,6 +54,7 @@ class Test extends Component {
   }
 }
 
+//3.- NOS SUSCRIBIMOS AL CONTEXTO POR MEDIO DEL COMPONENTE CONSUMER, Y ACCEDEMOS A LOS DATOS
 class Lista extends Component {
   render() {
     return (
@@ -64,13 +67,13 @@ class Lista extends Component {
         </h2>
         <p className="italic">Suscripción al Provider con el Consumer</p>
         <AppContext.Consumer>
-          {value => {
+          {value => { //La funsión dentro del consumer nos permite accesar a toda las propiedades del contexto
             return (
-              <ul>
-                {value.usuarios.map(usuario => (
-                  <li>{usuario}</li>
+              <ol>
+                {value.usuarios.map((usuario, index) => (
+                  <li key={index}>{usuario}</li>
                 ))}
-              </ul>
+              </ol>
             );
           }}
         </AppContext.Consumer>
@@ -78,5 +81,3 @@ class Lista extends Component {
     );
   }
 }
-
-// export default Lista;
