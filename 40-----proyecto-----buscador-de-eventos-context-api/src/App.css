@@ -5,6 +5,15 @@ BEM:  Bloque - Elemento - Modificador
 /*Variables*/
 :root {
   --black-color: #1a1b2d;
+  --primary-color: #1C58F6;
+  --evently-thin-color: #356bf8;
+  --secondary-color: #ff007a;
+  --vamtam-accent-color-2: #f20487;
+  --vamtam-accent-color-1: #3813c2;
+  --evently-accent-color-2: #ee0034;
+  --evently-accent-color-3: #25258e;
+  --gray-color: #43434d;
+  --white-color: #ffffff;
 }
 
 * {
