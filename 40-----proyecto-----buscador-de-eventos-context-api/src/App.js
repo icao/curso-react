@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './App.css';
+import Header from './components/Header'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Proyecto de buscador de eventos</h1>
-    </div>
+    <Fragment>
+      <header className="container__header">
+        <Header />
+      </header>
+    </Fragment>
   );
 }
 

@@ -1,11 +1,11 @@
 /*
 BEM:  Bloque - Elemento - Modificador
 */
- 
+
 /*Variables*/
 :root {
   --black-color: #1a1b2d;
-  --primary-color: #1C58F6;
+  --primary-color: #1c58f6;
   --evently-thin-color: #356bf8;
   --secondary-color: #ff007a;
   --vamtam-accent-color-2: #f20487;
@@ -20,10 +20,101 @@ BEM:  Bloque - Elemento - Modificador
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: .5s;
+  transition: 0.5s;
+  /* animation-name: fadeIn; */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+}
+
+.container.is-fluid {
+  max-width: none;
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 100%;
+}
+
+/*MEDIA QUERyS SIZES*/
+@media screen and (min-width: 769px) {
+  .container {
+    /* background-color: #c42fff; */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+    /* background-color: #adff2f; */
+  }
+}
+
+@media screen and (min-width: 1216px) {
+  .container {
+    max-width: 1152px;
+    /* background-color: #ff0000; */
+  }
+}
+
+@media screen and (min-width: 1408px) {
+  .container {
+    max-width: 1344px;
+    /* background-color: #ffff00; */
+  }
+}
+
+@media screen and (min-width: 1820px) {
+  .container {
+    max-width: 1600px;
+    /* background-color: #2041ff; */
+  }
 }
 
 /*Bloque*/
+.container__header {
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: plum;
+  box-sizing: border-box;
+}
+
+.logo__container {
+  background-color: pink;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.image__logo {
+  /* width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  vertical-align: middle; */
+  width: auto;
+  max-width: 100%;
+  /* height: 46px; */
+  height: calc(37px + 1vmin);
+  object-fit: cover;
+  vertical-align: middle;
+}
 
 /*Elemento*/
 
