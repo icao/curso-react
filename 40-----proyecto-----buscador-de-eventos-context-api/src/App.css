@@ -116,6 +116,36 @@ BEM:  Bloque - Elemento - Modificador
   vertical-align: middle;
 }
 
+.container__hero__banner{
+
+}
+.hero__banner{
+  width: 100%;
+  height: 500px;
+  background-color: gray;
+  padding: 100px 50px;
+  background-image: url("https://wellexpo.qodeinteractive.com/wp-content/uploads/2018/07/main-slider-background-2.jpg");
+  position: relative;
+  z-index: -1;
+}
+.hero__banner .container{
+  z-index: 2;
+  color: var(--white-color);
+}
+.hero__banner::after{
+  display: block;
+  position: absolute;
+  content: " ";
+  width: inherit;
+  height: inherit;
+  background-color: var(--vamtam-accent-color-1);
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+  z-index: 1;
+
+}
+
 /*Elemento*/
 
 /*Modificador*/
