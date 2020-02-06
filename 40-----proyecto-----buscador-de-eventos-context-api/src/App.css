@@ -226,14 +226,16 @@ select.placeholder {
   text-transform: capitalize;
 }
 
-/* .form__select option{
+.form__select option{
+  width: inherit;
+  height: 58px;
   font-family: var(--font-montserrat);
   font-weight: 700;
   color: var(--gray-thin-color);
   font-size: 25px;
   padding: 0 20px;
   text-transform: capitalize;
-} */
+}
 
 .form__select:hover, .form__select:focus{
   border: 1px solid var(--vamtam-accent-color-1);
