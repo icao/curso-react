@@ -2,6 +2,9 @@
 BEM:  Bloque - Elemento - Modificador
 */
 
+/* Imports */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900&display=swap');
+
 /*Variables*/
 :root {
   --black-color: #1a1b2d;
@@ -13,7 +16,9 @@ BEM:  Bloque - Elemento - Modificador
   --evently-accent-color-2: #ee0034;
   --evently-accent-color-3: #25258e;
   --gray-color: #43434d;
+  --gray-thin-color: #D8D8D8;
   --white-color: #ffffff;
+  --font-montserrat: 'Montserrat', sans-serif;
 }
 
 * {
@@ -22,6 +27,7 @@ BEM:  Bloque - Elemento - Modificador
   box-sizing: border-box;
   transition: 0.5s;
   /* animation-name: fadeIn; */
+  outline: none;
 }
 
 @keyframes fadeIn {
@@ -89,12 +95,14 @@ BEM:  Bloque - Elemento - Modificador
 .header {
   width: 100%;
   height: 100px;
-  background-color: plum;
+  /* background-color: plum; */
   box-sizing: border-box;
+  position: absolute;
+  z-index: 100;
 }
 
 .logo__container {
-  background-color: pink;
+  /* background-color: pink; */
   width: 100%;
   height: 100px;
   display: flex;
@@ -103,14 +111,8 @@ BEM:  Bloque - Elemento - Modificador
 }
 
 .image__logo {
-  /* width: 100%;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  vertical-align: middle; */
   width: auto;
   max-width: 100%;
-  /* height: 46px; */
   height: calc(37px + 1vmin);
   object-fit: cover;
   vertical-align: middle;
@@ -121,17 +123,17 @@ BEM:  Bloque - Elemento - Modificador
 }
 .hero__banner{
   width: 100%;
-  height: 500px;
-  background-color: gray;
-  padding: 100px 50px;
+  height: 400px;
+  background-color: white;
+  padding: 50px 0;
   background-image: url("https://wellexpo.qodeinteractive.com/wp-content/uploads/2018/07/main-slider-background-2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
-  z-index: -1;
+  z-index: 1;
 }
-.hero__banner .container{
-  z-index: 2;
-  color: var(--white-color);
-}
+
 .hero__banner::after{
   display: block;
   position: absolute;
@@ -142,10 +144,114 @@ BEM:  Bloque - Elemento - Modificador
   top: 0;
   left: 0;
   opacity: 0.6;
-  z-index: 1;
 
+}
+.hero__banner__layer__content{
+  /* background-color: pink; */
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.hero__banner__title{
+  color: var(--white-color);
+  font-family: var(--font-montserrat);
+  font-size: 50px;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+
+.container__form{
+  width: 100%;
+  height: auto;
+  /* background-color: paleturquoise; */
+  display: flex;
+  justify-content: center;
+}
+
+.container__form > *{
+  margin: 0 8px;
+  width: 100%;
+  max-width: 398px;
 }
 
 /*Elemento*/
+.flex__center{
+  /* border: 2px solid blueviolet; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form__input{
+  border: 1px solid var(--gray-thin-color);
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  color: var(--gray-color);
+  font-size: 25px;
+  padding: 0 20px;
+  text-transform: capitalize;
+}
+
+.form__input::placeholder{
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  color: var(--gray-thin-color);
+  font-size: 25px;
+  /* padding: 0 20px; */
+  text-transform: capitalize;
+}
+
+.form__input:hover, .form__input:focus{
+  border: 1px solid var(--vamtam-accent-color-1);
+}
+
+select.placeholder {  
+  color: #999;
+}
+
+.form__select{
+  border: 1px solid var(--gray-thin-color);
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  color: var(--gray-color);
+  font-size: 25px;
+  padding: 0 20px;
+  text-transform: capitalize;
+}
+
+/* .form__select option{
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  color: var(--gray-thin-color);
+  font-size: 25px;
+  padding: 0 20px;
+  text-transform: capitalize;
+} */
+
+.form__select:hover, .form__select:focus{
+  border: 1px solid var(--vamtam-accent-color-1);
+}
+
+.button{
+  /* box-shadow: none; */
+  border: 1px solid var(--evently-thin-color);
+  background-color: var(--evently-thin-color);
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white-color);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-align: center;
+  
+  padding: 20px 0;
+}
 
 /*Modificador*/

@@ -1,7 +1,8 @@
-import React, {Fragment} from 'react';
-import './App.css';
-import Header from './components/Header'
-import HeroBanner from './components/HeroBanner'
+import React, { Fragment } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import HeroBanner from "./components/HeroBanner";
+import Form from "./components/Form";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       </header>
       <section className="container__hero__banner">
         <HeroBanner>
-          <h1>¿Qué estás buscando?</h1>
+          <Form />
         </HeroBanner>
       </section>
     </Fragment>
