@@ -10,6 +10,9 @@ export const AppContext = React.createContext({
   categories: []
 })
 class App extends Component {
+  state = {
+    categories: []
+  }
   componentDidMount() {
     // hacer peticion al servicio para obtener las categorias
     // una vez obtenida las categorias, enviar al estado
@@ -20,19 +23,27 @@ class App extends Component {
     const options = {
       headers: {'Authorization': 'Bearer L55VEZFPSOTQKDJLRYJG'}
     }
-    axios("https://www.eventbriteapi.com/v3/categories/?locale=es_ES", options).then(res => {
-      console.log(
-        "RESPONSE: ",
-        res.data.categories.map(cat => cat.name_localized)
-      );
-    })
+    axios("https://www.eventbriteapi.com/v3/categories/?locale=es_ES", options)
+      .then(res => {
+        console.log(
+          "RESPONSE: ",
+          res.data.categories.map(cat => cat.name_localized)
+        );
+        this.setState({
+          categories: res.data.categories
+        });
+      })
+      .then(
+        
+    )
   }
 
   render() {
+    const categories = this.state
     return (
       <Fragment>
         {/* una vez obtenido las categorias, pasarlo como value al provider */}
-        <AppContext.Provider> 
+        <AppContext.Provider value={categories}> 
           <header className="container__header">
             <Header />
           </header>
