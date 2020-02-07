@@ -118,6 +118,12 @@ BEM:  Bloque - Elemento - Modificador
   vertical-align: middle;
 }
 
+@media screen and (max-width: 769px) {
+  .image__logo {
+    height: calc(28px + 1vmin);
+  }
+}
+
 .container__hero__banner {
 }
 .hero__banner {
@@ -125,7 +131,7 @@ BEM:  Bloque - Elemento - Modificador
   height: 400px;
   background-color: white;
   padding: 50px 0;
-  background-image: url("https://wellexpo.qodeinteractive.com/wp-content/uploads/2018/07/main-slider-background-2.jpg");
+  /* background-image: url("https://wellexpo.qodeinteractive.com/wp-content/uploads/2018/07/main-slider-background-2.jpg"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -145,10 +151,10 @@ BEM:  Bloque - Elemento - Modificador
   content: " ";
   width: inherit;
   height: inherit;
-  background-color: var(--vamtam-accent-color-1);
+  /* background-color: var(--vamtam-accent-color-1); */
   top: 0;
   left: 0;
-  opacity: 0.6;
+  /* opacity: 0.6; */
 }
 
 .hero__banner__layer__content {
@@ -167,7 +173,7 @@ BEM:  Bloque - Elemento - Modificador
 }
 
 .hero__banner__title {
-  color: var(--white-color);
+  /* color: var(--white-color); */
   font-family: var(--font-montserrat);
   font-size: calc(40px + 1vmin);
   margin-top: 30px;
