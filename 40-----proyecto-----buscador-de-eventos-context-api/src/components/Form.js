@@ -1,15 +1,39 @@
-import React, { Component} from 'react';
+import React, { Component } from "react";
 
 class Form extends Component {
-  state = {  }
-  render() { 
+  state = {
+    inputValue: "",
+    selectValue: ""
+  };
+
+  handleChange = e => {
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
+  render() {
     return (
       <form className="container__form">
-        <input type="text" className="form__input" placeholder="evento" />      
-        <select className="form__select">
-          <option >
-            Selecciona una categoria
-          </option>
+        <input
+          className="form__input"
+          placeholder="evento"
+          type="text"
+          name="inputValue"
+          value={this.state.inputValue}
+          onChange={this.handleChange}
+        />
+        <select
+          className="form__select"
+          name="selectValue"
+          value={this.setState.selectValue}
+          onChange={this.handleChange}
+        >
+          <option>Selecciona una categoria</option>
           <option value="grapefruit">Grapefruit</option>
           <option value="lime">Lime</option>
           <option value="coconut">Coconut</option>
@@ -20,5 +44,5 @@ class Form extends Component {
     );
   }
 }
- 
+
 export default Form;
