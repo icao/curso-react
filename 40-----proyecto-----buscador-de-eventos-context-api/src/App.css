@@ -3,7 +3,7 @@ BEM:  Bloque - Elemento - Modificador
 */
 
 /* Imports */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900&display=swap");
 
 /*Variables*/
 :root {
@@ -16,9 +16,9 @@ BEM:  Bloque - Elemento - Modificador
   --evently-accent-color-2: #ee0034;
   --evently-accent-color-3: #25258e;
   --gray-color: #43434d;
-  --gray-thin-color: #D8D8D8;
+  --gray-thin-color: #d8d8d8;
   --white-color: #ffffff;
-  --font-montserrat: 'Montserrat', sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
 }
 
 * {
@@ -118,10 +118,9 @@ BEM:  Bloque - Elemento - Modificador
   vertical-align: middle;
 }
 
-.container__hero__banner{
-
+.container__hero__banner {
 }
-.hero__banner{
+.hero__banner {
   width: 100%;
   height: 400px;
   background-color: white;
@@ -134,7 +133,13 @@ BEM:  Bloque - Elemento - Modificador
   z-index: 1;
 }
 
-.hero__banner::after{
+@media screen and (max-width: 769px) {
+  .hero__banner {
+    height: 370px;
+  }
+}
+
+.hero__banner::after {
   display: block;
   position: absolute;
   content: " ";
@@ -144,10 +149,9 @@ BEM:  Bloque - Elemento - Modificador
   top: 0;
   left: 0;
   opacity: 0.6;
-
 }
-.hero__banner__layer__content{
-  /* background-color: pink; */
+
+.hero__banner__layer__content {
   width: 100%;
   height: 400px;
   position: absolute;
@@ -156,31 +160,61 @@ BEM:  Bloque - Elemento - Modificador
   z-index: 2;
 }
 
-.hero__banner__title{
+@media screen and (max-width: 769px) {
+  .hero__banner__layer__content {
+    height: 370px;
+  }
+}
+
+.hero__banner__title {
   color: var(--white-color);
   font-family: var(--font-montserrat);
-  font-size: 50px;
+  font-size: calc(40px + 1vmin);
   margin-top: 30px;
   margin-bottom: 80px;
+  text-align: center;
 }
 
-.container__form{
+@media screen and (max-width: 769px) {
+  .hero__banner__title {
+    font-size: calc(27px + 1vmin);
+    margin-top: 95px;
+    margin-bottom: 20px;
+  }
+}
+
+.container__form {
   width: 100%;
-  height: auto;
-  /* background-color: paleturquoise; */
+  height: 58px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.container__form > *{
+.container__form > * {
   margin: 0 8px;
-  width: 100%;
+  height: 58px;
+  width: 30%;
   max-width: 398px;
 }
 
+@media screen and (max-width: 769px) {
+  .container__form {
+    height: auto;
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .container__form > * {
+    margin-bottom: 8px;
+    height: 50px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 /*Elemento*/
-.flex__center{
-  /* border: 2px solid blueviolet; */
+.flex__center {
   width: 100%;
   height: 100%;
   display: flex;
@@ -189,7 +223,7 @@ BEM:  Bloque - Elemento - Modificador
   flex-direction: column;
 }
 
-.form__input{
+.form__input {
   border: 1px solid var(--gray-thin-color);
   font-family: var(--font-montserrat);
   font-weight: 700;
@@ -199,24 +233,24 @@ BEM:  Bloque - Elemento - Modificador
   text-transform: capitalize;
 }
 
-.form__input::placeholder{
+.form__input::placeholder {
   font-family: var(--font-montserrat);
   font-weight: 700;
   color: var(--gray-thin-color);
   font-size: 25px;
-  /* padding: 0 20px; */
   text-transform: capitalize;
 }
 
-.form__input:hover, .form__input:focus{
+.form__input:hover,
+.form__input:focus {
   border: 1px solid var(--vamtam-accent-color-1);
 }
 
-select.placeholder {  
+select.placeholder {
   color: #999;
 }
 
-.form__select{
+.form__select {
   border: 1px solid var(--gray-thin-color);
   font-family: var(--font-montserrat);
   font-weight: 700;
@@ -226,22 +260,17 @@ select.placeholder {
   text-transform: capitalize;
 }
 
-.form__select option{
-  width: inherit;
-  height: 58px;
-  font-family: var(--font-montserrat);
+.form__select option {
   font-weight: 700;
-  color: var(--gray-thin-color);
-  font-size: 25px;
-  padding: 0 20px;
   text-transform: capitalize;
 }
 
-.form__select:hover, .form__select:focus{
+.form__select:hover,
+.form__select:focus {
   border: 1px solid var(--vamtam-accent-color-1);
 }
 
-.button{
+.button {
   /* box-shadow: none; */
   border: 1px solid var(--evently-thin-color);
   background-color: var(--evently-thin-color);
@@ -252,8 +281,14 @@ select.placeholder {
   letter-spacing: 0;
   text-transform: uppercase;
   text-align: center;
-  
+
   padding: 20px 0;
+  box-sizing: border-box;
 }
 
+@media screen and (max-width: 769px) {
+  .button {
+    padding: 10px 0;
+  }
+}
 /*Modificador*/
