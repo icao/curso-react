@@ -5,9 +5,12 @@ import Header from "./components/Header";
 import HeroBanner from "./components/HeroBanner";
 import Form from "./components/Form";
 
-
 export const AppContext = React.createContext({
   categories: []
+})
+
+export const SearchContext = React.createContext({
+  getEvents: () => {}
 })
 class App extends Component {
   state = {
@@ -20,7 +23,7 @@ class App extends Component {
   }
 
   getCategories() {
-    const options = {
+    let options = {
       headers: {'Authorization': 'Bearer L55VEZFPSOTQKDJLRYJG'}
     }
     axios("https://www.eventbriteapi.com/v3/categories/?locale=es_ES", options)
@@ -33,25 +36,32 @@ class App extends Component {
           categories: res.data.categories
         });
       })
-      .then(
-        
-    )
+  }
+
+  getEvents(e) {
+    // e.preventDefault()
+    let options = {
+      headers: { Authorization: "Bearer L55VEZFPSOTQKDJLRYJG" }
+    }
+    console.log("obteniendo los eventos", e);
+    // axios("url", options)
   }
 
   render() {
-    const categories = this.state
+    // const categories = this.state
     return (
       <Fragment>
-        {/* una vez obtenido las categorias, pasarlo como value al provider */}
-        <AppContext.Provider value={categories}> 
-          <header className="container__header">
-            <Header />
-          </header>
-          <section className="container__hero__banner">
-            <HeroBanner>
-              <Form />
-            </HeroBanner>
-          </section>
+        <AppContext.Provider value={this.state.categories}>
+          <SearchContext.Provider value={this.getEvents}>
+            <header className="container__header">
+              <Header />
+            </header>
+            <section className="container__hero__banner">
+              <HeroBanner>
+                <Form />
+              </HeroBanner>
+            </section>
+          </SearchContext.Provider>
         </AppContext.Provider>
       </Fragment>
     );
