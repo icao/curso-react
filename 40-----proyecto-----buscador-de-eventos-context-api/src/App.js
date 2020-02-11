@@ -49,9 +49,9 @@ class App extends Component {
   }
 
   getEvents = (inputQuery, inputCategory) => {
-    console.log(`Buscar ${inputQuery} en ${inputCategory}`);
+    console.log(`Buscar ${inputQuery.trim()} en ${inputCategory}`);
     let key = "15213903-aeaa964c328dd346aacbb7cfb";
-    let url = `https://pixabay.com/api/?key=${key}&q=${inputQuery}&image_type=${inputCategory}`;
+    let url = `https://pixabay.com/api/?key=${key}&q=${inputQuery.trim()}&image_type=${inputCategory}`;
     axios(url).then(res => {
       console.log("RESPUESTA: ", res.data.hits);
       let results = res.data.hits;
