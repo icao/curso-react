@@ -131,7 +131,7 @@ BEM:  Bloque - Elemento - Modificador
   height: 400px;
   background-color: white;
   padding: 50px 0;
-  /* background-image: url("https://wellexpo.qodeinteractive.com/wp-content/uploads/2018/07/main-slider-background-2.jpg"); */
+  /* background-image: url("./images/all_images.jpg"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -152,9 +152,10 @@ BEM:  Bloque - Elemento - Modificador
   width: inherit;
   height: inherit;
   /* background-color: var(--vamtam-accent-color-1); */
+  /* background-color: var(--black-color); */
   top: 0;
   left: 0;
-  /* opacity: 0.6; */
+  opacity: 0.5;
 }
 
 .hero__banner__layer__content {

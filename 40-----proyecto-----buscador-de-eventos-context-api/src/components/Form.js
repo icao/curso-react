@@ -3,8 +3,8 @@ import { AppContext, SearchContext } from "../App";
 
 class Form extends Component {
   state = {
-    inputValue: "",
-    selectValue: ""
+    inputQuery: "",
+    inputCategory: ""
   };
 
   handleChange = e => {
@@ -27,29 +27,30 @@ class Form extends Component {
                 className="container__form"
                 onSubmit={e => {
                   e.preventDefault();
-                  event(this.state);
+                  let {inputQuery, inputCategory} = this.state
+                  event(inputQuery, inputCategory);
                 }}
               >
                 <input
                   className="form__input"
-                  placeholder="evento"
+                  placeholder="busca una imágen"
                   type="text"
-                  name="inputValue"
-                  value={this.state.inputValue}
+                  name="inputQuery"
+                  value={this.state.inputQuery}
                   onChange={this.handleChange}
                 />
                 {
                   <select
                     className="form__select"
-                    name="selectValue"
-                    value={this.setState.selectValue}
+                    name="inputCategory"
+                    value={this.setState.inputCategory}
                     onChange={this.handleChange}
                   >
                     <option>Selecciona una categoria</option>
-                    {value.map(valor => {
+                    {value.map((valor,index) => {
                       return (
-                        <option value={valor.id} key={valor.id}>
-                          {valor.name_localized}
+                        <option value={valor.image_type} key={index}>
+                          {valor.name_value}
                         </option>
                       );
                     })}

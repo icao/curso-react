@@ -1,51 +1,65 @@
 import React, { Component, Fragment } from "react";
-import axios from 'axios'
+import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
 import HeroBanner from "./components/HeroBanner";
 import Form from "./components/Form";
+import AllImages from "./images/all_images.jpg";
 
 export const AppContext = React.createContext({
   categories: []
-})
+});
 
 export const SearchContext = React.createContext({
   getEvents: () => {}
-})
+});
 class App extends Component {
   state = {
-    categories: []
-  }
+    categories: [],
+    results: []
+  };
   componentDidMount() {
-    // hacer peticion al servicio para obtener las categorias
-    // una vez obtenida las categorias, enviar al estado
-    this.getCategories()
+    this.getCategories();
   }
 
   getCategories() {
-    let options = {
-      headers: {'Authorization': 'Bearer L55VEZFPSOTQKDJLRYJG'}
-    }
-    axios("https://www.eventbriteapi.com/v3/categories/?locale=es_ES", options)
-      .then(res => {
-        console.log(
-          "RESPONSE: ",
-          res.data.categories.map(cat => cat.name_localized)
-        );
-        this.setState({
-          categories: res.data.categories
-        });
-      })
+    let categories = [
+      {
+        image_type: "all",
+        name_value: "todo",
+        image: AllImages
+      },
+      {
+        image_type: "photo",
+        name_value: "foto"
+      },
+      {
+        image_type: "illustration",
+        name_value: "ilustración"
+      },
+      {
+        image_type: "vector",
+        name_value: "vector"
+      }
+    ];
+
+    this.setState({
+      categories
+    });
   }
 
-  getEvents(e) {
-    // e.preventDefault()
-    let options = {
-      headers: { Authorization: "Bearer L55VEZFPSOTQKDJLRYJG" }
-    }
-    console.log("obteniendo los eventos", e);
-    // axios("url", options)
-  }
+  getEvents = (inputQuery, inputCategory) => {
+    console.log(`Buscar ${inputQuery} en ${inputCategory}`);
+    let key = "15213903-aeaa964c328dd346aacbb7cfb";
+    let url = `https://pixabay.com/api/?key=${key}&q=${inputQuery}&image_type=${inputCategory}`;
+    axios(url).then(res => {
+      console.log("RESPUESTA: ", res.data.hits);
+      let results = res.data.hits;
+      this.setState({
+        results
+      });
+    });
+  };
 
   render() {
     // const categories = this.state
