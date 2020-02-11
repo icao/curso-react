@@ -27,7 +27,8 @@ class Form extends Component {
                 className="container__form"
                 onSubmit={e => {
                   e.preventDefault();
-                  let {inputQuery, inputCategory} = this.state
+                  let { inputQuery, inputCategory } = this.state
+                  // if (inputQuery ==)
                   event(inputQuery, inputCategory);
                 }}
               >
@@ -35,6 +36,7 @@ class Form extends Component {
                   className="form__input"
                   placeholder="busca una imágen"
                   type="text"
+                  required
                   name="inputQuery"
                   value={this.state.inputQuery}
                   onChange={this.handleChange}
@@ -42,11 +44,12 @@ class Form extends Component {
                 {
                   <select
                     className="form__select"
+                    required
                     name="inputCategory"
                     value={this.setState.inputCategory}
                     onChange={this.handleChange}
                   >
-                    <option>Selecciona una categoria</option>
+                    <option value="">Selecciona una categoria</option>
                     {value.map((valor,index) => {
                       return (
                         <option value={valor.image_type} key={index}>
