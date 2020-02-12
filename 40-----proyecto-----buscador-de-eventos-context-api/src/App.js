@@ -7,12 +7,13 @@ import Form from "./components/Form";
 import AllImages from "./images/all_images.jpg";
 import ListImages from './components/ListImages'
 
-export const AppContext = React.createContext({
+export const CategoryContext = React.createContext({
   categories: []
 });
 
 export const SearchContext = React.createContext({
-  getEvents: () => {}
+  getEvents: () => { },
+  results: []
 });
 class App extends Component {
   state = {
@@ -67,7 +68,17 @@ class App extends Component {
 
   showResults = () => {
     return this.state.results.length === 0 ? (
-      <h2>Lo sentimos :( Intenta con otra busqueda</h2>
+      <div className="container flex__center">
+        <p className="text--center">
+          Lo sentimos, no se encontraron resultados.
+          <span role="img" aria-label="jsx-a11y/aria-proptypes">
+            {" "}
+            😥
+          </span>
+          <br />
+          Intenta con otra busqueda.
+        </p>
+      </div>
     ) : (
       <ListImages />
     );
@@ -78,7 +89,7 @@ class App extends Component {
     const { categories, results, useSearch } = this.state;
     return (
       <Fragment>
-        <AppContext.Provider value={categories}>
+        <CategoryContext.Provider value={categories}>
           <SearchContext.Provider value={this.getEvents}>
             <header className="container__header">
               <Header />
@@ -92,14 +103,19 @@ class App extends Component {
               {useSearch ? (
                 this.showResults()
               ) : (
-                <h2>
-                  Nuestro banco de imágenes tiene más de 1.599228 millones de
-                  imágenes gracias a PIXABAY. Usa el buscador para encontrar tu favorita.
-                </h2>
+                <div className="container">
+                  <p className="text--center">
+                    Nuestro banco de imágenes tiene más de 1.599228 millones de
+                    imágenes gracias a <strong>PIXABAY</strong>.
+                  </p>
+                  <p className="text--center">
+                    Usa el buscador para encontrar tu favorita.
+                  </p>
+                </div>
               )}
             </section>
           </SearchContext.Provider>
-        </AppContext.Provider>
+        </CategoryContext.Provider>
       </Fragment>
     );
   }

@@ -25,6 +25,7 @@ BEM:  Bloque - Elemento - Modificador
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-montserrat);
   transition: 0.5s;
   /* animation-name: fadeIn; */
   outline: none;
@@ -223,7 +224,7 @@ BEM:  Bloque - Elemento - Modificador
 .container__results{
   width: 100%;
   height: auto;
-  background-color: powderblue;
+  /* background-color: powderblue; */
   padding: 2em;
 }
 
@@ -306,3 +307,6 @@ select.placeholder {
   }
 }
 /*Modificador*/
+.text--center{
+  text-align: center;
+}

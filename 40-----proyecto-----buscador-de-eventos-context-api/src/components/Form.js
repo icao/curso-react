@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AppContext, SearchContext } from "../App";
+import { CategoryContext, SearchContext } from "../App";
 
 class Form extends Component {
   state = {
@@ -19,7 +19,7 @@ class Form extends Component {
 
   render() {
     return (
-      <AppContext.Consumer>
+      <CategoryContext.Consumer>
         {value => (
           <SearchContext.Consumer>
             {event => (
@@ -63,7 +63,7 @@ class Form extends Component {
             )}
           </SearchContext.Consumer>
         )}
-      </AppContext.Consumer>
+      </CategoryContext.Consumer>
     );
   }
 }
