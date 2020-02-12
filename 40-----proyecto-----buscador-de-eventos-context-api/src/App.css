@@ -220,6 +220,13 @@ BEM:  Bloque - Elemento - Modificador
   }
 }
 
+.container__results{
+  width: 100%;
+  height: auto;
+  background-color: powderblue;
+  padding: 2em;
+}
+
 /*Elemento*/
 .flex__center {
   width: 100%;

@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import HeroBanner from "./components/HeroBanner";
 import Form from "./components/Form";
 import AllImages from "./images/all_images.jpg";
+import ListImages from './components/ListImages'
 
 export const AppContext = React.createContext({
   categories: []
@@ -16,7 +17,8 @@ export const SearchContext = React.createContext({
 class App extends Component {
   state = {
     categories: [],
-    results: []
+    results: [],
+    useSearch: false
   };
   componentDidMount() {
     this.getCategories();
@@ -42,9 +44,10 @@ class App extends Component {
         name_value: "vector"
       }
     ];
-
     this.setState({
       categories
+    }, () => {
+        console.log("ACTUALIZANDO CATALOGO");
     });
   }
 
@@ -56,16 +59,26 @@ class App extends Component {
       console.log("RESPUESTA: ", res.data.hits);
       let results = res.data.hits;
       this.setState({
-        results
+        results,
+        useSearch: true
       });
     });
   };
 
+  showResults = () => {
+    return this.state.results.length === 0 ? (
+      <h2>Lo sentimos :( Intenta con otra busqueda</h2>
+    ) : (
+      <ListImages />
+    );
+    
+  }
+ 
   render() {
-    // const categories = this.state
+    const { categories, results, useSearch } = this.state;
     return (
       <Fragment>
-        <AppContext.Provider value={this.state.categories}>
+        <AppContext.Provider value={categories}>
           <SearchContext.Provider value={this.getEvents}>
             <header className="container__header">
               <Header />
@@ -74,6 +87,16 @@ class App extends Component {
               <HeroBanner>
                 <Form />
               </HeroBanner>
+            </section>
+            <section className="container__results">
+              {useSearch ? (
+                this.showResults()
+              ) : (
+                <h2>
+                  Nuestro banco de imágenes tiene más de 1.599228 millones de
+                  imágenes gracias a PIXABAY. Usa el buscador para encontrar tu favorita.
+                </h2>
+              )}
             </section>
           </SearchContext.Provider>
         </AppContext.Provider>

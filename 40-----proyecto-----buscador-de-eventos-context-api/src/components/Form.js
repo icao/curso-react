@@ -27,8 +27,7 @@ class Form extends Component {
                 className="container__form"
                 onSubmit={e => {
                   e.preventDefault();
-                  let { inputQuery, inputCategory } = this.state
-                  // if (inputQuery ==)
+                  let { inputQuery, inputCategory } = this.state;
                   event(inputQuery, inputCategory);
                 }}
               >
