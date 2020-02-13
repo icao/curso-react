@@ -1,4 +1,4 @@
-const API_KEY = "cd9a23d2fd294db681e28e3ff94c290b";
+const API_KEY = "20514652831b4fbd99ba5764446575ec";
 
 export const getNews = (category = "general", country) => {
   const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`;
