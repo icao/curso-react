@@ -22,13 +22,13 @@ class Form extends Component {
       <CategoryContext.Consumer>
         {value => (
           <SearchContext.Consumer>
-            {event => (
+            {({getEvents}) => (
               <form
                 className="container__form"
                 onSubmit={e => {
                   e.preventDefault();
                   let { inputQuery, inputCategory } = this.state;
-                  event(inputQuery, inputCategory);
+                  getEvents(inputQuery, inputCategory);
                 }}
               >
                 <input
