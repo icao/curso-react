@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class CardImage extends Component {
-
   resize() {
     const grid = document.querySelector(".grid");
 
@@ -45,20 +44,14 @@ class CardImage extends Component {
     return (
       <div className="card__container">
         <a href={pageURL} target="_blank" rel="noopener noreferrer">
-          {/* <a target="_blank" rel="noopener noreferrer"> */}
           <div className="card__image__container">
             <img
               className="card__image"
               src={webformatURL}
               alt="imagen de la noticia"
-              // onError={this.addDefaultImage}
               onLoad={this.launchResize}
-              // resize={this.launchResize}
             />
           </div>
-          {/* <div className="card__text__container">
-            <p>ver imagen</p>
-          </div> */}
         </a>
       </div>
     );

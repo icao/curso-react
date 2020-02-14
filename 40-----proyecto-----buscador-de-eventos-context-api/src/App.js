@@ -4,12 +4,10 @@ import "./App.css";
 import Header from "./components/Header";
 import HeroBanner from "./components/HeroBanner";
 import Form from "./components/Form";
-import AllImages from "./images/all_images.jpg";
 import ListImages from './components/ListImages'
+import { CategoryContextProvider } from './context/CategoryContext'
 
-export const CategoryContext = React.createContext({
-  categories: []
-});
+
 
 export const SearchContext = React.createContext({
   getEvents: () => { },
@@ -17,45 +15,14 @@ export const SearchContext = React.createContext({
 });
 class App extends Component {
   state = {
-    categories: [],
     results: [],
     useSearch: false
   };
-  componentDidMount() {
-    this.getCategories();
-  }
-
-  getCategories() {
-    let categories = [
-      {
-        image_type: "all",
-        name_value: "todo",
-        image: AllImages
-      },
-      {
-        image_type: "photo",
-        name_value: "foto"
-      },
-      {
-        image_type: "illustration",
-        name_value: "ilustración"
-      },
-      {
-        image_type: "vector",
-        name_value: "vector"
-      }
-    ];
-    this.setState({
-      categories
-    });
-  }
-
+ 
   getEvents = (inputQuery, inputCategory) => {
-    // console.log(`Buscar ${inputQuery.trim()} en ${inputCategory}`);
     let key = "15213903-aeaa964c328dd346aacbb7cfb";
     let url = `https://pixabay.com/api/?key=${key}&q=${inputQuery.trim()}&image_type=${inputCategory}`;
     axios(url).then(res => {
-      // console.log("RESPUESTA: ", res.data.hits);
       let results = res.data.hits;
       this.setState({
         results,
@@ -84,14 +51,14 @@ class App extends Component {
   }
  
   render() {
-    const { categories, results, useSearch } = this.state;
+    const { results, useSearch } = this.state;
     const value = {
       results,
       getEvents: this.getEvents
     }
     return (
       <Fragment>
-        <CategoryContext.Provider value={categories}>
+        <CategoryContextProvider>
           <SearchContext.Provider value={value}>
             <header className="container__header">
               <Header />
@@ -117,7 +84,7 @@ class App extends Component {
               )}
             </section>
           </SearchContext.Provider>
-        </CategoryContext.Provider>
+        </CategoryContextProvider>
       </Fragment>
     );
   }

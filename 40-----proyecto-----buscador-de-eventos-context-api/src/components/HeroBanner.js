@@ -7,7 +7,6 @@ import React, { Component, Fragment } from "react";
 class HeroBanner extends Component {
   state = {};
   render() {
-    // console.log('IMAGEN CARGADA:', AllImages);
     const hero__banner = {
       // backgroundImage: `URL(${AllImages})`
       // backgroundImage: `URL(${Photo})`
