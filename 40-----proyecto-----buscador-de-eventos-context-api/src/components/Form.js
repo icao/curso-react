@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import {  SearchContext } from "../App";
 import { CategoryContextConsumer } from '../context/CategoryContext'
+import { SearchContextConsumer } from "../context/SearchContext";
 
 class Form extends Component {
   state = {
@@ -22,7 +22,7 @@ class Form extends Component {
     return (
       <CategoryContextConsumer>
         {value => (
-          <SearchContext.Consumer>
+          <SearchContextConsumer>
             {({getEvents}) => (
               <form
                 className="container__form"
@@ -62,7 +62,7 @@ class Form extends Component {
                 <button className="button button__primary">Buscar</button>
               </form>
             )}
-          </SearchContext.Consumer>
+          </SearchContextConsumer>
         )}
       </CategoryContextConsumer>
     );

@@ -1,10 +1,10 @@
 import React from 'react'
-import { SearchContext } from "../App";
-import  CardImage from './CardImage'
+import {SearchContextConsumer} from "../context/SearchContext"
+import CardImage from './CardImage'
 
 const ListImages = () => {
   return (
-    <SearchContext.Consumer>
+    <SearchContextConsumer>
       {({ results }) => (
         <div className="container">
           <div className="grid">
@@ -16,7 +16,7 @@ const ListImages = () => {
           </div>
         </div>
       )}
-    </SearchContext.Consumer>
+    </SearchContextConsumer>
   );
 }
 
