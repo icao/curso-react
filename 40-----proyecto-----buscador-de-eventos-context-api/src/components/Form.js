@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CategoryContextConsumer } from '../context/CategoryContext'
+import { CategoryContextConsumer } from "../context/CategoryContext";
 import { SearchContextConsumer } from "../context/SearchContext";
 
 class Form extends Component {
@@ -23,7 +23,7 @@ class Form extends Component {
       <CategoryContextConsumer>
         {value => (
           <SearchContextConsumer>
-            {({getEvents}) => (
+            {({ getEvents }) => (
               <form
                 className="container__form"
                 onSubmit={e => {
@@ -50,7 +50,7 @@ class Form extends Component {
                     onChange={this.handleChange}
                   >
                     <option value="">Selecciona una categoria</option>
-                    {value.map((valor,index) => {
+                    {value.map((valor, index) => {
                       return (
                         <option value={valor.image_type} key={index}>
                           {valor.name_value}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ListImages from '../components/ListImages'
+import ListImages from "../components/ListImages";
 
 export const SearchContext = React.createContext({
   getEvents: () => {},
@@ -18,7 +18,6 @@ export class SearchContextProvider extends Component {
     let url = `https://pixabay.com/api/?key=${key}&q=${inputQuery.trim()}&image_type=${inputCategory}`;
     axios(url).then(res => {
       let results = res.data.hits;
-      console.log("resultadossss", results);
       this.setState({
         results,
         useSearch: true

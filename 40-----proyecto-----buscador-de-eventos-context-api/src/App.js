@@ -9,8 +9,6 @@ import ShowResults from "./components/ShowResults";
 
 class App extends Component {
   render() {
-    // const { useSearch } = this.state;
-
     return (
       <Fragment>
         <CategoryContextProvider>

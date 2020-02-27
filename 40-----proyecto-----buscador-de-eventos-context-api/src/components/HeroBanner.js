@@ -14,9 +14,7 @@ class HeroBanner extends Component {
       // backgroundImage: `URL(${Illustration})`
     };
 
-    const hero__title = {
-      
-    };
+    const hero__title = {};
 
     return (
       <Fragment>

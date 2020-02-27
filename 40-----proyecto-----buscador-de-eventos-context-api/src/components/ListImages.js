@@ -1,6 +1,6 @@
-import React from 'react'
-import {SearchContextConsumer} from "../context/SearchContext"
-import CardImage from './CardImage'
+import React from "react";
+import { SearchContextConsumer } from "../context/SearchContext";
+import CardImage from "./CardImage";
 
 const ListImages = () => {
   return (
@@ -10,7 +10,7 @@ const ListImages = () => {
           <div className="grid">
             {results.map(image => (
               <div className="item" key={image.id}>
-                <CardImage data={image}/>
+                <CardImage data={image} />
               </div>
             ))}
           </div>
@@ -18,6 +18,6 @@ const ListImages = () => {
       )}
     </SearchContextConsumer>
   );
-}
+};
 
 export default ListImages;
