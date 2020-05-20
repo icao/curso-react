@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css'
-import UseEffect from './components/use-effect/UseEffect'
+import IntroHookUseEffect from './components/intro-use-effect/IntroHookUseEffect'
 
 function App() {
   return (
     <div className='App'>
-      <UseEffect />
+      <IntroHookUseEffect />
     </div>
   )
 }
