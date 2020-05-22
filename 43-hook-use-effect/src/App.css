@@ -1,4 +1,8 @@
-.App {
+h1,
+h2,
+h3,
+h4,
+h5 {
   text-align: center;
 }
 
@@ -35,4 +39,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 0 2em;
+  box-sizing: border-box;
+}
+
+.container > * {
+  margin: 15px;
+}
+
+.column {
+  flex: 1;
+  border: 2px solid rgb(48, 48, 255);
+  box-sizing: border-box;
+  padding: 1em;
 }
