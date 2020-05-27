@@ -8,7 +8,6 @@ const EffectsWithoutCleanupHook = () => {
     // LA función que recibe el hook useEffect es nuestro efecto
     // Actualiza el título del documento(pestaña) usando la API del navegador
     document.title = `Has clikeado ${count} veces`
-    console.log(`Has clikeado ${count} veces`)
   })
   // IMPORTANTE: useEffect, se ejecuta despues de cada renderizado y despues de cada actualización
 

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import EffectsWithoutCleanupClass from '../effects-without-cleanup/EffectsWithoutCleanupClass'
 import EffectsWithoutCleanupHook from '../effects-without-cleanup/EffectsWithoutCleanupHook'
+import EffectsWithCleanupClass from '../effects-with-cleanup/EffectsWithCleanupClass'
 
 const IntroHookUseEffect = () => {
+  const [showCC, setShowCC] = useState(true)
+
   return (
     <div>
       <h1>
@@ -11,7 +14,6 @@ const IntroHookUseEffect = () => {
         </span>{' '}
         Hook useEffect
       </h1>
-      {/* TODO: Comentar para que caso equicale el componentDidMount, componentDidUpdate, componentWillUnmount */}
       <section className='container'>
         <div className='column'>
           <h2>Efecto Sin Saneamiento</h2>
@@ -37,8 +39,37 @@ const IntroHookUseEffect = () => {
         </div>
         <div className='column'>
           <h2>Efecto Con Saneamiento</h2>
+          <p>
+            En el apartado anterior hemos visto cómo expresar efectos
+            secundarios que no necesitan ningún saneamiento. Sin embargo,
+            algunos efectos lo necesitan. Por ejemplo,{' '}
+            <strong>si queremos establecer una suscripción</strong> a alguna
+            fuente de datos externa. En ese caso, ¡es importante sanear el
+            efecto para no introducir una fuga de memoria! Comparemos cómo se
+            puede hacer esto con clases y con Hooks. (Ver en el código de los
+            sig componentes)
+          </p>
+          <h3>Efecto con clases</h3>
+          {showCC && <EffectsWithCleanupClass />}
+          <button onClick={() => setShowCC(!showCC)}>
+            {showCC ? `Desmontar` : `Montar`}
+          </button>
         </div>
       </section>
+      <div className='section'>
+        <div className='container'>
+          <div className='column'>
+            <h2>Recapitulación</h2>
+          </div>
+        </div>
+      </div>
+      <div className='section'>
+        <div className='container'>
+          <div className='column'>
+            <h2>Consejos para usar efectos</h2>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

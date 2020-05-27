@@ -59,3 +59,8 @@ h5 {
   box-sizing: border-box;
   padding: 1em;
 }
+
+.card {
+  border: 2px solid palegreen;
+  padding: 0.2em 0.7em;
+}
