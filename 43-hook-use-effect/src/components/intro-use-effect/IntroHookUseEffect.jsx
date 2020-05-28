@@ -71,6 +71,36 @@ const IntroHookUseEffect = () => {
         <div className='container'>
           <div className='column'>
             <h2>Recapitulación</h2>
+            <p>
+              En los ejemplos anteriores, hemos aprendido que useEffect nos
+              permite expresar diferentes tipos de efectos secundarios despues
+              de que un componente se renderice.
+            </p>
+            <p>
+              Algunos efectos pueden devolver una función cuando requieran
+              saneamiento
+            </p>
+            <pre>
+              {`
+               useEffect(() => { // FUNCIÓN EFECTO
+
+                // Código suscripción, peticiones API, etc.
+
+                return () => { // FUNCIÓN PARA SANEAR EL EFECTO
+                  // Código removiendo la suscripción
+                };
+              })
+             `}
+            </pre>
+            <p>
+              Otros códigos pueden no tener fase de saneamiento y no devolver
+              nada
+            </p>
+            <pre>{`
+              useEffect(() => {
+                document.title = 'Example text';
+              });
+            `}</pre>
           </div>
         </div>
       </div>

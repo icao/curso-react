@@ -22,6 +22,7 @@ const EffectsWithCleanupHook = () => {
     )
     // Similar a componentWillUnmount, Especifica cómo sanear este efecto:
     return function () {
+      // Funcion que saneara nuestro efecto, se ejecuta al momento de desmontarlo
       window.removeEventListener('resize', getResize)
       console.log(
         `%c El listener resize se ha DESMONTADO, haciendo saneamiento(cleanup)`,
