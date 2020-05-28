@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import EffectsWithoutCleanupClass from '../effects-without-cleanup/EffectsWithoutCleanupClass'
 import EffectsWithoutCleanupHook from '../effects-without-cleanup/EffectsWithoutCleanupHook'
 import EffectsWithCleanupClass from '../effects-with-cleanup/EffectsWithCleanupClass'
+import EffectsWithCleanupHook from '../effects-with-cleanup/EffectsWithCleanupHook'
 
 const IntroHookUseEffect = () => {
   const [showCC, setShowCC] = useState(true)
+  const [showHC, setShowHC] = useState(true)
 
   return (
     <div>
@@ -14,6 +16,10 @@ const IntroHookUseEffect = () => {
         </span>{' '}
         Hook useEffect
       </h1>
+      <p className='text--center'>
+        El Hook de efecto te permite llevar a cabo efectos secundarios en
+        componentes funcionales
+      </p>
       <section className='container'>
         <div className='column'>
           <h2>Efecto Sin Saneamiento</h2>
@@ -53,6 +59,11 @@ const IntroHookUseEffect = () => {
           {showCC && <EffectsWithCleanupClass />}
           <button onClick={() => setShowCC(!showCC)}>
             {showCC ? `Desmontar` : `Montar`}
+          </button>
+          <h3>Efecto con hooks</h3>
+          {showHC && <EffectsWithCleanupHook />}
+          <button onClick={() => setShowHC(!showHC)}>
+            {showHC ? `Desmontar` : `Montar`}
           </button>
         </div>
       </section>

@@ -6,6 +6,10 @@ h5 {
   text-align: center;
 }
 
+.text--center {
+  text-align: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -61,6 +65,10 @@ h5 {
 }
 
 .card {
-  border: 2px solid palegreen;
+  border: 2px solid #98fb98;
+  padding: 0.2em 0.7em;
+}
+.card__hook {
+  border: 2px solid #ff46ff;
   padding: 0.2em 0.7em;
 }

@@ -8,21 +8,24 @@ class EffectsWithCleanupClass extends Component {
 
   componentDidMount() {
     console.log(
-      `El componente EffectsWithCleanupClass se ha MONTADO, suscripción eventListener Resize`
+      `%c El componente EffectsWithCleanupClass se ha MONTADO, suscripción eventListener Resize`,
+      `color: #98fb98`
     )
     window.addEventListener('resize', this.handleResize)
   }
 
   componentWillUnmount() {
-    console.log(
-      `El listener resize se ha desmontado, haciendo saneamiento(cleanup)`
-    )
     window.removeEventListener('resize', this.handleResize)
+    console.log(
+      `%c El listener resize se ha DESMONTADO, haciendo saneamiento(cleanup)`,
+      `color: #98fb98; font-weight: bold; font-size: 14px`
+    )
   }
 
   handleResize = () => {
     console.log(
-      `Window ${document.body.clientWidth}, ${document.body.clientHeight}`
+      `%c El tamaño de la ventana es de ${this.state.anchoVentana}px x ${this.state.largoVentana}px`,
+      `color: #98fb98`
     )
     this.setState({
       anchoVentana: document.body.clientWidth,
