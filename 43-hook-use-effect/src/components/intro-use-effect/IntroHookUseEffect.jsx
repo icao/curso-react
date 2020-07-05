@@ -101,6 +101,7 @@ const IntroHookUseEffect = () => {
                 document.title = 'Example text';
               });
             `}</pre>
+            <p>El Hook de efecto unifica ambos casos en una única API.</p>
           </div>
         </div>
       </div>
