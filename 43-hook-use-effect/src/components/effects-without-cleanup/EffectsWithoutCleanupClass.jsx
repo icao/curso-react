@@ -40,10 +40,9 @@ class EffectsWithoutCleanupClass extends Component {
 export default EffectsWithoutCleanupClass
 
 /*
-    Se puede observar cómo se duplica el código en los métodos dek ciclo de vida del class component.
+    Se puede observar cómo se duplica el código en los métodos del ciclo de vida del class component.
 
-    Es to es porque en muchas ocaciones queremos llevar a cabo el mismo efecto secundario sin importar si el componente acaba de montarse o si se ha actualizado.
-    Conceptualmente, queremos que ocurra después de cada renderizado, pero las clases de React NO TIENE UN MÉTODO   UE HAGA ESO .
-    POSRÍAMOS EXTRAER UN MÉTODO, PERO AÚN ASÍ TENDRÍAMOS QUE LLAMARLO EN LOS DOS SITIOS.
+    Es to es porque en muchas ocasiones queremos llevar a cabo el mismo efecto secundario sin importar si el componente acaba de montarse o si se ha actualizado.
+    Conceptualmente, queremos que ocurra después de cada renderizado, pero las clases de React NO TIENE UN MÉTODO QUE HAGA ESO PODRÍAMOS EXTRAER UN MÉTODO, PERO AÚN ASÍ TENDRÍAMOS QUE LLAMARLO EN LOS DOS SITIOS.
     En cambio con el Hook de useEffect, no pasa esto.
 */

@@ -5,7 +5,7 @@ const EffectsWithoutCleanupHook = () => {
 
   // De forma similar a componentDidMount y componentDidUpdate
   useEffect(() => {
-    // LA función que recibe el hook useEffect es nuestro efecto
+    // La función que recibe el hook useEffect es nuestro efecto
     // Actualiza el título del documento(pestaña) usando la API del navegador
     document.title = `Has clikeado ${count} veces`
   })
@@ -28,19 +28,20 @@ export default EffectsWithoutCleanupHook
 
 /**
  * Qué hace useEffect?
- * Al usar este Hook, le estamos indicando  a React que el componente tienen que hacer algo después de renderizarse. React recordará la función que le hemos pasafo(nos referimos a ella como nuestro "efecto"), y la llamará más tarde despues de actualizar el DOM. En este efecto, actualizamos el título del documento, pero tambien podríamos hacer peticiones de datos o incocar alguna API imperativa.
+ * Al usar este Hook, le estamos indicando  a React que el componente tienen que hacer algo después de renderizarse. React recordará la función que le hemos pasado(nos referimos a ella como nuestro "efecto"), y la llamará más tarde despues de actualizar el DOM. En este efecto, actualizamos el título del documento, pero tambien podríamos hacer peticiones de datos o invocar alguna API imperativa.
  */
 
 /**
- * ¿Por qué se llama a useEffect dentro dle componente?
+ * ¿Por qué se llama a useEffect dentro del componente?
  * useEffect dentro del componente nos permite acceder a la variable de estado 'count'(o cualquier tipo) directamente desde el efecto.
- * No necesitamos una API especial para acceder a ella, ya que se encuentra en el ámbito de la función . Los Hooks aprovechan los clousures de JavaScript y proporciona una solución.
+ * No necesitamos una API especial para acceder a ella, ya que se encuentra en el ámbito de la función.
+ * Los Hooks aprovechan los clousures de JavaScript y proporciona una solución.
  */
 
 /**
  * ¿Se ejecuta useEffect después de cada renderizado?
- * ¡Sí!
- * Por defecto se ejecuta después del primer renderizado y después de cada actualización, Cabe mencionar que se puede modificar este comportamiento somo se veraá mas adelante.
+ * ¡Sí! ✔
+ * Por defecto se ejecuta después del primer renderizado y después de cada actualización, Cabe mencionar que se puede modificar este comportamiento somo se verá mas adelante.
  *
- * En vez de pensar en terminos de "montar" y "actualizar", puede resultar más fácil pensar en efectos que ocurren DESPUES DEL RENDERIZADO. React se asefura d que el DOM se ha actualizado antes de llevar a cabo el efecto.
+ * En vez de pensar en terminos de "montar" y "actualizar", puede resultar más fácil pensar en efectos que ocurren DESPUES DEL RENDERIZADO. React se asefura de que el DOM se ha actualizado antes de llevar a cabo el efecto.
  */

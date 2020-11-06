@@ -50,8 +50,8 @@ class EffectsWithCleanupClass extends Component {
 export default EffectsWithCleanupClass
 
 /*
-  En una clase de React, normalmente se establece una suscripcion en 'componentDidMount', y se cancela la suscripcion en 'componentWillUnmount'. Por ejemplo, digamos que tenemos una suscripcion que lee el tamano de nuestro contenedor de la aplicacion.
-  Establecemos nuestra suscripcion en el ciclo de vida 'componentDidMount', observamos que es necesario usar 'componentWillUnmount '.Estan vinculados los dos metodos. 
+  En una clase de React, normalmente se establece una suscripcion en 'componentDidMount', y se cancela la suscripción en 'componentWillUnmount'. Por ejemplo, digamos que tenemos una suscripción que lee el tamaño de nuestro contenedor de la aplicación.
+  Establecemos nuestra suscripción en el ciclo de vida 'componentDidMount', observamos que es necesario usar 'componentWillUnmount '.Estan vinculados los dos métodos. 
   Fíjate en cómo componentDidMount y componentWillUnmount necesitan ser un reflejo el uno del otro. Los métodos del ciclo de vida nos obligan a separar esta lógica incluso cuando, conceptualmente, el código de ambos está relacionado con el mismo efecto.
 */
 
