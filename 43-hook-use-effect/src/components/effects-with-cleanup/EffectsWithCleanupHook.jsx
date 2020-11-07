@@ -47,21 +47,21 @@ export default EffectsWithCleanupHook
 
 /*
   ¿Qué hace useEffect?
-  Al usar este Hook, le estamos indicando a react que el componente tiene que hacer algo después de renderizarse. React recordará la función que le hemos pasado(NOS REFERIMOS A ELLA COMO EL EFECTO), y la llamará más tarde despues de actualizar el DOM. 
-  En este efecto, actualizamos las dimensiones del tamaño de la ventana(contenedor de neustra app), pero tambien se pueden hacer peticiones de datos o invocar API imperativa. 
+  Al usar este Hook, le estamos indicando a react que el componente tiene que hacer algo después de renderizarse. React recordará la función que le hemos pasado(NOS REFERIMOS A ELLA COMO EL EFECTO), y la llamará más tarde después de actualizar el DOM. 
+  En este efecto, actualizamos las dimensiones del tamaño de la ventana(contenedor de nuestra app), pero también se pueden hacer peticiones de datos o invocar API imperativa. 
 */
 
 /*
-  El hook useEffect acepta dos parametros, un efecto y una lista(array)
+  El hook useEffect acepta dos parámetros, un efecto y una lista(array)
   useEffect([funcion_efecto], [lista_dependencias])
-  Donde: 
-    funcion_efecto: Funcion anónima o tipo flecha, que funciona como nuestro efecto al comento de actualizarse el DOM
+  Dónde: 
+    funcion_efecto: Función anónima o tipo flecha, que funciona como nuestro efecto al momento de actualizarse el DOM
     lista_dependencias: Arreglo que contiene una lista de dependencias la cual estará escuchando useEffect. Puede ser vacio o con elementos.
 */
 
 /*
   ¿Por qué se llama a useEffect dentro del componente? 
-  useEffect dentro dle ocmponente nos permite acceder a la variable de estado 'anchoVentana'(ocualquier prop) directamente desde el efecto. 
+  useEffect dentro del componente nos permite acceder a la variable de estado 'anchoVentana'(ocualquier prop) directamente desde el efecto. 
   No necesitamos una API especial para acceder a ella, ya que se encuentra en el 'ámbito de la función'(nuestro componente).
   Los Hooks aprovechan los 'clousures' de Javascript y evitan intriducir APIs especificas de React donde JS ya proporciona una solución.
 */
@@ -71,7 +71,7 @@ export default EffectsWithCleanupHook
   sí, por defecto useeffect se ejecuta después del primer renderizado y después de cada actualización.(sustituyendo asi a los ciclos de vida componentdidMount, componentDidUUpdate y componentWillUnmount)
   SE PUEDE MODIFICAR EL ESE COMPORTAMIENTO pasandole un segundo argumento al hook useEffect. 
 
-  Tenemos que tener en cuenta que en vez de pensar en "montar" y "actualizar", puede ser más fácil pensar en efector que ocurren "DESPUES DEL RENDERIZADO"
+  Tenemos que tener en cuenta que en vez de pensar en "montar" y "actualizar", puede ser más fácil pensar en efectos que ocurren "DESPUES DEL RENDERIZADO"
 
   React se asegura que el DOM se ha actualizado antes de llevar a cabo el efecto.
 
