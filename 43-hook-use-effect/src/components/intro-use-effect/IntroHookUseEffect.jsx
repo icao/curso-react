@@ -4,6 +4,7 @@ import EffectsWithoutCleanupHook from '../effects-without-cleanup/EffectsWithout
 import EffectsWithCleanupClass from '../effects-with-cleanup/EffectsWithCleanupClass'
 import EffectsWithCleanupHook from '../effects-with-cleanup/EffectsWithCleanupHook'
 import TipsUsingEffects from '../tips-using-effects/TipsUsingEffects'
+import ExampleUseEffect from '../example-use-effect/ExampleUseEffect'
 
 const IntroHookUseEffect = () => {
   const [showCC, setShowCC] = useState(true)
@@ -111,6 +112,13 @@ const IntroHookUseEffect = () => {
           <div className='column'>
             <h2>Consejos para usar efectos</h2>
             <TipsUsingEffects />
+          </div>
+        </div>
+      </div>
+      <div className='section'>
+        <div className='container'>
+          <div className='column'>
+            <ExampleUseEffect />
           </div>
         </div>
       </div>
