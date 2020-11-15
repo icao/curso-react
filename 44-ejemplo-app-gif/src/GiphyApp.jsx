@@ -9,11 +9,12 @@ function GiphyApp() {
     'peliculas',
     'series',
   ])
+
   return (
     <>
       <h1>GifApp</h1>
       <h2>Categorías</h2>
-      <AddCategory />
+      <AddCategory setCategorias={setCategorias} />
       <ol>
         {categorias.map((categoria, index) => (
           <li key={index}>{categoria}</li>
