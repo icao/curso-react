@@ -1,25 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import GifItem from '../gif-item/GifItem'
 
 const GiftCollection = ({ category }) => {
+  const [images, setImages] = useState([])
+
+  useEffect(() => {
+    searchGif()
+  }, [])
+
   async function searchGif() {
     const url =
       'https://api.giphy.com/v1/gifs/search?q=homero&limit=10&api_key=ZbiyJ9p6nPacvAU3gM7rlFTXBIolRy5h'
     const response = await fetch(url)
     const { data } = await response.json()
-    const gifts = data.map(gif => {
+    const gifs = data.map(gif => {
       return {
         id: gif.id,
         title: gif.title,
         url: gif.images.downsized_medium.url,
       }
     })
-
-    console.log(gifts)
+    console.log(gifs)
+    setImages(gifs)
   }
 
-  searchGif()
-
-  return <h3>{category}</h3>
+  return (
+    <>
+      <h3>{category}</h3>
+      {images.map(image => (
+        <GifItem key={image.id} {...image} />
+      ))}
+    </>
+  )
 }
 
 export default GiftCollection

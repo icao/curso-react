@@ -4,12 +4,7 @@ import AddCategory from './components/add-category/AddCategory'
 import GiftCollection from './components/gif-collection/GiftCollection'
 
 function GiphyApp() {
-  const [categorias, setCategorias] = useState([
-    'anime',
-    'videojuegos',
-    'peliculas',
-    'series',
-  ])
+  const [categorias, setCategorias] = useState(['anime'])
 
   return (
     <>
