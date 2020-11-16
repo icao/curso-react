@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './GiphyApp.scss'
 import AddCategory from './components/add-category/AddCategory'
+import GiftCollection from './components/gif-collection/GiftCollection'
 
 function GiphyApp() {
   const [categorias, setCategorias] = useState([
@@ -15,11 +16,9 @@ function GiphyApp() {
       <h1>GifApp</h1>
       <h2>Categorías</h2>
       <AddCategory setCategorias={setCategorias} />
-      <ol>
-        {categorias.map((categoria, index) => (
-          <li key={index}>{categoria}</li>
-        ))}
-      </ol>
+      {categorias.map(categoria => (
+        <GiftCollection key={categoria} category={categoria} />
+      ))}
     </>
   )
 }
