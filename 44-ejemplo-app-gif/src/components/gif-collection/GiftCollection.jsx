@@ -6,7 +6,6 @@ const GiftCollection = ({ category }) => {
       'https://api.giphy.com/v1/gifs/search?q=homero&limit=10&api_key=ZbiyJ9p6nPacvAU3gM7rlFTXBIolRy5h'
     const response = await fetch(url)
     const { data } = await response.json()
-    // console.log(gifs)
     const gifts = data.map(gif => {
       return {
         id: gif.id,
@@ -18,9 +17,7 @@ const GiftCollection = ({ category }) => {
     console.log(gifts)
   }
 
-  useEffect(() => {
-    searchGif()
-  }, [])
+  searchGif()
 
   return <h3>{category}</h3>
 }
