@@ -17,7 +17,7 @@ const AddCategory = ({ setCategorias }) => {
     // Validando la longitud de la entrada en el input
     if (categoria.trim().length > 2) {
       console.log(`Agregando... 📪 ${categoria}`)
-      setCategorias(categorias => [...categorias, categoria]) // [2]
+      setCategorias(categorias => [categoria, ...categorias]) // [2]
       setCategoria('')
     }
   }
