@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import GifItem from '../gif-item/GifItem'
 
-const GiftCollection = ({ category }) => {
+const GifCollection = ({ category }) => {
   const [images, setImages] = useState([])
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const GiftCollection = ({ category }) => {
 
   return (
     <>
-      <h3>{category}</h3>
+      <h2 className='title-collection'>{category}</h2>
       {images.map(image => (
         <GifItem key={image.id} {...image} />
       ))}
@@ -34,4 +34,4 @@ const GiftCollection = ({ category }) => {
   )
 }
 
-export default GiftCollection
+export default GifCollection
