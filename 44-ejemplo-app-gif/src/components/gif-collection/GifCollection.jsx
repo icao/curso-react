@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import GifItem from '../gif-item/GifItem'
+import './GifCollection.scss'
 
 const GifCollection = ({ category }) => {
   const [images, setImages] = useState([])
@@ -27,9 +28,11 @@ const GifCollection = ({ category }) => {
   return (
     <>
       <h2 className='title-collection'>{category}</h2>
-      {images.map(image => (
-        <GifItem key={image.id} {...image} />
-      ))}
+      <div className='container-collection'>
+        {images.map(image => (
+          <GifItem key={image.id} {...image} />
+        ))}
+      </div>
     </>
   )
 }
