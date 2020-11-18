@@ -4,7 +4,7 @@ import AddCategory from './components/add-category/AddCategory'
 import GifCollection from './components/gif-collection/GifCollection'
 
 function GiphyApp() {
-  const [categorias, setCategorias] = useState(['anime'])
+  const [categorias, setCategorias] = useState(['pibubear'])
 
   return (
     <>
