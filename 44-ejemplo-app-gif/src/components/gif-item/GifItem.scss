@@ -13,4 +13,12 @@
     width: 100%;
     height: auto;
   }
+
+  &__title {
+    padding: 1rem;
+    text-align: center;
+    h4 {
+      margin: 0;
+    }
+  }
 }
