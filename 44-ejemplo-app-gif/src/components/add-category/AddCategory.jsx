@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import './AddCategory.scss'
 
 const AddCategory = ({ setCategorias }) => {
   const [categoria, setCategoria] = useState('')
@@ -11,27 +12,24 @@ const AddCategory = ({ setCategorias }) => {
 
   function handleSubmit(event) {
     event.preventDefault()
-    console.log(`Agregando... 📪 ${categoria}`)
     // props.setCategorias(categorias => [...categorias, categoria]) // [1]
 
     // Validando la longitud de la entrada en el input
     if (categoria.trim().length > 2) {
+      console.log(`Agregando... 📪 ${categoria}`)
       setCategorias(categorias => [...categorias, categoria]) // [2]
       setCategoria('')
     }
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor='imput-category'>
-        Categoría{' '}
-        <input
-          id='imput-category'
-          type='text'
-          value={categoria}
-          onChange={handleChange}
-        />
-      </label>
-      <button>Agregar</button>
+    <form className='form-container' onSubmit={handleSubmit}>
+      <input
+        className='input-category'
+        type='text'
+        value={categoria}
+        onChange={handleChange}
+      />
+      <button className='btn btn-primary'>🔎</button>
     </form>
   )
 }

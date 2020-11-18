@@ -1,12 +1,18 @@
 @import './scss/Fonts';
+@import './scss/Palette';
 
 body {
   margin: 0;
   font-family: $font-main;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  // background-color: $color-black-regular;
 }
 
 code {
   font-family: $font-code;
+}
+
+* {
+  box-sizing: border-box;
 }

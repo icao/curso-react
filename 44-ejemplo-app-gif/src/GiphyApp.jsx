@@ -8,9 +8,10 @@ function GiphyApp() {
 
   return (
     <>
-      <h1>GifApp</h1>
-      <h2>Categorías</h2>
-      <AddCategory setCategorias={setCategorias} />
+      <div className='header'>
+        <h1 className='header__logo'>GIFY</h1>
+        <AddCategory setCategorias={setCategorias} />
+      </div>
       {categorias.map(categoria => (
         <GiftCollection key={categoria} category={categoria} />
       ))}
