@@ -1,0 +1,14 @@
+.container-center {
+  text-align: center;
+}
+
+hr {
+  margin: 3em 0;
+}
+
+.center-full {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
