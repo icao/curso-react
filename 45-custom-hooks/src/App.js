@@ -1,11 +1,10 @@
 import './App.css'
+import Counter from './components/counter/Counter'
 
 function App() {
   return (
     <div>
       <h1>Custom Hooks</h1>
-      {/* TODO: explicar aqui en el app, todo acerca de los custom hooks */}
-
       <p>
         No existe una normatividad de como debemos construir nuestros propios
         hooks, asi que podemos construirlos como consideremos correcto,
@@ -48,6 +47,7 @@ function App() {
         <li>Ejemplo de resolución de la ventana</li>
         <li>Ejemplo de petición http - consumo de una API</li>
       </ol>
+      <Counter />
     </div>
   )
 }
