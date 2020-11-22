@@ -1,5 +1,6 @@
 import './App.css'
 import Counter from './components/counter/Counter'
+import Dogs from './components/dogs/Dogs'
 import WindowResolution from './components/window-resolution/WindowResolution'
 
 function App() {
@@ -48,13 +49,19 @@ function App() {
         <li>Ejemplo de resolución de la ventana</li>
         <li>Ejemplo de petición http - consumo de una API</li>
       </ol>
-      <h2>🧮 Contador | {`<Counter />`} y useCounter</h2>
-      <Counter />
-      <h2>
-        📏 Obteniendo resolución de la ventana | {`<WindowResolution />`} y
-        useSizeResolution
-      </h2>
-      <WindowResolution />
+      <div className='container-center'>
+        <h2>🧮 Contador | {`<Counter />`} y useCounter</h2>
+        <Counter />
+        <hr />
+        <h2>
+          📏 Obteniendo resolución de la ventana | {`<WindowResolution />`} y
+          useSizeResolution
+        </h2>
+        <WindowResolution />
+        <hr />
+        <h2>Obteniendo imágnes de una API | {`<Dogs />`} y useFetch</h2>
+        <Dogs />
+      </div>
     </div>
   )
 }

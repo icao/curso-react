@@ -1,0 +1,10 @@
+.image-collection {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.image-dog {
+  width: 250px;
+  height: auto;
+}
