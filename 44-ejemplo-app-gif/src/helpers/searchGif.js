@@ -9,9 +9,5 @@ export async function searchGif(category) {
       url: gif.images.downsized_medium.url,
     }
   })
-
-  console.log(gifs)
   return gifs
-
-  // setImages(gifs)
 }
