@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Probando componente <GifItem /> <GifItem /> debe mostrarse correctamente y aceptar las props: title, url 1`] = `
+<div
+  className="card animate__animated animate__fadeInDown"
+>
+  <img
+    alt="Soy el nombre del gif"
+    src="http://algo_direccion_imagen"
+  />
+  <div
+    className="card__title"
+  >
+    <h4>
+      Soy el nombre del gif
+    </h4>
+  </div>
+</div>
+`;

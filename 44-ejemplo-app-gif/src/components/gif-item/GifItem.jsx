@@ -1,5 +1,6 @@
 import React from 'react'
 import './GifItem.scss'
+import PropTypes from 'prop-types'
 
 const GifItem = ({ title, url }) => {
   return (
@@ -10,6 +11,11 @@ const GifItem = ({ title, url }) => {
       </div>
     </div>
   )
+}
+
+GifItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 }
 
 export default GifItem
