@@ -6,7 +6,7 @@ exports[`Probando componente <GifItem /> <GifItem /> debe mostrarse correctament
 >
   <img
     alt="Soy el nombre del gif"
-    src="http://algo_direccion_imagen"
+    src="http://alguna_direccion_imagen"
   />
   <div
     className="card__title"
