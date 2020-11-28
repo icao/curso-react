@@ -29,6 +29,6 @@ describe('Probando componente <GifItem />', () => {
     const classImg = wrapper.find('div').at(0).prop('className')
     console.log(classImg)
     // Se espera que exista la clase animate__fadeInDown en el div contenedor
-    expect(classImg.includes('animate__fadeDown')).toBe(true)
+    expect(classImg.includes('animate__fadeInDown')).toBe(true)
   })
 })
