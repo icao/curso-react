@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Probando el componente <AddCategory /> El componente <AddCategory /> debe de mostrarse correctamente y aceptar la prop setCategorias 1`] = `
+<form
+  className="form-container"
+  onSubmit={[Function]}
+>
+  <input
+    className="input-category"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <button
+    className="btn btn-primary"
+  >
+    🔎
+  </button>
+</form>
+`;
