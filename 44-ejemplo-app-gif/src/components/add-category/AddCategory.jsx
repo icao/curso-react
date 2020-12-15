@@ -13,6 +13,7 @@ const AddCategory = ({ setCategorias }) => {
   function handleSubmit(event) {
     event.preventDefault()
     // props.setCategorias(categorias => [...categorias, categoria]) // [1]
+    console.log('llamando a handleSubmit', categoria)
 
     // Validando la longitud de la entrada en el input
     if (categoria.trim().length > 2) {

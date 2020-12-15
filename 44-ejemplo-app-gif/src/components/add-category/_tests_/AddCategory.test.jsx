@@ -2,10 +2,12 @@ import AddCategory from '../AddCategory'
 import { shallow } from 'enzyme'
 
 describe('Probando el componente <AddCategory />', () => {
-  // NOTA: Por el momento inventaremos una función dummy, en otros capítulos futuros, verémos la correcta forma de enviarle una función como parametro
-  const setCategorias = () => {} // Esta función dummy no hace nada
-  const wrapper = shallow(<AddCategory setCategorias={setCategorias} />)
+  const setCategorias = jest.fn() // simulación de la función setCategorias()
+  let wrapper = shallow(<AddCategory setCategorias={setCategorias} />)
 
+  beforeEach(() => {
+    wrapper = shallow(<AddCategory setCategorias={setCategorias} />)
+  })
   test('El componente <AddCategory /> debe de mostrarse correctamente y aceptar la prop setCategorias', () => {
     expect(wrapper).toMatchSnapshot()
   })
@@ -18,7 +20,14 @@ describe('Probando el componente <AddCategory />', () => {
         value,
       },
     }) // [1]
-    // NOTA: Por el momento no andamos testeando el hook
+    // NOTA: Por el momento no andamos testeando el hook, una forma seria agregar un parrafo y hacer el testesperando que el value sea igual al texto del parrafo.
+  })
+
+  test('El botón submit no debe de ejecutar/enviar nada(funcionalidad o datos)', () => {
+    // Simulamos un evento submit en el form
+    wrapper.find('form').simulate('submit', { preventDefault: () => {} })
+    //se espera que el método setCategorias() no se halla llamado
+    expect(setCategorias).not.toHaveBeenCalled() //[2]
   })
 })
 
@@ -48,3 +57,14 @@ describe('Probando el componente <AddCategory />', () => {
  *
  * IMPORTANTE: Por el momento no se esta testeando el hook
  */
+
+/**
+ * [2] - Debemos verificar si en una prueba anterior no ha sido modificado el wrapper, en este caso si fue modificado en el punto [1] donde asignamos un valor al input. En nuestro componente se envia el submit si existe en la entrada del input un valor mayor a longitud 2. Por ende en nuestro test nos marcaria ERROR
+ * Expected number of calls: 0  -> SE ESPERABA NO SER LLAMADO
+ * Received number of calls: 1  -> SE ESTA MANDANDO A LLAMAR
+ *
+ * Por consiguiente falla nuestro test unitario.
+ * Hemos de recordar que es buena practica si se requiere, tener inicializado en cada prueba nuestro wrapper que contienen el snapshot del componente iniciado.
+ *
+ * Entonces aplicamosel uso del método beforeEach() al inicio de nuestras pruebas, donde antes de cada test será inicializado el wrapper
+ * */
