@@ -8,9 +8,11 @@ describe('Probando el componente <AddCategory />', () => {
   beforeEach(() => {
     wrapper = shallow(<AddCategory setCategorias={setCategorias} />)
   })
+
   test('El componente <AddCategory /> debe de mostrarse correctamente y aceptar la prop setCategorias', () => {
     expect(wrapper).toMatchSnapshot()
   })
+
   test('Debe cambiar la caja de texto(input) y lanzarse el onChange', () => {
     const input = wrapper.find('input')
     const value = 'Busca este gif' // valor para introducir en el imput
@@ -28,6 +30,28 @@ describe('Probando el componente <AddCategory />', () => {
     wrapper.find('form').simulate('submit', { preventDefault: () => {} })
     //se espera que el método setCategorias() no se halla llamado
     expect(setCategorias).not.toHaveBeenCalled() //[2]
+  })
+
+  test('Debe de mandar a llamarse setCategorias() y limpiarse la caja de texto', () => {
+    // 1.Simular el input change
+    const input = wrapper.find('input')
+    const value = 'navidad'
+    input.simulate('change', {
+      target: {
+        value,
+      },
+    })
+
+    // 2.simular el submit
+    const form = wrapper.find('form')
+    form.simulate('submit', { preventDefault() {} })
+
+    //3. setCategorias debe de ser llamado
+    expect(setCategorias).toHaveBeenCalled()
+
+    //4. El valor del input de be estar vacio ''
+    const inputLastState = wrapper.find('input').prop('value')
+    expect(inputLastState).toBe('')
   })
 })
 
