@@ -48,6 +48,9 @@ describe('Probando el componente <AddCategory />', () => {
 
     //3. setCategorias debe de ser llamado
     expect(setCategorias).toHaveBeenCalled()
+    // otra forma de atacar el problema es:
+    expect(setCategorias).toHaveBeenCalledTimes(1) // [3a]
+    expect(setCategorias).toHaveBeenCalledWith(expect.any(Function)) // [3b]
 
     //4. El valor del input de be estar vacio ''
     const inputLastState = wrapper.find('input').prop('value')
@@ -92,3 +95,11 @@ describe('Probando el componente <AddCategory />', () => {
  *
  * Entonces aplicamosel uso del método beforeEach() al inicio de nuestras pruebas, donde antes de cada test será inicializado el wrapper
  * */
+
+/**
+ * Otra forma de testear que la función setCategorias sea ejecutada es con los siguientes planteamientos.
+ *
+ * [3a] - Se espera que setCategorias se mande a llamar solo una vez
+ * [3b] - se espera que cuando se mande a llamar setCategorias, se le pase una función
+ *
+ */
