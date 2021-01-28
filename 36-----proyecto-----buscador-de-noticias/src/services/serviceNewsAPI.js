@@ -1,7 +1,22 @@
-const API_KEY = "20514652831b4fbd99ba5764446575ec";
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+// const qInTitle = ''
+// const from = ''
+// const apiKey = ''
+// const url = `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${qInTitle}&from=${from}language=en&apiKey=${apiKey}`
 
-export const getNews = (category = "general", country) => {
-  const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`;
+// fetch(request)
+//   .then(response => response.json())
+//   .then(news => {
+//     console.log(news)
+//   })
+//   .catch(error => {
+//     console.log(error)
+//   })
 
-  return fetch(URL).then(res => res.json());
-};
+const API_KEY = 'e1337f0a1a8b482eabec531aca4881a8'
+
+export const getNews = (category = 'general', country) => {
+  const URL = `${proxyUrl}https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`
+  const request = new Request(URL)
+  return fetch(request).then(res => res.json())
+}
