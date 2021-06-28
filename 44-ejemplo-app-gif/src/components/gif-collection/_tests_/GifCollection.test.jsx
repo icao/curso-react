@@ -3,7 +3,8 @@ import { shallow } from 'enzyme'
 
 describe('Probando el componente <GifCollection />', () => {
   test('El componente <GifCollection /> debe de renderearse correctamente', () => {
-    const wrapper = shallow(<GifCollection />)
+    const categoria = 'batman'
+    const wrapper = shallow(<GifCollection category={categoria} />)
 
     expect(wrapper).toMatchSnapshot()
   })

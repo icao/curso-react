@@ -2,12 +2,14 @@
 
 exports[`Probando el componente <GifCollection /> El componente <GifCollection /> debe de renderearse correctamente 1`] = `
 <Fragment>
+  <h2
+    className="title-collection"
+  >
+    batman
+  </h2>
   <h2>
     Loading...
   </h2>
-  <h2
-    className="title-collection"
-  />
   <div
     className="container-collection"
   />
