@@ -10,13 +10,20 @@ import Spinner from "./components/Spinner";
 
 class App extends Component {
   state = {
-    articles: []
+    articles: [],
+    totalResults: null,
   };
 
-  searchNews = category => {
-    serviceApi.getNews(category, "mx").then(response => {
+  searchNews = (category) => {
+    let date = new Date();
+    let formattedDate = `${date.getUTCFullYear()}-${
+      date.getMonth() + 1
+    }-${date.getUTCDate()}`;
+
+    serviceApi.getNews(category, "mx", formattedDate).then((response) => {
       this.setState({
-        articles: response.articles
+        articles: response.data,
+        totalResults: response.pagination.total,
       });
     });
   };
@@ -27,7 +34,7 @@ class App extends Component {
 
   showResults = () => {
     return this.state.articles.length !== 0 ? (
-      <ListNews news={this.state.articles} />
+      <ListNews news={this.state.articles} results={this.state.results} />
     ) : (
       <Spinner />
     );
@@ -45,9 +52,16 @@ class App extends Component {
           <Headband searchNews={this.searchNews} />
         </div>
         <div className="list__news__container">
-          <div className="container ">{this.showResults()}</div>
+          <div className="container ">
+            {this.state.totalResults === 0 && (
+              <div>
+                <h2>No se encontraron resultados</h2>
+                <h3>Intenta con otra categoría</h3>
+              </div>
+            )}
+            {this.showResults()}
+          </div>
         </div>
-        
       </div>
     );
   }

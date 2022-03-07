@@ -19,4 +19,6 @@ function GiphyApp() {
   )
 }
 
+//TODO: REVISAR DONDE NOS QUEDAMOS PARA HACER LOS TESTS
+
 export default GiphyApp

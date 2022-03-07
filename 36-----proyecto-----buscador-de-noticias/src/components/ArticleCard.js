@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import imageDefault from "../images/default_news_img.jpg";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 class ArticleCard extends Component {
   resize() {
     const grid = document.querySelector(".grid");
@@ -15,7 +15,7 @@ class ArticleCard extends Component {
     grid.style.gridAutoRows = "auto";
     grid.style.alignItems = "self-start";
 
-    grid.querySelectorAll(".item").forEach(item => {
+    grid.querySelectorAll(".item").forEach((item) => {
       item.style.gridRowEnd = `span ${Math.ceil(
         (item.clientHeight + rowGap) / (rowHeight + rowGap)
       )}`;
@@ -24,14 +24,13 @@ class ArticleCard extends Component {
     grid.removeAttribute("style");
   }
 
-
   componentDidMount() {
     window.addEventListener("load", this.resize);
     window.addEventListener("resize", this.resize);
   }
 
   getFormattedDate() {
-    const { publishedAt } = this.props.article;
+    const { published_at } = this.props.article;
     let months = [
       "ene",
       "feb",
@@ -44,10 +43,10 @@ class ArticleCard extends Component {
       "sep",
       "act",
       "nov",
-      "dic"
+      "dic",
     ];
 
-    let date = new Date(publishedAt);
+    let date = new Date(published_at);
     let formattedDate = `${
       months[date.getUTCMonth()]
     } ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
@@ -55,7 +54,7 @@ class ArticleCard extends Component {
     return formattedDate;
   }
 
-  addDefaultImage = event => {
+  addDefaultImage = (event) => {
     event.target.src = imageDefault;
   };
 
@@ -66,26 +65,20 @@ class ArticleCard extends Component {
   };
 
   render() {
-    const {
-      source: { name },
-      title,
-      description,
-      urlToImage,
-      url
-    } = this.props.article;
+    const { source, title, description, image, url } = this.props.article;
     return (
       <div className="card__container">
         <a href={url} target="_blank" rel="noopener noreferrer">
           <div className="card__image__container">
             <img
               className="card__image"
-              src={urlToImage === null ? imageDefault : urlToImage}
+              src={image === null ? imageDefault : image}
               alt="imagen de la noticia"
               onError={this.addDefaultImage}
               onLoad={this.launchResize}
             />
             <div className="card__image__tag__container">
-              <span className="card__image__tag__text">{name}</span>
+              <span className="card__image__tag__text">{source}</span>
             </div>
           </div>
           <div className="card__text__container">
@@ -100,7 +93,7 @@ class ArticleCard extends Component {
 }
 
 ArticleCard.propTypes = {
-  article: PropTypes.object.isRequired
-}
+  article: PropTypes.object.isRequired,
+};
 
 export default ArticleCard;

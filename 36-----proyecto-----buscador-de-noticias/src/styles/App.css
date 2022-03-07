@@ -262,6 +262,7 @@ BEM:  Bloque - Elemento - Modificador
   color: var(--color-white);
   font-size: 14px;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .card__text__container {

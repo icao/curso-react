@@ -1,17 +1,17 @@
-import React, {Component} from 'react';
-import '../styles/Select.css'
-import PropTypes from 'prop-types'
+import React, { Component } from "react";
+import "../styles/Select.css";
+import PropTypes from "prop-types";
 
 class Select extends Component {
   state = {
-    value: "general"
+    value: "general",
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     const value = e.target.value;
     this.setState(
       {
-        value
+        value,
       },
       () => {
         const { value } = this.state;
@@ -38,7 +38,7 @@ class Select extends Component {
 }
 
 Select.propTypes = {
-  searchNews: PropTypes.func.isRequired
-}
- 
+  searchNews: PropTypes.func.isRequired,
+};
+
 export default Select;

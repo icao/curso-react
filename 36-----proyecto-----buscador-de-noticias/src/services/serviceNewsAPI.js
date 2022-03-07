@@ -1,9 +1,7 @@
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+const API_KEY = "219f1e4c1a08f5f7d5736b239155bfa7";
 
-const API_KEY = 'e1337f0a1a8b482eabec531aca4881a8'
+export const getNews = (category = "general", country, date) => {
+  const URL = `http://api.mediastack.com/v1/news?access_key=${API_KEY}&countries=${country}&categories=${category}&date=${date}`;
 
-export const getNews = (category = 'general', country) => {
-  const URL = `${proxyUrl}https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`
-  const request = new Request(URL)
-  return fetch(request).then(res => res.json())
-}
+  return fetch(URL).then((res) => res.json());
+};
