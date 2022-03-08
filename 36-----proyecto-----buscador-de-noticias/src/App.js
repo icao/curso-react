@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Headband from "./components/Headband";
 import ListNews from "./components/ListNews";
 import Spinner from "./components/Spinner";
+import { DateTime } from "luxon";
 
 class App extends Component {
   state = {
@@ -19,6 +20,38 @@ class App extends Component {
     let formattedDate = `${date.getUTCFullYear()}-${
       date.getMonth() + 1
     }-${date.getUTCDate()}`;
+
+    console.log("DATE:" + date);
+    console.log(
+      new Date().toLocaleString("es-MX", { timeZone: "Mexico/General" }),
+      "\n",
+      new Date().toLocaleString("es-MX", { timeZone: "America/Mexico_City" }),
+      "\n",
+      "\n"
+    );
+
+    console.log(
+      "%cFECHA Mexico/General: %o",
+      "color: red ;",
+      DateTime.now().setZone("Mexico/General")
+    );
+    console.log(
+      "%cFECHA America/Mexico_City: %o",
+      "color: green ;",
+      DateTime.now().setZone("America/Mexico_City")
+    );
+
+    console.log("%cFECHA UTC: %o", "color: pink ;", DateTime.utc());
+    console.log(
+      "%cFECHA NOW to UTC: %o",
+      "color: pink ;",
+      DateTime.now().toUTC()
+    );
+    console.log(
+      "%cFECHA UTC to LOCAL: %o",
+      "color: pink ;",
+      DateTime.utc().toLocal()
+    );
 
     serviceApi.getNews(category, "mx", formattedDate).then((response) => {
       this.setState({
