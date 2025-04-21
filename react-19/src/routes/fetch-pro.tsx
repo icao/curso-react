@@ -1,13 +1,23 @@
 import { createFileRoute } from '@tanstack/react-router'
+import EjemploFetch from '@/layouts/EjemploFetch'
+import EjemploFetchCustomHook from '@/layouts/EjemploFetchCustomHook'
 
 export const Route = createFileRoute('/fetch-pro')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
-  return <>
-    <h2 className='text-2xl font-bold'>Hello "/fetch-like-pro"!</h2>
-    <h3>Aqui va el contenido de fetch como un pro</h3>
-  
-  </>
+  return (
+    <section className="p-9 min-h-screen flex flex-col items-center gap-12 bg-[#141414] text-white text-[calc(10px+2vmin)]">
+      <h2 className="text-2xl font-bold">
+        Entendiendo <i>fetch</i> como un pro
+      </h2>
+
+      <section className=" flex flex-row items-center  gap-8">
+        <EjemploFetch />
+
+        <EjemploFetchCustomHook />
+      </section>
+    </section>
+  )
 }
