@@ -16,7 +16,7 @@ const EjemploFetch = () => {
     getUsers().then((data) => setUsers(data.results))
   }, [])
 
-  if (!users) return <div>Loading...</div>
+  if (!users) return <p className="text-white font-medium">Loading...</p>
 
   return (
     <section className="flex flex-col items-center gap-4">
