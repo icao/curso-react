@@ -12,8 +12,9 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as FetchProImport } from './routes/fetch-pro'
-import { Route as ChangesReact19Import } from './routes/changes-react-19'
 import { Route as IndexImport } from './routes/index'
+import { Route as ChangesReact19IndexImport } from './routes/changes-react-19/index'
+import { Route as ChangesReact19ApiUseImport } from './routes/changes-react-19/api-use'
 
 // Create/Update Routes
 
@@ -23,15 +24,21 @@ const FetchProRoute = FetchProImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const ChangesReact19Route = ChangesReact19Import.update({
-  id: '/changes-react-19',
-  path: '/changes-react-19',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ChangesReact19IndexRoute = ChangesReact19IndexImport.update({
+  id: '/changes-react-19/',
+  path: '/changes-react-19/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ChangesReact19ApiUseRoute = ChangesReact19ApiUseImport.update({
+  id: '/changes-react-19/api-use',
+  path: '/changes-react-19/api-use',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -46,18 +53,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/changes-react-19': {
-      id: '/changes-react-19'
-      path: '/changes-react-19'
-      fullPath: '/changes-react-19'
-      preLoaderRoute: typeof ChangesReact19Import
-      parentRoute: typeof rootRoute
-    }
     '/fetch-pro': {
       id: '/fetch-pro'
       path: '/fetch-pro'
       fullPath: '/fetch-pro'
       preLoaderRoute: typeof FetchProImport
+      parentRoute: typeof rootRoute
+    }
+    '/changes-react-19/api-use': {
+      id: '/changes-react-19/api-use'
+      path: '/changes-react-19/api-use'
+      fullPath: '/changes-react-19/api-use'
+      preLoaderRoute: typeof ChangesReact19ApiUseImport
+      parentRoute: typeof rootRoute
+    }
+    '/changes-react-19/': {
+      id: '/changes-react-19/'
+      path: '/changes-react-19'
+      fullPath: '/changes-react-19'
+      preLoaderRoute: typeof ChangesReact19IndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -67,42 +81,56 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/changes-react-19': typeof ChangesReact19Route
   '/fetch-pro': typeof FetchProRoute
+  '/changes-react-19/api-use': typeof ChangesReact19ApiUseRoute
+  '/changes-react-19': typeof ChangesReact19IndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/changes-react-19': typeof ChangesReact19Route
   '/fetch-pro': typeof FetchProRoute
+  '/changes-react-19/api-use': typeof ChangesReact19ApiUseRoute
+  '/changes-react-19': typeof ChangesReact19IndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/changes-react-19': typeof ChangesReact19Route
   '/fetch-pro': typeof FetchProRoute
+  '/changes-react-19/api-use': typeof ChangesReact19ApiUseRoute
+  '/changes-react-19/': typeof ChangesReact19IndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/changes-react-19' | '/fetch-pro'
+  fullPaths:
+    | '/'
+    | '/fetch-pro'
+    | '/changes-react-19/api-use'
+    | '/changes-react-19'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/changes-react-19' | '/fetch-pro'
-  id: '__root__' | '/' | '/changes-react-19' | '/fetch-pro'
+  to: '/' | '/fetch-pro' | '/changes-react-19/api-use' | '/changes-react-19'
+  id:
+    | '__root__'
+    | '/'
+    | '/fetch-pro'
+    | '/changes-react-19/api-use'
+    | '/changes-react-19/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ChangesReact19Route: typeof ChangesReact19Route
   FetchProRoute: typeof FetchProRoute
+  ChangesReact19ApiUseRoute: typeof ChangesReact19ApiUseRoute
+  ChangesReact19IndexRoute: typeof ChangesReact19IndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ChangesReact19Route: ChangesReact19Route,
   FetchProRoute: FetchProRoute,
+  ChangesReact19ApiUseRoute: ChangesReact19ApiUseRoute,
+  ChangesReact19IndexRoute: ChangesReact19IndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -116,18 +144,22 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/changes-react-19",
-        "/fetch-pro"
+        "/fetch-pro",
+        "/changes-react-19/api-use",
+        "/changes-react-19/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/changes-react-19": {
-      "filePath": "changes-react-19.tsx"
-    },
     "/fetch-pro": {
       "filePath": "fetch-pro.tsx"
+    },
+    "/changes-react-19/api-use": {
+      "filePath": "changes-react-19/api-use.tsx"
+    },
+    "/changes-react-19/": {
+      "filePath": "changes-react-19/index.tsx"
     }
   }
 }
