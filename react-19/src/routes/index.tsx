@@ -1,6 +1,16 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 import logo from '../logo.svg'
 
+// Este fragmento de codigo es para que tanstack pueda identificar el componente
+// que se renderiza cuando se navega a la ruta /  y se renderiza el componente
+// que se encuentra en el archivo index.tsx
+// La estructura para declarar rutas es la siguiente:
+// export const Route = createFileRoute('/')({
+//   component: NombreDelComponenteAMostrar,
+// })
+// Donde NombreDelComponenteAMostrar es el nombre del componente que se renderizara
+// createdFileRoute es una funcion que se encarga de crear la ruta y devolverla
+// Route es el nombre de la ruta
 export const Route = createFileRoute('/')({
   component: App,
 })
