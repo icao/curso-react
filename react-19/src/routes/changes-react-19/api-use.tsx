@@ -30,7 +30,7 @@ function ApiUse() {
       </p>
 
       <section>
-        <h2 className='font-bold text-2xl'>Ejemplo de uso</h2>
+        <h2 className='font-bolder text-3xl'>Ejemplo de uso</h2>
         <PokeApiUse />
       </section>
     </section>
