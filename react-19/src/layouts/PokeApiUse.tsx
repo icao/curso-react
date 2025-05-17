@@ -1,6 +1,7 @@
 import { Suspense, useState } from 'react'
+import { ErrorBoundary } from '../shared/ErrorBoundary'
 import PokemonInfo from './PokemonInfo'
-import PokemonList from './PokemonList';
+import PokemonList from './PokemonList'
 
 const URL_API = 'https://pokeapi.co/api/v2/pokemon'
 const fetchPokemon = (pokemonName: string) => {
@@ -24,10 +25,17 @@ const fetchPokemon = (pokemonName: string) => {
   })
 }
 
-const pokemonList = async() => {
+const pokemonList = async () => {
   const response = await fetch(`${URL_API}/?limit=10`)
   const data = await response.json()
   return data.results
+}
+
+const pokemonListWithError = async () => {
+  const response = await fetch(`${URL_API}/?limit=10`)
+  const data = await response.json()
+  // return data.results
+  throw new Error('Ha ocurrido un error al buscar el pokemon')
 }
 
 const PokeApiUse = () => {
@@ -44,6 +52,7 @@ const PokeApiUse = () => {
       Si se quiere evitar esto, se puede separar el componente PokemonList y quedar como un componente independiente, a la par que el componente PokeApiUse.
       */}
       <Suspense fallback={<h1>Loading pokemon list...</h1>}>
+        {/* Listado de pokemons */}
         <PokemonList pokemonListPromise={pokemonList()} />
       </Suspense>
       <div className="border-2 border-blue-600 rounded-lg p-4 flex flex-col gap-4">
@@ -65,8 +74,26 @@ const PokeApiUse = () => {
         </div>
 
         <Suspense fallback={<h1>Loading pokemon info...</h1>}>
+          {/* Información del pokemon */}
           <PokemonInfo pokemonPromise={fetchPokemon(query)} />
         </Suspense>
+      </div>
+      <div>
+        <h2 className="text-2xl font-bold text-emerald-300">
+          Listado de pokemons con error
+        </h2>
+        <ErrorBoundary
+          fallback={
+            <h1 className="text-red-400 text-3xl">
+              Error al buscar el pokemon EB
+            </h1>
+          }
+        >
+          <Suspense fallback={<h1>Loading pokemon list...</h1>}>
+            {/* Listado de pokemons */}
+            <PokemonList pokemonListPromise={pokemonListWithError()} />
+          </Suspense>
+        </ErrorBoundary>
       </div>
     </section>
   )

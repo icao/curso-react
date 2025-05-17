@@ -17,7 +17,7 @@ function ApiUse() {
       <h1>
         API <i>use</i>
       </h1>
-      <p className='text-2xl'>
+      <p className="text-2xl">
         Teoria acerca del API <i>use</i>.{' '}
         <a
           className="text-blue-600 hover:text-blue-500 decoration-2 hover:underline focus:outline-hidden focus:underline opacity-90"
@@ -28,9 +28,20 @@ function ApiUse() {
           Leer mas aquí
         </a>
       </p>
+      <p className="text-2xl">
+        Teoria acerca de <i>ErrorBoundary</i>.{' '}
+        <a
+          className="text-blue-600 hover:text-blue-500 decoration-2 hover:underline focus:outline-hidden focus:underline opacity-90"
+          href="https://www.notion.so/ErrorBoundary-1f28b9fd1256809ebd47ed9cd52cc96e?pvs=4"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Leer mas aquí
+        </a>
+      </p>
 
       <section>
-        <h2 className='font-bolder text-3xl'>Ejemplo de uso</h2>
+        <h2 className="font-bolder text-3xl">Ejemplo de uso</h2>
         <PokeApiUse />
       </section>
     </section>
