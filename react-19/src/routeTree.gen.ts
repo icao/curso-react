@@ -14,6 +14,8 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as FetchProImport } from './routes/fetch-pro'
 import { Route as IndexImport } from './routes/index'
 import { Route as ChangesReact19IndexImport } from './routes/changes-react-19/index'
+import { Route as ChangesReact19UseActionStateImport } from './routes/changes-react-19/useActionState'
+import { Route as ChangesReact19UseTransitionImport } from './routes/changes-react-19/use-transition'
 import { Route as ChangesReact19ApiUseImport } from './routes/changes-react-19/api-use'
 
 // Create/Update Routes
@@ -35,6 +37,20 @@ const ChangesReact19IndexRoute = ChangesReact19IndexImport.update({
   path: '/changes-react-19/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const ChangesReact19UseActionStateRoute =
+  ChangesReact19UseActionStateImport.update({
+    id: '/changes-react-19/useActionState',
+    path: '/changes-react-19/useActionState',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const ChangesReact19UseTransitionRoute =
+  ChangesReact19UseTransitionImport.update({
+    id: '/changes-react-19/use-transition',
+    path: '/changes-react-19/use-transition',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 const ChangesReact19ApiUseRoute = ChangesReact19ApiUseImport.update({
   id: '/changes-react-19/api-use',
@@ -67,6 +83,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChangesReact19ApiUseImport
       parentRoute: typeof rootRoute
     }
+    '/changes-react-19/use-transition': {
+      id: '/changes-react-19/use-transition'
+      path: '/changes-react-19/use-transition'
+      fullPath: '/changes-react-19/use-transition'
+      preLoaderRoute: typeof ChangesReact19UseTransitionImport
+      parentRoute: typeof rootRoute
+    }
+    '/changes-react-19/useActionState': {
+      id: '/changes-react-19/useActionState'
+      path: '/changes-react-19/useActionState'
+      fullPath: '/changes-react-19/useActionState'
+      preLoaderRoute: typeof ChangesReact19UseActionStateImport
+      parentRoute: typeof rootRoute
+    }
     '/changes-react-19/': {
       id: '/changes-react-19/'
       path: '/changes-react-19'
@@ -83,6 +113,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/fetch-pro': typeof FetchProRoute
   '/changes-react-19/api-use': typeof ChangesReact19ApiUseRoute
+  '/changes-react-19/use-transition': typeof ChangesReact19UseTransitionRoute
+  '/changes-react-19/useActionState': typeof ChangesReact19UseActionStateRoute
   '/changes-react-19': typeof ChangesReact19IndexRoute
 }
 
@@ -90,6 +122,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/fetch-pro': typeof FetchProRoute
   '/changes-react-19/api-use': typeof ChangesReact19ApiUseRoute
+  '/changes-react-19/use-transition': typeof ChangesReact19UseTransitionRoute
+  '/changes-react-19/useActionState': typeof ChangesReact19UseActionStateRoute
   '/changes-react-19': typeof ChangesReact19IndexRoute
 }
 
@@ -98,6 +132,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/fetch-pro': typeof FetchProRoute
   '/changes-react-19/api-use': typeof ChangesReact19ApiUseRoute
+  '/changes-react-19/use-transition': typeof ChangesReact19UseTransitionRoute
+  '/changes-react-19/useActionState': typeof ChangesReact19UseActionStateRoute
   '/changes-react-19/': typeof ChangesReact19IndexRoute
 }
 
@@ -107,14 +143,24 @@ export interface FileRouteTypes {
     | '/'
     | '/fetch-pro'
     | '/changes-react-19/api-use'
+    | '/changes-react-19/use-transition'
+    | '/changes-react-19/useActionState'
     | '/changes-react-19'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/fetch-pro' | '/changes-react-19/api-use' | '/changes-react-19'
+  to:
+    | '/'
+    | '/fetch-pro'
+    | '/changes-react-19/api-use'
+    | '/changes-react-19/use-transition'
+    | '/changes-react-19/useActionState'
+    | '/changes-react-19'
   id:
     | '__root__'
     | '/'
     | '/fetch-pro'
     | '/changes-react-19/api-use'
+    | '/changes-react-19/use-transition'
+    | '/changes-react-19/useActionState'
     | '/changes-react-19/'
   fileRoutesById: FileRoutesById
 }
@@ -123,6 +169,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FetchProRoute: typeof FetchProRoute
   ChangesReact19ApiUseRoute: typeof ChangesReact19ApiUseRoute
+  ChangesReact19UseTransitionRoute: typeof ChangesReact19UseTransitionRoute
+  ChangesReact19UseActionStateRoute: typeof ChangesReact19UseActionStateRoute
   ChangesReact19IndexRoute: typeof ChangesReact19IndexRoute
 }
 
@@ -130,6 +178,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FetchProRoute: FetchProRoute,
   ChangesReact19ApiUseRoute: ChangesReact19ApiUseRoute,
+  ChangesReact19UseTransitionRoute: ChangesReact19UseTransitionRoute,
+  ChangesReact19UseActionStateRoute: ChangesReact19UseActionStateRoute,
   ChangesReact19IndexRoute: ChangesReact19IndexRoute,
 }
 
@@ -146,6 +196,8 @@ export const routeTree = rootRoute
         "/",
         "/fetch-pro",
         "/changes-react-19/api-use",
+        "/changes-react-19/use-transition",
+        "/changes-react-19/useActionState",
         "/changes-react-19/"
       ]
     },
@@ -157,6 +209,12 @@ export const routeTree = rootRoute
     },
     "/changes-react-19/api-use": {
       "filePath": "changes-react-19/api-use.tsx"
+    },
+    "/changes-react-19/use-transition": {
+      "filePath": "changes-react-19/use-transition.tsx"
+    },
+    "/changes-react-19/useActionState": {
+      "filePath": "changes-react-19/useActionState.tsx"
     },
     "/changes-react-19/": {
       "filePath": "changes-react-19/index.tsx"

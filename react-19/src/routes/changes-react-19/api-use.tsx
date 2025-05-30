@@ -7,7 +7,7 @@ export const Route = createFileRoute('/changes-react-19/api-use')({
 
 function ApiUse() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-[#141414] text-white text-[calc(10px+2vmin)] flex gap-4">
+    <section className="min-h-screen flex gap-4 flex-col items-center justify-center bg-[#141414] text-white text-[calc(10px+2vmin)] ">
       <Link to="/changes-react-19">
         <button className="font-mono text-lg text-blue-600 hover:text-blue-500 decoration-2 hover:underline focus:outline-hidden focus:underline opacity-90">
           <span aria-hidden="true">←</span>

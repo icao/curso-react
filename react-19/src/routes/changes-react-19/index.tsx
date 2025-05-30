@@ -23,6 +23,14 @@ function RouteComponent() {
         <li>
           Api <i>use</i>
         </li>
+        <Link to="/changes-react-19/use-transition">
+          <li className="text-blue-600 hover:text-blue-500 decoration-2 hover:underline focus:outline-hidden focus:underline opacity-90">
+            Hook{' '}
+            <i>
+              useTransition <span aria-hidden="true">→</span>
+            </i>
+          </li>
+        </Link>
       </ol>
       <Outlet /> {/* This is where child routes will render */}
     </section>
