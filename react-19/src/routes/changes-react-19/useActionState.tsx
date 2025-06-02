@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
+import TraditionalForm from '@/layouts/TraditionalForm'
 
 export const Route = createFileRoute('/changes-react-19/useActionState')({
   component: RouteComponent,
@@ -27,10 +28,10 @@ function RouteComponent() {
           Leer mas aquí
         </a>
       </p>
- 
 
-      <section>
-     
+      <section className="mt-8 grid md:grid-cols-2 gap-6">
+        <TraditionalForm />
+        <TraditionalForm />
       </section>
     </section>
   )
