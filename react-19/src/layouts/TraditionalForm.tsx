@@ -36,14 +36,14 @@ const TraditionalForm = () => {
     <div className="p-8 min-h-screen">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8">
-          useTransition: React 19 - En formularios
+          Formulario con componentes controlados y useTransition
         </h1>
 
         <div className="mt-8 bg-cyan-950 p-6 rounded-lg shadow">
           <div className="grid md:grid-cols-1 gap-6">
             <div>
               <h4 className="font-semibold text-green-600 mb-2">
-                React 19 (Con useTransition)
+               Tradicional
               </h4>
               <div className="space-y-4">
                 <div>
