@@ -22,7 +22,7 @@ function RouteComponent() {
         Teoria acerca del hook <i>useActionState</i>.{' '}
         <a
           className="text-blue-600 hover:text-blue-500 decoration-2 hover:underline focus:outline-hidden focus:underline opacity-90"
-          // href="https://www.notion.so/Hook-useTransition-1f98b9fd125680ceb497d91b947e72f9?pvs=4"
+          href="https://www.notion.so/useActionState-20b8b9fd125680fc8306cf8fee587979?source=copy_link"
           target="_blank"
           rel="noreferrer"
         >
