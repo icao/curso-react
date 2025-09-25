@@ -35,6 +35,7 @@ const pokemonListWithError = async () => {
   const response = await fetch(`${URL_API}/?limit=10`)
   const data = await response.json()
   // return data.results
+  // !NOTA: Lanzamos un error a proposito solo para ejemplificar el uso de ErrorBoundary
   throw new Error('Ha ocurrido un error al buscar el pokemon')
 }
 

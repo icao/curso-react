@@ -1,17 +1,23 @@
-import React, { use } from 'react'
+import  { use } from 'react'
+import type { Pokemon } from '@/types/Pokemon'
 
-const PokemonList = ({ pokemonListPromise }) => {
+interface PokemonListProps {
+  pokemonListPromise: Promise<Array<Pokemon>>
+}
+
+const PokemonList = ({ pokemonListPromise }: PokemonListProps) => {
   const pokemons = use(pokemonListPromise)
-  if (!pokemons) return null
-
+  
   return (
     <div>
       <h2 className="text-2xl font-bold text-emerald-300">
         Listado de pokemons
       </h2>
       <ul className="list-disc list-inside">
-        {pokemons?.map((pokemon) => (
-          <li key={pokemon.name} className='text-lg'>{pokemon.name}</li>
+        {pokemons.map((pokemon) => (
+          <li key={pokemon.name} className="text-lg">
+            {pokemon.name}
+          </li>
         ))}
       </ul>
     </div>

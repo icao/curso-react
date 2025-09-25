@@ -1,11 +1,26 @@
 import { use } from "react"
 
-const PokemonInfo = ({ pokemonPromise }) => {
+interface PokemonApi {
+  name: string
+  weight: number
+  sprites: {
+    front_default: string
+  }
+  error: boolean | null
+  
+}
+interface PokemonInfoProps { 
+  pokemonPromise: Promise<PokemonApi>
+}
+
+const PokemonInfo = ({ pokemonPromise }: PokemonInfoProps) => {
   const pokemonData = use(pokemonPromise)
 
-  if (!pokemonData) return null
-  if (pokemonData?.error) {
-    return <h1>Error al buscar el pokemon</h1>
+  // Necesario para no mostrar nada, ya   que con en api use siempre se manda a renderizar a la primera vez, no hacemos uso del useEffect. Asi evitamos que truene la APP
+  if (!pokemonData) return null // eslint-disable-line
+
+  if (pokemonData.error) {
+    return <h1>Error al buscar el pokemon 😔 </h1>
   }
 
   return (

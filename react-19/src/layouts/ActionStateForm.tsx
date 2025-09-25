@@ -104,6 +104,8 @@ const initialState = {
                 bloquea
               </p>
             </form>
+
+             <pre>{JSON.stringify(state, null, 2)}</pre>
           </div>
         </div>
       </div>
