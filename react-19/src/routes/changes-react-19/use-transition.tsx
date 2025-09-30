@@ -1,5 +1,5 @@
-
 import { Link, createFileRoute } from '@tanstack/react-router'
+import ShoppingList from '../../layouts/ShoppingList'
 import NavigationTab from '@/layouts/NavigationTab'
 
 export const Route = createFileRoute('/changes-react-19/use-transition')({
@@ -15,7 +15,7 @@ function RouteComponent() {
           Regresar a index
         </button>
       </Link>
-      <h1 >
+      <h1>
         Hook <i>useTransition</i>
       </h1>
       <p className="text-2xl">
@@ -28,12 +28,21 @@ function RouteComponent() {
         >
           Leer mas aquí
         </a>
-      </p> 
-      <p className="text-2xl">El hook <i>useTransition</i> es muy útil cuando queremos hacer algo que puede ser un proceso de carga de datos, por ejemplo, cuando queremos mostrar un mensaje de cargando mientras se está cargando datos. Podemos decir que es la abstraccion de <i>isPending</i></p>
+      </p>
+      <p className="text-2xl">
+        El hook <i>useTransition</i> es muy útil cuando queremos hacer algo que
+        puede ser un proceso de carga de datos, por ejemplo, cuando queremos
+        mostrar un mensaje de cargando mientras se está cargando datos. Podemos
+        decir que es la abstraccion de <i>isPending</i>
+      </p>
 
       <section>
-        
         <NavigationTab />
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-2xl font-bold">Ejemplo de uso 2</h2>
+        <ShoppingList />
       </section>
     </section>
   )
