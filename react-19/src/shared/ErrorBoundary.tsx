@@ -34,7 +34,7 @@ export class ErrorBoundary extends Component<Props, State> {
       //   // Warning: `captureOwnerStack` is not available in production.
       //   React.captureOwnerStack(),
       // )
-      console.log('ErrorBoundary: componentDidCatch', error, info)
+      console.log('♦️ ErrorBoundary: componentDidCatch', error, info)
   }
 
   render() {

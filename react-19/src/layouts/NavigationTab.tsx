@@ -1,4 +1,4 @@
-import { startTransition, use, useEffect, useState, useTransition } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 
 const NavigationTab = () => {
   const [activeTab, setActiveTab] = useState('home')
